@@ -56,15 +56,63 @@
 		5F505E192989366D00EAFE2E /* Atlas */ = {
 			isa = PBXGroup;
 			children = (
-				5F505E1A2989366D00EAFE2E /* AppDelegate.swift */,
-				5F505E1C2989366D00EAFE2E /* SceneDelegate.swift */,
-				5F505E1E2989366D00EAFE2E /* RootViewController.swift */,
-				5F505E202989366D00EAFE2E /* Main.storyboard */,
-				5F505E232989366F00EAFE2E /* Assets.xcassets */,
-				5F505E252989366F00EAFE2E /* LaunchScreen.storyboard */,
-				5F505E282989366F00EAFE2E /* Info.plist */,
+				5F505E342989398600EAFE2E /* Delegates */,
+				5F505E322989385200EAFE2E /* View Controllers */,
+				5F505E36298939D400EAFE2E /* Storyboards */,
+				5F505E35298939A400EAFE2E /* Resources */,
+				5F505E37298939FB00EAFE2E /* Supporting Files */,
 			);
 			path = Atlas;
+			sourceTree = "<group>";
+		};
+		5F505E312989384600EAFE2E /* Root View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5F505E1E2989366D00EAFE2E /* RootViewController.swift */,
+			);
+			path = "Root View Controller";
+			sourceTree = "<group>";
+		};
+		5F505E322989385200EAFE2E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F505E312989384600EAFE2E /* Root View Controller */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5F505E342989398600EAFE2E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				5F505E1A2989366D00EAFE2E /* AppDelegate.swift */,
+				5F505E1C2989366D00EAFE2E /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		5F505E35298939A400EAFE2E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5F505E232989366F00EAFE2E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5F505E36298939D400EAFE2E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5F505E202989366D00EAFE2E /* Main.storyboard */,
+				5F505E252989366F00EAFE2E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5F505E37298939FB00EAFE2E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F505E282989366F00EAFE2E /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +125,7 @@
 				5F505E132989366D00EAFE2E /* Sources */,
 				5F505E142989366D00EAFE2E /* Frameworks */,
 				5F505E152989366D00EAFE2E /* Resources */,
+				5F505E332989388900EAFE2E /* SwiftLint Run Script */,
 			);
 			buildRules = (
 			);
@@ -132,6 +181,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F505E332989388900EAFE2E /* SwiftLint Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\n if which swiftlint >/dev/null; then\n     swiftlint --no-cache\n else\n     echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\n fi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5F505E132989366D00EAFE2E /* Sources */ = {
@@ -289,7 +360,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WV9WZS43J9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Atlas/Info.plist;
+				INFOPLIST_FILE = "Atlas/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +388,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WV9WZS43J9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Atlas/Info.plist;
+				INFOPLIST_FILE = "Atlas/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
