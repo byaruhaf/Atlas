@@ -61,6 +61,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="315"/>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jx3-qJ-PAo"/>
                         <color key="backgroundColor" name="CLOUDY"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="aus-Ps-fGq" secondAttribute="trailing" id="1Iq-HU-6Bk"/>
@@ -81,6 +82,7 @@
                     <view key="view" contentMode="scaleToFill" id="l76-K1-GpH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="454"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3Sr-lf-MS3"/>
                         <color key="backgroundColor" name="CLOUDY"/>
                     </view>
                 </viewController>
@@ -94,6 +96,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3E4-rP-nIP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WE2-IM-Cjx">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -109,7 +112,7 @@
     <resources>
         <image name="forest_cloudy" width="360" height="321"/>
         <namedColor name="CLOUDY">
-            <color red="0.35401061179999999" green="0.43846309189999999" blue="0.47451579570000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.35400000214576721" green="0.43799999356269836" blue="0.47499999403953552" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
