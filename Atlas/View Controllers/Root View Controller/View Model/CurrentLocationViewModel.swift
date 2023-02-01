@@ -6,29 +6,11 @@
 //
 
 import Foundation
-import Combine
 
 // @MainActor
 final class CurrentLocationViewModel {
     private var currentWeatherTaskHandle: Task<CurrentWeather, Error>?
     private var forecastTaskHandle: Task<Forecast, Error>?
-//    @Published private(set) var current: CurrentWeather?
-//
-//    private var locations: [List] {
-//        get {
-//            locationsSubject.value
-//        }
-//        set {
-//            locationsSubject.value = newValue
-//        }
-//    }
-//
-//    var locationsPublisher: AnyPublisher<[List], Never> {
-//        locationsSubject.eraseToAnyPublisher()
-//    }
-//
-//    private let locationsSubject = CurrentValueSubject<[List], Never>([])
-    
     private(set) var current: CurrentWeather?
     private(set) var forecast: Forecast?
     
@@ -45,27 +27,8 @@ final class CurrentLocationViewModel {
         
         let currentWeather = try await task1.value
         let forecast = try await task2.value
-//        print(currentWeather)
-//        print(forecast)
         self.current = currentWeather
         self.forecast = forecast
-        //        do {
-        //            let task1 = Task.detached {
-        //                try await self.loadCurrentWeatherData()
-        //            }
-        //            let task2 = Task.detached {
-        //                try await self.loadForecastWeatherData()
-        //            }
-        //            currentWeatherTaskHandle = task1
-        //            forecastTaskHandle = task2
-        //
-        //            let currentWeather = try await task1.value
-        //            let forecast = try await task2.value
-        //            print(currentWeather)
-        //            print(forecast)
-        //        } catch {
-        //            print(error)
-        //        }
     }
     
     func loadCurrentWeatherData() async throws -> CurrentWeather {

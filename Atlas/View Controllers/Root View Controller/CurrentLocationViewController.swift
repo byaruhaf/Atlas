@@ -6,13 +6,9 @@
 //
 
 import UIKit
-import Combine
 
 final class CurrentLocationViewController: UIViewController {
-//    private var subscriptions = Set<AnyCancellable>()
-//    var cancellables = Set<AnyCancellable>()
 
-    
     var viewModel: CurrentLocationViewModel? {
         didSet {
             guard let viewModel = viewModel else {
@@ -22,7 +18,6 @@ final class CurrentLocationViewController: UIViewController {
             setupViewModel(with: viewModel)
         }
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +32,8 @@ final class CurrentLocationViewController: UIViewController {
             
             do {
                 try await viewModel()
-//                async let currentWeatherData = viewModel.loadCurrentWeatherData()
-//                async let forecastWeatherData = viewModel.loadForecastWeatherData()
-//
-                print(viewModel.forecast)
-                print(viewModel.current)
+                print(viewModel.forecast.debugDescription)
+                print(viewModel.current.debugDescription)
             } catch {
                 print(error.localizedDescription)
             }
