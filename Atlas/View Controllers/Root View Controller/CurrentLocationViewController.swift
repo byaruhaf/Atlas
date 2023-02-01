@@ -44,7 +44,7 @@ final class CurrentLocationViewController: UIViewController {
     
     private func setupView() {
         // Configure View
-        view.backgroundColor = UIColor(named: "SUNNY")
+//        view.backgroundColor = UIColor(named: "SUNNY")
     }
     
     func loadCurrentWeatherData() async throws -> CurrentWeather {
