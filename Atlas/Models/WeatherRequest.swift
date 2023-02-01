@@ -53,6 +53,7 @@ struct WeatherRequest {
         
         guard let url = urlComponents.url else {
             // if we can’t create a URL, Exit immediately and complain loudly.
+            // TODO: Log this with Logger
             fatalError("Unable to Create URL for Weather Service Request")
         }
         
