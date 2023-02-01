@@ -9,7 +9,9 @@ import UIKit
 import Combine
 
 final class CurrentLocationViewController: UIViewController {
-    private var subscriptions = Set<AnyCancellable>()
+//    private var subscriptions = Set<AnyCancellable>()
+//    var cancellables = Set<AnyCancellable>()
+
     
     var viewModel: CurrentLocationViewModel? {
         didSet {
@@ -21,11 +23,9 @@ final class CurrentLocationViewController: UIViewController {
         }
     }
     
-    var cancellables = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Setup View
         setupView()
     }
@@ -40,8 +40,8 @@ final class CurrentLocationViewController: UIViewController {
 //                async let currentWeatherData = viewModel.loadCurrentWeatherData()
 //                async let forecastWeatherData = viewModel.loadForecastWeatherData()
 //
-//                await print(try currentWeatherData)
-//                await print(try forecastWeatherData)
+                print(viewModel.forecast)
+                print(viewModel.current)
             } catch {
                 print(error.localizedDescription)
             }
