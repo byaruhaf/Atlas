@@ -15,7 +15,14 @@ final class CurrentLocationViewController: UIViewController {
         // Setup View
         setupView()
         Task(priority: .userInitiated) {
-            await fetchWeatherDate()
+            do {
+                async let currentWeatherData = loadCurrentWeatherData()
+                async let forecastWeatherData = loadForecastWeatherData()
+                await print(try currentWeatherData)
+                await print(try forecastWeatherData)
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
     
@@ -24,8 +31,7 @@ final class CurrentLocationViewController: UIViewController {
         view.backgroundColor = UIColor(named: "SUNNY")
     }
     
-    private func fetchWeatherDate() async {
-        
+    func loadCurrentWeatherData() async throws -> CurrentWeather {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.openweathermap.org"
@@ -35,13 +41,16 @@ final class CurrentLocationViewController: UIViewController {
             .init(name: "lon", value: "32.582520"),
             .init(name: "appid", value: "5a568ba1adb3fc3e8806cb1a4e00b623"),
             .init(name: "units", value: "metric")
-//            .init(name: "units", value: "imperial")
+            //            .init(name: "units", value: "imperial")
         ]
-
-        guard let url = urlComponents.url else { return }
+        
+        guard let url = urlComponents.url else {  throw CustomError("Invalid Current Weather URL")  }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        
+        return try await fetch(from: request)
+    }
+    
+    func loadForecastWeatherData() async throws -> Forecast {
         var urlComponents2 = URLComponents()
         urlComponents2.scheme = "https"
         urlComponents2.host = "api.openweathermap.org"
@@ -53,27 +62,32 @@ final class CurrentLocationViewController: UIViewController {
             .init(name: "units", value: "metric")
         ]
         
-        guard let url2 = urlComponents2.url else { return }
+        guard let url2 = urlComponents2.url else { throw CustomError("Invalid Forecast Weather URL") }
         var request2 = URLRequest(url: url2)
         request2.httpMethod = "GET"
-        
-        
-        do {
-            let (currentWeatherData, response) = try await URLSession.shared.data(for: request)
-            let (forecastWeatherData, response2) = try await URLSession.shared.data(for: request2)
+        return try await fetch(from: request2)
+    }
+    
+    func fetch<T: Decodable>(from urlRequest: URLRequest) async throws -> T {
+        let (appNetData, response) = try await URLSession.shared.data(for: urlRequest)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while fetching data") }
+        let decoder = JSONDecoder()
+        let result = try decoder.decode(T.self, from: appNetData)
+        return result
+    }
+}
 
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .secondsSince1970
-
-            guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while fetching data") }
-            let result = try decoder.decode(CurrentWeather.self, from: currentWeatherData)
-            print(result)
-            
-            guard (response2 as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while fetching data") }
-            let result2 = try decoder.decode(Forecast.self, from: forecastWeatherData)
-            print(result2)
-        } catch {
-            print(error.localizedDescription)
+enum CustomError: Error, CustomStringConvertible {
+    case message(String)
+    
+    var description: String {
+        switch self {
+        case let .message(message):
+            return message
         }
+    }
+    
+    init(_ message: String) {
+        self = .message(message)
     }
 }
