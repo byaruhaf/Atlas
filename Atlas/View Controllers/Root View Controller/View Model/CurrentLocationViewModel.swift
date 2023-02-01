@@ -7,28 +7,43 @@
 
 import Foundation
 
+enum WeatherDataError: Error {
+    case notAuthorizedToRequestLocation
+    case failedToRequestLocation
+    case noWeatherDataAvailable
+}
+
 // @MainActor
 final class CurrentLocationViewModel {
     private var currentWeatherTaskHandle: Task<CurrentWeather, Error>?
     private var forecastTaskHandle: Task<Forecast, Error>?
     private(set) var current: CurrentWeather?
     private(set) var forecast: Forecast?
-    
+        
     func callAsFunction() async throws {
-        
-        let task1 = Task.detached {
-            try await self.loadCurrentWeatherData()
+        do {
+            let task1 = Task.detached {
+                try await self.loadCurrentWeatherData()
+            }
+            let task2 = Task.detached {
+                try await self.loadForecastWeatherData()
+            }
+            currentWeatherTaskHandle = task1
+            forecastTaskHandle = task2
+            
+            let currentWeather = try await task1.value
+            let forecast = try await task2.value
+            self.current = currentWeather
+            self.forecast = forecast
+        } catch {
+            print(error.localizedDescription) // TODO: Log this with Logger
+            throw  WeatherDataError.noWeatherDataAvailable
         }
-        let task2 = Task.detached {
-            try await self.loadForecastWeatherData()
-        }
-        currentWeatherTaskHandle = task1
-        forecastTaskHandle = task2
-        
-        let currentWeather = try await task1.value
-        let forecast = try await task2.value
-        self.current = currentWeather
-        self.forecast = forecast
+    }
+    
+    deinit {
+        currentWeatherTaskHandle?.cancel()
+        forecastTaskHandle?.cancel()
     }
     
     func loadCurrentWeatherData() async throws -> CurrentWeather {
@@ -43,9 +58,16 @@ final class CurrentLocationViewModel {
     
     func fetch<T: Decodable>(from urlRequest: URLRequest) async throws -> T {
         let (appNetData, response) = try await URLSession.shared.data(for: urlRequest)
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while fetching data") }
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            print("The response statusCode is \(String(describing: (response as? HTTPURLResponse)?.statusCode))") // TODO: Log this with Logger
+            throw  WeatherDataError.noWeatherDataAvailable
+        }
         let decoder = JSONDecoder()
-        let result = try decoder.decode(T.self, from: appNetData)
-        return result
+        do {
+            let result = try decoder.decode(T.self, from: appNetData)
+            return result
+        } catch {
+            throw  WeatherDataError.noWeatherDataAvailable
+        }
     }
 }

@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
+// swiftlint:disable convenience_type
 class Alert {
-    
-    class func showBasic(title: String, message: String, vc: UIViewController) {
+    class func showBasic(title: String, message: String, viewController: UIViewController) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        vc.present(alert, animated: true)
+        viewController.present(alert, animated: true)
     }
 }

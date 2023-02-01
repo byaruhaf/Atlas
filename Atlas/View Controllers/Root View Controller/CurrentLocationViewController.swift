@@ -33,7 +33,8 @@ final class CurrentLocationViewController: UIViewController {
                 print(viewModel.forecast.debugDescription)
                 print(viewModel.current.debugDescription)
             } catch {
-                print(error.localizedDescription)
+                Alert.showBasic(title: "Unable to Fetch Weather Data", message: "The application is unable to fetch weather data. Please make sure your device is connected over Wi-Fi or cellular.", viewController: self)
+                print(error.localizedDescription) // TODO: Log this with Logger
             }
         }
     }
