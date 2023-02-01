@@ -20,13 +20,13 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TS3-Bt-0BO">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="315"/>
                                 <connections>
-                                    <segue destination="PxI-dN-gBc" kind="embed" id="6Lg-0M-iYw"/>
+                                    <segue destination="PxI-dN-gBc" kind="embed" identifier="SegueDayView" id="6Lg-0M-iYw"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3I-jY-fRd">
                                 <rect key="frame" x="0.0" y="315" width="393" height="454"/>
                                 <connections>
-                                    <segue destination="Rza-yO-ZF7" kind="embed" id="N31-6R-z1g"/>
+                                    <segue destination="Rza-yO-ZF7" kind="embed" identifier="SegueForcastView" id="N31-6R-z1g"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -60,18 +60,29 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forest_cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="aus-Ps-fGq">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="315"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPk-TH-hPe">
+                                <rect key="frame" x="175" y="147" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jx3-qJ-PAo"/>
                         <color key="backgroundColor" name="CLOUDY"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="aus-Ps-fGq" secondAttribute="trailing" id="1Iq-HU-6Bk"/>
                             <constraint firstAttribute="bottom" secondItem="aus-Ps-fGq" secondAttribute="bottom" id="2tu-WA-oWj"/>
+                            <constraint firstItem="Jx3-qJ-PAo" firstAttribute="trailing" secondItem="mPk-TH-hPe" secondAttribute="trailing" constant="176" id="D6E-8t-sEi"/>
+                            <constraint firstItem="mPk-TH-hPe" firstAttribute="leading" secondItem="Jx3-qJ-PAo" secondAttribute="leading" constant="175" id="KmP-Ci-BdV"/>
                             <constraint firstItem="aus-Ps-fGq" firstAttribute="top" secondItem="CrP-bC-Xcu" secondAttribute="top" id="LnS-Zg-XkH"/>
+                            <constraint firstItem="Jx3-qJ-PAo" firstAttribute="bottom" secondItem="mPk-TH-hPe" secondAttribute="bottom" constant="147" id="Sx0-yg-Hlq"/>
                             <constraint firstItem="aus-Ps-fGq" firstAttribute="leading" secondItem="CrP-bC-Xcu" secondAttribute="leading" id="oU1-an-D0B"/>
+                            <constraint firstItem="mPk-TH-hPe" firstAttribute="top" secondItem="Jx3-qJ-PAo" secondAttribute="top" constant="88" id="vGb-bQ-ZxU"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageDayBG" destination="aus-Ps-fGq" id="3aQ-hZ-bvb"/>
+                        <outlet property="testtext" destination="mPk-TH-hPe" id="q07-pf-Ejh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Skp-Gt-d1o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -117,9 +128,26 @@
                     <view key="view" contentMode="scaleToFill" id="l76-K1-GpH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="454"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gaq-1g-vnm">
+                                <rect key="frame" x="128" y="164" width="83" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3Sr-lf-MS3"/>
                         <color key="backgroundColor" name="CLOUDY"/>
+                        <constraints>
+                            <constraint firstItem="Gaq-1g-vnm" firstAttribute="top" secondItem="3Sr-lf-MS3" secondAttribute="top" constant="105" id="Fbd-F4-edn"/>
+                            <constraint firstItem="3Sr-lf-MS3" firstAttribute="trailing" secondItem="Gaq-1g-vnm" secondAttribute="trailing" constant="182" id="VnA-VE-ZyB"/>
+                            <constraint firstItem="3Sr-lf-MS3" firstAttribute="bottom" secondItem="Gaq-1g-vnm" secondAttribute="bottom" constant="248" id="gTF-Sq-c5I"/>
+                            <constraint firstItem="Gaq-1g-vnm" firstAttribute="leading" secondItem="3Sr-lf-MS3" secondAttribute="leading" constant="128" id="zy5-mp-pD9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="flable" destination="Gaq-1g-vnm" id="f7t-3g-LBP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SnL-yy-4ky" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

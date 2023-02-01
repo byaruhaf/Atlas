@@ -8,14 +8,56 @@
 import UIKit
 
 final class DayViewController: UIViewController {
-    var titleD: String?
-    
+ 
     @IBOutlet var imageDayBG: UIImageView!
+    @IBOutlet var testtext: UILabel!
+    
+    // MARK: -
+    
+    var viewModel: DayViewModel? {
+        didSet {
+            updateView()
+        }
+    }
+    
+    // MARK: - Public Interface
+    
+//    override func reloadData() {
+//        updateView()
+//    }
+    
+    // MARK: - View Methods
+    
+    private func updateView() {
+        testtext.text = viewModel?.weatherData.main.feelsLike.description
+//        activityIndicatorView.stopAnimating()
+//
+//        if let viewModel = viewModel {
+//            updateWeatherDataContainerView(with: viewModel)
+//
+//        } else {
+//            messageLabel.isHidden = false
+//            messageLabel.text = "Cloudy was unable to fetch weather data."
+//        }
+    }
+    
+    // MARK: -
+    
+    private func updateWeatherDataContainerView(with viewModel: DayViewModel) {
+//        weatherDataContainerView.isHidden = false
+//
+//        dateLabel.text = viewModel.date
+//        timeLabel.text = viewModel.time
+//        iconImageView.image = viewModel.image
+//        windSpeedLabel.text = viewModel.windSpeed
+//        descriptionLabel.text = viewModel.summary
+//        temperatureLabel.text = viewModel.temperature
+    }
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(titleD)
+        
         // Setup View
         setupView()
     }
