@@ -18,6 +18,7 @@ final class CurrentLocationViewController: UIViewController {
             do {
                 async let currentWeatherData = loadCurrentWeatherData()
                 async let forecastWeatherData = loadForecastWeatherData()
+                
                 await print(try currentWeatherData)
                 await print(try forecastWeatherData)
             } catch {
