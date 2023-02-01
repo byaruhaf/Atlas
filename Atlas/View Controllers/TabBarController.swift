@@ -9,6 +9,8 @@ import UIKit
 
 class TabBarController: UITabBarController {
 
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +25,7 @@ class TabBarController: UITabBarController {
             return
         }
         
+        // Dependency Injection
         for viewController in viewControllers {
             switch viewController {
             case let viewController as CurrentLocationViewController:
