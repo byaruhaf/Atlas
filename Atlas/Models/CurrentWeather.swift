@@ -6,6 +6,8 @@
 //
 
 import Foundation
+// To be removed after
+// swiftlint:disable all
 
 struct CurrentWeather: Codable {
     struct Coord: Codable {
