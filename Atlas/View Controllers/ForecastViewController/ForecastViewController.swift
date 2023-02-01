@@ -8,11 +8,12 @@
 import UIKit
 
 final class ForecastViewController: UIViewController {
+    var titleF: String?
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(titleF)
         // Setup View
         setupView()
     }

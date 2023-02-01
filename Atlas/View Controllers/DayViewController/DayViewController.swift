@@ -8,13 +8,14 @@
 import UIKit
 
 final class DayViewController: UIViewController {
+    var titleD: String?
     
     @IBOutlet var imageDayBG: UIImageView!
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(titleD)
         // Setup View
         setupView()
     }
