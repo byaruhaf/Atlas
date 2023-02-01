@@ -8,9 +8,14 @@
 import UIKit
 
 final class CurrentLocationViewController: UIViewController {
+    
+    var viewModel: CurrentLocationViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Setup View Model
+        setupViewModel(with: viewModel)
         
         // Setup View
         setupView()
@@ -25,6 +30,16 @@ final class CurrentLocationViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    // MARK: - Helper Methods
+    
+    private func setupViewModel(with viewModel: CurrentLocationViewModel?) {
+        guard let viewModel = viewModel else {
+            return
+        }
+        // Configure Title Label
+        print(viewModel.title)
     }
     
     private func setupView() {

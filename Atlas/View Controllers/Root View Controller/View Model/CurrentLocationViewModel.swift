@@ -9,4 +9,5 @@ import Foundation
 
 @MainActor
 final class CurrentLocationViewModel {
+    let title: String = "Testing XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx"
 }

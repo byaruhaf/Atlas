@@ -96,7 +96,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="4yx-wQ-zH7">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3E4-rP-nIP" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3E4-rP-nIP" customClass="TabBarController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WE2-IM-Cjx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

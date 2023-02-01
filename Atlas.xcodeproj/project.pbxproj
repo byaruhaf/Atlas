@@ -21,6 +21,7 @@
 		5FC3A533298A6A850071FA66 /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3A532298A6A850071FA66 /* WeatherRequest.swift */; };
 		5FC3A536298A6F440071FA66 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3A535298A6F440071FA66 /* Configuration.swift */; };
 		5FC3A53D298A818D0071FA66 /* CurrentLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3A53C298A818D0071FA66 /* CurrentLocationViewModel.swift */; };
+		5FC3A542298A85D70071FA66 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3A541298A85D70071FA66 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		5FC3A532298A6A850071FA66 /* WeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRequest.swift; sourceTree = "<group>"; };
 		5FC3A535298A6F440071FA66 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		5FC3A53C298A818D0071FA66 /* CurrentLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewModel.swift; sourceTree = "<group>"; };
+		5FC3A541298A85D70071FA66 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				5F505E312989384600EAFE2E /* Root View Controller */,
 				5FC3A52D298A3CB80071FA66 /* DayViewController */,
 				5FC3A52E298A3CC30071FA66 /* ForecastViewController */,
+				5FC3A541298A85D70071FA66 /* TabBarController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				5FC3A536298A6F440071FA66 /* Configuration.swift in Sources */,
 				5FC3A533298A6A850071FA66 /* WeatherRequest.swift in Sources */,
 				5FC3A53D298A818D0071FA66 /* CurrentLocationViewModel.swift in Sources */,
+				5FC3A542298A85D70071FA66 /* TabBarController.swift in Sources */,
 				5F505E1D2989366D00EAFE2E /* SceneDelegate.swift in Sources */,
 				5F5CA340298A1B61006074B3 /* DayViewController.swift in Sources */,
 			);
