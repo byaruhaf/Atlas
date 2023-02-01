@@ -70,6 +70,9 @@
                             <constraint firstItem="aus-Ps-fGq" firstAttribute="leading" secondItem="CrP-bC-Xcu" secondAttribute="leading" id="oU1-an-D0B"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageDayBG" destination="aus-Ps-fGq" id="3aQ-hZ-bvb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Skp-Gt-d1o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -86,8 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				5F505E312989384600EAFE2E /* Root View Controller */,
-				5F5CA33F298A1B61006074B3 /* DayViewController.swift */,
-				5F5CA341298A1BC7006074B3 /* ForecastViewController.swift */,
+				5FC3A52D298A3CB80071FA66 /* DayViewController */,
+				5FC3A52E298A3CC30071FA66 /* ForecastViewController */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -133,6 +133,22 @@
 				5F5CA33D298A069C006074B3 /* CurrentWeather.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5FC3A52D298A3CB80071FA66 /* DayViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F5CA33F298A1B61006074B3 /* DayViewController.swift */,
+			);
+			path = DayViewController;
+			sourceTree = "<group>";
+		};
+		5FC3A52E298A3CC30071FA66 /* ForecastViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F5CA341298A1BC7006074B3 /* ForecastViewController.swift */,
+			);
+			path = ForecastViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
