@@ -17,6 +17,7 @@
 		5F5CA33E298A069C006074B3 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CA33D298A069C006074B3 /* CurrentWeather.swift */; };
 		5F5CA340298A1B61006074B3 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CA33F298A1B61006074B3 /* DayViewController.swift */; };
 		5F5CA342298A1BC7006074B3 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CA341298A1BC7006074B3 /* ForecastViewController.swift */; };
+		5FC3A531298A44B60071FA66 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3A530298A44B60071FA66 /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5F5CA33D298A069C006074B3 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		5F5CA33F298A1B61006074B3 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		5F5CA341298A1BC7006074B3 /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
+		5FC3A530298A44B60071FA66 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		5F505E192989366D00EAFE2E /* Atlas */ = {
 			isa = PBXGroup;
 			children = (
+				5FC3A52F298A44660071FA66 /* Extensions */,
 				5F5CA33A298A0607006074B3 /* Models */,
 				5F505E342989398600EAFE2E /* Delegates */,
 				5F505E322989385200EAFE2E /* View Controllers */,
@@ -149,6 +152,14 @@
 				5F5CA341298A1BC7006074B3 /* ForecastViewController.swift */,
 			);
 			path = ForecastViewController;
+			sourceTree = "<group>";
+		};
+		5FC3A52F298A44660071FA66 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3A530298A44B60071FA66 /* UIImage+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +259,7 @@
 				5F5CA33C298A061B006074B3 /* Forecast.swift in Sources */,
 				5F5CA342298A1BC7006074B3 /* ForecastViewController.swift in Sources */,
 				5F5CA33E298A069C006074B3 /* CurrentWeather.swift in Sources */,
+				5FC3A531298A44B60071FA66 /* UIImage+Extension.swift in Sources */,
 				5F505E1F2989366D00EAFE2E /* CurrentLocationViewController.swift in Sources */,
 				5F505E1B2989366D00EAFE2E /* AppDelegate.swift in Sources */,
 				5F505E1D2989366D00EAFE2E /* SceneDelegate.swift in Sources */,

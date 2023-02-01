@@ -9,6 +9,7 @@ import UIKit
 
 final class ForecastViewController: UIViewController {
 
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -16,6 +17,7 @@ final class ForecastViewController: UIViewController {
         setupView()
     }
     
+    // MARK: - Helper Methods
     private func setupView() {
         // Configure View
         view.backgroundColor = UIColor(named: "SUNNY")

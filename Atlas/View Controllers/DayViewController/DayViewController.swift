@@ -11,6 +11,7 @@ final class DayViewController: UIViewController {
     
     @IBOutlet var imageDayBG: UIImageView!
     
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +19,7 @@ final class DayViewController: UIViewController {
         setupView()
     }
     
+    // MARK: - Helper Methods
     private func setupView() {
         // Configure View
         view.backgroundColor = UIColor(named: "SUNNY")
