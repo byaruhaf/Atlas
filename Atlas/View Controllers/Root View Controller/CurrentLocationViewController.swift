@@ -1,5 +1,5 @@
 //
-//  CurrentViewController.swift
+//  CurrentLocationViewController.swift
 //  Atlas
 //
 //  Created by Franklin Byaruhanga on 31/01/2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CurrentViewController: UIViewController {
+final class CurrentLocationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
