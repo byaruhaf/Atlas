@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TS3-Bt-0BO">
-                                <rect key="frame" x="0.0" y="58.999999999999986" width="393" height="255.66666666666663"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="315"/>
                                 <connections>
                                     <segue destination="PxI-dN-gBc" kind="embed" id="6Lg-0M-iYw"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3I-jY-fRd">
-                                <rect key="frame" x="0.0" y="314.66666666666674" width="393" height="454.33333333333326"/>
+                                <rect key="frame" x="0.0" y="315" width="393" height="454"/>
                                 <connections>
                                     <segue destination="Rza-yO-ZF7" kind="embed" id="N31-6R-z1g"/>
                                 </connections>
@@ -34,13 +34,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="G3I-jY-fRd" firstAttribute="top" secondItem="TS3-Bt-0BO" secondAttribute="bottom" id="3uQ-7i-fok"/>
-                            <constraint firstItem="TS3-Bt-0BO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9iL-oZ-HNF"/>
                             <constraint firstItem="G3I-jY-fRd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9lv-Qj-Pg1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TS3-Bt-0BO" secondAttribute="trailing" id="NpE-P6-XaW"/>
                             <constraint firstItem="TS3-Bt-0BO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TWN-B5-49Z"/>
-                            <constraint firstItem="TS3-Bt-0BO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="TjG-6b-hMQ"/>
+                            <constraint firstItem="TS3-Bt-0BO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" constant="59.400000000000006" id="TjG-6b-hMQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G3I-jY-fRd" secondAttribute="bottom" id="Z2e-Xi-cAM"/>
-                            <constraint firstItem="TS3-Bt-0BO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gib-4b-2nh"/>
+                            <constraint firstItem="TS3-Bt-0BO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-59" id="gib-4b-2nh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G3I-jY-fRd" secondAttribute="trailing" id="k35-zc-ZdJ"/>
                         </constraints>
                     </view>
@@ -55,11 +54,11 @@
             <objects>
                 <viewController id="PxI-dN-gBc" customClass="DayViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CrP-bC-Xcu">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="255.66666666666666"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="315"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forest_cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="aus-Ps-fGq">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="255.66666666666666"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="315"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="CLOUDY"/>
@@ -80,7 +79,7 @@
             <objects>
                 <viewController id="Rza-yO-ZF7" customClass="ForecastViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l76-K1-GpH">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="454.33333333333331"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="454"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="CLOUDY"/>
                     </view>
