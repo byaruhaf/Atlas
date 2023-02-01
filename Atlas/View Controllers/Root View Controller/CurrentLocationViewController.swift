@@ -6,63 +6,51 @@
 //
 
 import UIKit
+import Combine
 
 final class CurrentLocationViewController: UIViewController {
+    private var subscriptions = Set<AnyCancellable>()
     
-    var viewModel: CurrentLocationViewModel?
+    var viewModel: CurrentLocationViewModel? {
+        didSet {
+            guard let viewModel = viewModel else {
+                return
+            }
+            // Setup View Model
+            setupViewModel(with: viewModel)
+        }
+    }
+    
+    var cancellables = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Setup View Model
-        setupViewModel(with: viewModel)
-        
         // Setup View
         setupView()
+    }
+    
+    // MARK: - Helper Methods
+    
+    private func setupViewModel(with viewModel: CurrentLocationViewModel) {
         Task(priority: .userInitiated) {
+            
             do {
-                async let currentWeatherData = loadCurrentWeatherData()
-                async let forecastWeatherData = loadForecastWeatherData()
-                
-                await print(try currentWeatherData)
-                await print(try forecastWeatherData)
+                try await viewModel()
+//                async let currentWeatherData = viewModel.loadCurrentWeatherData()
+//                async let forecastWeatherData = viewModel.loadForecastWeatherData()
+//
+//                await print(try currentWeatherData)
+//                await print(try forecastWeatherData)
             } catch {
                 print(error.localizedDescription)
             }
         }
     }
     
-    // MARK: - Helper Methods
-    
-    private func setupViewModel(with viewModel: CurrentLocationViewModel?) {
-        guard let viewModel = viewModel else {
-            return
-        }
-        // Configure Title Label
-        print(viewModel.title)
-    }
-    
     private func setupView() {
         // Configure View
 //        view.backgroundColor = UIColor(named: "SUNNY")
-    }
-    
-    func loadCurrentWeatherData() async throws -> CurrentWeather {
-        let weatherRequest = WeatherRequest(requestType: .weather, units: .metric, location: Defaults.location)
-        return try await fetch(from: weatherRequest.urlRequest)
-    }
-    
-    func loadForecastWeatherData() async throws -> Forecast {
-        let weatherRequest = WeatherRequest(requestType: .forecast, units: .metric, location: Defaults.location)
-        return try await fetch(from: weatherRequest.urlRequest)
-    }
-    
-    func fetch<T: Decodable>(from urlRequest: URLRequest) async throws -> T {
-        let (appNetData, response) = try await URLSession.shared.data(for: urlRequest)
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while fetching data") }
-        let decoder = JSONDecoder()
-        let result = try decoder.decode(T.self, from: appNetData)
-        return result
     }
 }
 

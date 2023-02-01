@@ -98,10 +98,10 @@
 		5F505E322989385200EAFE2E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5FC3A541298A85D70071FA66 /* TabBarController.swift */,
 				5F505E312989384600EAFE2E /* Root View Controller */,
 				5FC3A52D298A3CB80071FA66 /* DayViewController */,
 				5FC3A52E298A3CC30071FA66 /* ForecastViewController */,
-				5FC3A541298A85D70071FA66 /* TabBarController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
