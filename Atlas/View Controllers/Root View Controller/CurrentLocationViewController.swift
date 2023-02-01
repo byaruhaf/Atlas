@@ -21,8 +21,6 @@ final class CurrentLocationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Setup View
-        setupView()
     }
     
     // MARK: - Helper Methods
@@ -38,11 +36,6 @@ final class CurrentLocationViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
-    }
-    
-    private func setupView() {
-        // Configure View
-//        view.backgroundColor = UIColor(named: "SUNNY")
     }
 }
 
