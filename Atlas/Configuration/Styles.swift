@@ -7,6 +7,23 @@
 
 import UIKit
 
+extension UIColor {
+    enum Atlas {
+        static var baseTextColor: UIColor {
+            UIColor.white
+        }
+        static var cloudyColor: UIColor {
+            UIColor(named: "CLOUDY") ?? UIColor.white
+        }
+        static var sunnyColor: UIColor {
+            UIColor(named: "SUNNY") ?? UIColor.white
+        }
+        static var rainyColor: UIColor {
+            UIColor(named: "RAINY") ?? UIColor.white
+        }
+    }
+}
+
 extension UIFont {
     enum Atlas {
         static let bodyRegular: UIFont = .systemFont(ofSize: 17.0, weight: .regular)

@@ -20,20 +20,20 @@ final class DayViewController: UIViewController {
     }
     @IBOutlet var centerTempLabel: UILabel! {
         didSet {
-            centerTempLabel.textColor = .white
+            centerTempLabel.textColor = UIColor.Atlas.baseTextColor
             centerTempLabel.font = UIFont.Atlas.titleHuge
         }
     }
     @IBOutlet var conditonLabel: UILabel! {
         didSet {
-            conditonLabel.textColor = .white
+            conditonLabel.textColor = UIColor.Atlas.baseTextColor
             conditonLabel.font = UIFont.Atlas.titleLarge
         }
     }
     @IBOutlet var smallValueLabels: [UILabel]! {
         didSet {
             for label in smallValueLabels {
-                label.textColor = .white
+                label.textColor = UIColor.Atlas.baseTextColor
                 label.font = UIFont.Atlas.bodyBold
             }
         }
@@ -69,12 +69,6 @@ final class DayViewController: UIViewController {
         }
     }
     
-    // MARK: - Public Interface
-    
-    //    override func reloadData() {
-    //        updateView()
-    //    }
-    
     // MARK: - View Methods
     
     private func setupViewModel(with viewModel: DayViewModel) {
@@ -90,32 +84,6 @@ final class DayViewController: UIViewController {
             conditonLabel.text = viewModel.weatherCondition
             backgroundImageView.image = UIImage(named: viewModel.backgroundImageName)
         }
-    }
-    
-    private func updateView() {
-        
-        //        activityIndicatorView.stopAnimating()
-        //
-        //        if let viewModel = viewModel {
-        //            updateWeatherDataContainerView(with: viewModel)
-        //
-        //        } else {
-        //            messageLabel.isHidden = false
-        //            messageLabel.text = "Cloudy was unable to fetch weather data."
-        //        }
-    }
-    
-    // MARK: -
-    
-    private func updateWeatherDataContainerView(with viewModel: DayViewModel) {
-        //        weatherDataContainerView.isHidden = false
-        //
-        //        dateLabel.text = viewModel.date
-        //        timeLabel.text = viewModel.time
-        //        iconImageView.image = viewModel.image
-        //        windSpeedLabel.text = viewModel.windSpeed
-        //        descriptionLabel.text = viewModel.summary
-        //        temperatureLabel.text = viewModel.temperature
     }
     
     // MARK: - View Life Cycle

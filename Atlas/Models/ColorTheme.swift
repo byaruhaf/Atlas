@@ -12,12 +12,13 @@ protocol ColorTheme {
 }
 
 struct CloudyColorTheme: ColorTheme {
-    let backgroundColor = UIColor(named: "CLOUDY") ?? UIColor.white
+    let backgroundColor = UIColor.Atlas.cloudyColor
 }
 
 struct SunnyColorTheme: ColorTheme {
-    let backgroundColor = UIColor(named: "SUNNY") ?? UIColor.white
+    let backgroundColor = UIColor.Atlas.sunnyColor
 }
+
 struct RainColorTheme: ColorTheme {
-    let backgroundColor = UIColor(named: "RAINY") ?? UIColor.white
+    let backgroundColor = UIColor.Atlas.rainyColor
 }
