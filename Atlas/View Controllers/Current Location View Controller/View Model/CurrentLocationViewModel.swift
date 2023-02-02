@@ -14,11 +14,11 @@ enum WeatherDataError: Error {
 }
 
 // @MainActor
-final class CurrentLocationViewModel {
+final class CurrentLocationViewModel: WeatherData {
     private var currentWeatherTaskHandle: Task<CurrentWeather, Error>?
     private var forecastTaskHandle: Task<Forecast, Error>?
-    private(set) var current: CurrentWeather?
-    private(set) var forecast: Forecast?
+    var current: CurrentWeatherConditions?
+    var forecast: ForecastWeatherConditions?
         
     func callAsFunction() async throws {
         do {

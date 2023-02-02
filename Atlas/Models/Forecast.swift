@@ -22,3 +22,5 @@ struct List: Codable {
 struct Forecast: Codable {
     let list: [List]
 }
+
+extension Forecast: ForecastWeatherConditions {}

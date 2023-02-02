@@ -8,5 +8,5 @@
 import Foundation
 
 struct ForecastViewModel {
-    let weatherData: Forecast
+    let weatherData: ForecastWeatherConditions
 }

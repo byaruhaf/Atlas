@@ -8,14 +8,14 @@
 import UIKit
 
 final class CurrentLocationViewController: UIViewController {
-
+    
     // MARK: - Constants
     
     private let segueDayView = "SegueDayView"
     private let segueForcastView = "SegueForcastView"
     
     // MARK: - Properties
-
+    
     @IBOutlet private var dayViewController: DayViewController!
     @IBOutlet private var forcastViewController: ForecastViewController!
     
@@ -28,7 +28,7 @@ final class CurrentLocationViewController: UIViewController {
             setupViewModel(with: viewModel)
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -43,7 +43,7 @@ final class CurrentLocationViewController: UIViewController {
             guard let destination = segue.destination as? DayViewController else {
                 fatalError("Unexpected Destination View Controller")
             }
-
+            
             // Update Day View Controller
             self.dayViewController = destination
         case segueForcastView:
@@ -69,11 +69,11 @@ final class CurrentLocationViewController: UIViewController {
                 print(viewModel.current.debugDescription)
                 // Configure Day View Controller
                 guard let current = viewModel.current else { return }
-                        self.dayViewController.viewModel = DayViewModel(weatherData: current)
+                self.dayViewController.viewModel = DayViewModel(weatherData: current)
                 
                 // Configure Forcast View Controller
                 guard let forecast = viewModel.forecast else { return }
-                        self.forcastViewController.viewModel = ForecastViewModel(weatherData: forecast)
+                self.forcastViewController.viewModel = ForecastViewModel(weatherData: forecast)
             } catch {
                 Alert.showBasic(title: "Unable to Fetch Weather Data", message: "The application is unable to fetch weather data. Please make sure your device is connected over Wi-Fi or cellular.", viewController: self)
                 print(error.localizedDescription) // TODO: Log this with Logger

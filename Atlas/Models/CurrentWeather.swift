@@ -32,3 +32,6 @@ struct CurrentWeather: Codable {
     let weather: [Weather]
     let main: Main
 }
+
+extension CurrentWeather: CurrentWeatherConditions {
+}

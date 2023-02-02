@@ -8,5 +8,5 @@
 import Foundation
 
 struct DayViewModel {
-    let weatherData: CurrentWeather
+    let weatherData: CurrentWeatherConditions
 }
