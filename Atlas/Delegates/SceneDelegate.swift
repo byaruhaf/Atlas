@@ -22,7 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Configure Window
         window?.rootViewController = DependencyProvider.rootViewController
-        
+
+        // Disable Dark Mode
+        window?.overrideUserInterfaceStyle = .light
+
         // Make Window Key Window
         window?.makeKeyAndVisible()
     }

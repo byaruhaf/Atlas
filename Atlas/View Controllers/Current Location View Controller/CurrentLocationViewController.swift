@@ -70,7 +70,7 @@ final class CurrentLocationViewController: UIViewController {
                 // Configure Day View Controller
                 guard let current = viewModel.current else { return }
                 self.dayViewController.viewModel = DayViewModel(weatherData: current)
-                
+                determineColorTheme(condtion: current.weather[0].main)
                 // Configure Forcast View Controller
                 guard let forecast = viewModel.forecast else { return }
                 self.forcastViewController.viewModel = ForecastViewModel(weatherData: forecast)
@@ -78,6 +78,28 @@ final class CurrentLocationViewController: UIViewController {
                 Alert.showBasic(title: "Unable to Fetch Weather Data", message: "The application is unable to fetch weather data. Please make sure your device is connected over Wi-Fi or cellular.", viewController: self)
                 print(error.localizedDescription) // TODO: Log this with Logger
             }
+        }
+    }
+    
+    private func determineColorTheme(condtion: String) {
+        print(condtion)
+        if condtion == "Rain" {
+            ThemeManager.shared.currentBackgroundColor = RainColorTheme()
+        }
+        if condtion == "thunderstorm" {
+            ThemeManager.shared.currentBackgroundColor = RainColorTheme()
+        }
+        if condtion == "snow" {
+            ThemeManager.shared.currentBackgroundColor = RainColorTheme()
+        }
+        if condtion == "mist" {
+            ThemeManager.shared.currentBackgroundColor = RainColorTheme()
+        }
+        if condtion == "Clouds" {
+            ThemeManager.shared.currentBackgroundColor = CloudyColorTheme()
+        }
+        if condtion == "Clear" {
+            ThemeManager.shared.currentBackgroundColor = SunnyColorTheme()
         }
     }
 }

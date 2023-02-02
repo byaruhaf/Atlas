@@ -85,6 +85,7 @@ final class DayViewController: UIViewController {
     private func setupView() {
         // Configure View
         view.backgroundColor = UIColor(named: "SUNNY")
+        temperatureRibbon.backgroundColor = UIColor(named: "SUNNY")
         backgroundImageView.image = UIImage(named: "forest_sunny")
     }
     
@@ -128,6 +129,7 @@ extension DayViewController: ThemeableImage, ThemeableColor {
     func animateColor() {
         UIView.animate(withDuration: 0.2) {
             self.view.backgroundColor = ThemeManager.shared.currentBackgroundColor?.backgroundColor
+            self.temperatureRibbon.backgroundColor = ThemeManager.shared.currentBackgroundColor?.backgroundColor
         }
     }
 }
