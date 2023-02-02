@@ -33,9 +33,9 @@ struct CurrentWeather: Codable {
     let main: Main
 }
 
- extension CurrentWeather {
+ extension Weather {
      var weatherType: WeatherType {
-         guard let weatherType = WeatherType(rawValue: weather[0].main) else { return WeatherType.unknown}
+         guard let weatherType = WeatherType(rawValue: self.main) else { return WeatherType.unknown}
          return weatherType
      }
  }

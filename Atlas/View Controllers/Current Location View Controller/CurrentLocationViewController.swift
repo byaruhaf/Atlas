@@ -68,7 +68,7 @@ final class CurrentLocationViewController: UIViewController {
                 // Configure Day View Controller
                 guard let current = viewModel.current else { return }
                 self.dayViewController.viewModel = DayViewModel(weatherData: current)
-                determineColorTheme(condtion: current.weatherType)
+                determineColorTheme(condtion: current.weather[0].weatherType)
                 // Configure Forcast View Controller
                 guard let forecast = viewModel.forecast else { return }
                 self.forcastViewController.viewModel = ForecastViewModel(weatherData: forecast)

@@ -47,6 +47,7 @@ final class CurrentLocationViewModel: WeatherData {
             throw  WeatherDataError.noWeatherDataAvailable
         }
         let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .secondsSince1970
         do {
             let result = try decoder.decode(T.self, from: appNetData)
             return result

@@ -31,7 +31,10 @@ final class ForecastViewController: UIViewController {
     // MARK: - View Methods
     
     private func setupViewModel(with viewModel: ForecastViewModel) {
+        print(viewModel.weatherData.list[0].main)
         print(viewModel.weatherData.list[0].weather)
+        print(viewModel.weatherData.list[0].date)
+        print(viewModel.weatherData.list.count)
     }
     
     private func updateView() {

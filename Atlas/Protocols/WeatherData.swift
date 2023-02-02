@@ -19,7 +19,6 @@ protocol WeatherData {
 protocol CurrentWeatherConditions {
     var weather: [Weather] { get }
     var main: Main { get }
-    var weatherType: WeatherType { get }
 }
 
 protocol ForecastWeatherConditions {

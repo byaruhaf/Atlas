@@ -30,7 +30,7 @@ struct DayViewModel {
     }
     
     var backgroundImageName: String {
-        let weatherType = weatherData.weatherType
+        let weatherType = weatherData.weather[0].weatherType
         switch weatherType {
         case .rain, .thunderstorm, .drizzle, .snow:
             return "forest_rainy"
