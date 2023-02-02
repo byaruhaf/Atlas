@@ -10,15 +10,26 @@ import Foundation
 class ThemeManager {
     static let shared = ThemeManager()
     
-    public var currentTheme: Theme? {
+    // swiftlint:disable explicit_init
+    var currentTheme: ImageTheme? {
         didSet {
-            NotificationCenter.default.post(name: Notification.Name.init("themeChanged"), object: nil)
+            NotificationCenter.default.post(name: Notification.Name.init("ImageChanged"), object: nil)
+        }
+    }
+    // swiftlint:disable explicit_init
+    var backgroundColor: ColorTheme? {
+        didSet {
+            NotificationCenter.default.post(name: Notification.Name.init("ColorChanged"), object: nil)
         }
     }
     
     private init() {}
     
-    public func set(theme: Theme) {
+    func set(theme: ImageTheme) {
         self.currentTheme = theme
+    }
+    
+    func set(backgroundColor: ColorTheme) {
+        self.backgroundColor = backgroundColor
     }
 }
