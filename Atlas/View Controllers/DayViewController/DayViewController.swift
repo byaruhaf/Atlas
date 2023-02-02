@@ -9,14 +9,53 @@ import UIKit
 
 final class DayViewController: UIViewController {
     
-    @IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet var temperatureRibbon: UIStackView!
-    @IBOutlet var centerTempLabel: UILabel!
-    @IBOutlet var conditonLabel: UILabel!
     @IBOutlet var minTempLabel: UILabel!
     @IBOutlet var maxTempLabel: UILabel!
     @IBOutlet var currentTempLabel: UILabel!
+    @IBOutlet var backgroundImageView: UIImageView! {
+        didSet {
+            backgroundImageView.contentMode = .scaleToFill
+        }
+    }
+    @IBOutlet var centerTempLabel: UILabel! {
+        didSet {
+            centerTempLabel.textColor = .white
+            centerTempLabel.font = UIFont.Atlas.titleHuge
+        }
+    }
+    @IBOutlet var conditonLabel: UILabel! {
+        didSet {
+            conditonLabel.textColor = .white
+            conditonLabel.font = UIFont.Atlas.titleLarge
+        }
+    }
+    @IBOutlet var smallValueLabels: [UILabel]! {
+        didSet {
+            for label in smallValueLabels {
+                label.textColor = .white
+                label.font = UIFont.Atlas.bodyBold
+            }
+        }
+    }
     
+    @IBOutlet var smallTitleLabels: [UILabel]! {
+        didSet {
+            for label in smallTitleLabels {
+                label.textColor = .white
+                label.font = UIFont.Atlas.bodyRegular
+            }
+        }
+    }
+    
+    // MARK: -
+    
+    @IBOutlet var activityIndicatorView: UIActivityIndicatorView! {
+        didSet {
+            activityIndicatorView.startAnimating()
+            activityIndicatorView.hidesWhenStopped = true
+        }
+    }
     // MARK: -
     
     var viewModel: DayViewModel? {
@@ -39,6 +78,9 @@ final class DayViewController: UIViewController {
     // MARK: - View Methods
     
     private func setupViewModel(with viewModel: DayViewModel) {
+        // Hide Activity Indicator View
+        activityIndicatorView.stopAnimating()
+        
         UIView.animate(withDuration: 1) { [self] in
             // Configure Labels
             minTempLabel.text = viewModel.minTemperature

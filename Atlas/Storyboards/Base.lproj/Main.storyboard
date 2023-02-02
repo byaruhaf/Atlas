@@ -127,6 +127,9 @@
                                     <constraint firstAttribute="height" constant="3" id="yPQ-Md-Kik"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="9cO-Z4-Wwe">
+                                <rect key="frame" x="186.66666666666666" y="190.33333333333334" width="20" height="20"/>
+                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="J49-vt-SbW">
                                 <rect key="frame" x="133" y="80" width="127.33333333333331" height="120.66666666666669"/>
                                 <subviews>
@@ -155,10 +158,12 @@
                             <constraint firstItem="8MI-JI-FGJ" firstAttribute="top" secondItem="9Dc-Vd-RmP" secondAttribute="bottom" id="EgG-dO-BSV"/>
                             <constraint firstItem="8MI-JI-FGJ" firstAttribute="leading" secondItem="Jx3-qJ-PAo" secondAttribute="leading" id="FM7-Th-X7l"/>
                             <constraint firstItem="Jx3-qJ-PAo" firstAttribute="trailing" secondItem="8MI-JI-FGJ" secondAttribute="trailing" id="KbT-QF-m1n"/>
+                            <constraint firstItem="9cO-Z4-Wwe" firstAttribute="centerY" secondItem="J49-vt-SbW" secondAttribute="centerY" constant="60" id="TzY-aO-T7b"/>
                             <constraint firstItem="aus-Ps-fGq" firstAttribute="top" secondItem="CrP-bC-Xcu" secondAttribute="top" id="aXG-WM-C9Z"/>
                             <constraint firstItem="aus-Ps-fGq" firstAttribute="trailing" secondItem="Jx3-qJ-PAo" secondAttribute="trailing" id="eNO-7j-gQb"/>
                             <constraint firstItem="J49-vt-SbW" firstAttribute="leading" secondItem="Jx3-qJ-PAo" secondAttribute="leading" constant="133" id="iks-h6-hmy"/>
                             <constraint firstItem="Jx3-qJ-PAo" firstAttribute="trailing" secondItem="9Dc-Vd-RmP" secondAttribute="trailing" constant="16" id="l96-R4-M3p"/>
+                            <constraint firstItem="9cO-Z4-Wwe" firstAttribute="centerX" secondItem="J49-vt-SbW" secondAttribute="centerX" id="lbr-Wt-DJn"/>
                             <constraint firstItem="Jx3-qJ-PAo" firstAttribute="bottom" secondItem="8MI-JI-FGJ" secondAttribute="bottom" id="tme-EW-WbI"/>
                             <constraint firstItem="aus-Ps-fGq" firstAttribute="leading" secondItem="Jx3-qJ-PAo" secondAttribute="leading" id="uxT-S7-Ti0"/>
                             <constraint firstItem="9Dc-Vd-RmP" firstAttribute="leading" secondItem="Jx3-qJ-PAo" secondAttribute="leading" constant="16" id="v7d-uM-7AM"/>
@@ -166,6 +171,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="9cO-Z4-Wwe" id="sPV-03-ekT"/>
                         <outlet property="backgroundImageView" destination="aus-Ps-fGq" id="UYF-P5-LEw"/>
                         <outlet property="centerTempLabel" destination="mPk-TH-hPe" id="nkY-RF-DgO"/>
                         <outlet property="conditonLabel" destination="II2-8K-Vml" id="SK3-fr-SJP"/>
@@ -173,6 +179,12 @@
                         <outlet property="maxTempLabel" destination="RZs-mF-eJX" id="6Gi-LD-pqt"/>
                         <outlet property="minTempLabel" destination="L8h-TT-knJ" id="hc7-vd-V0N"/>
                         <outlet property="temperatureRibbon" destination="9Dc-Vd-RmP" id="lId-b0-Een"/>
+                        <outletCollection property="smallTitleLabels" destination="bXo-R3-cyj" collectionClass="NSMutableArray" id="B1k-vq-WIY"/>
+                        <outletCollection property="smallTitleLabels" destination="arO-mF-VI3" collectionClass="NSMutableArray" id="s6y-RR-y5Y"/>
+                        <outletCollection property="smallTitleLabels" destination="WhU-Ah-qd2" collectionClass="NSMutableArray" id="neP-Kq-FbZ"/>
+                        <outletCollection property="smallValueLabels" destination="RZs-mF-eJX" collectionClass="NSMutableArray" id="qQI-PO-oty"/>
+                        <outletCollection property="smallValueLabels" destination="1i3-dw-bqz" collectionClass="NSMutableArray" id="obu-fM-2I0"/>
+                        <outletCollection property="smallValueLabels" destination="L8h-TT-knJ" collectionClass="NSMutableArray" id="5Q2-eC-O1p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Skp-Gt-d1o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

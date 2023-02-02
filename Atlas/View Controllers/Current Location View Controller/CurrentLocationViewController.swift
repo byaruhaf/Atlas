@@ -65,8 +65,6 @@ final class CurrentLocationViewController: UIViewController {
             
             do {
                 try await viewModel()
-//                print(viewModel.forecast.debugDescription)
-//                print(viewModel.current.debugDescription)
                 // Configure Day View Controller
                 guard let current = viewModel.current else { return }
                 self.dayViewController.viewModel = DayViewModel(weatherData: current)
