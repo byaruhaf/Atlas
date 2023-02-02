@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F4AB472298BCBD20007815D /*  DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB471298BCBD20007815D /*  DependencyProvider.swift */; };
 		5F505E1B2989366D00EAFE2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F505E1A2989366D00EAFE2E /* AppDelegate.swift */; };
 		5F505E1D2989366D00EAFE2E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F505E1C2989366D00EAFE2E /* SceneDelegate.swift */; };
 		5F505E1F2989366D00EAFE2E /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F505E1E2989366D00EAFE2E /* CurrentLocationViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F4AB471298BCBD20007815D /*  DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " DependencyProvider.swift"; sourceTree = "<group>"; };
 		5F505E172989366D00EAFE2E /* Atlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F505E1A2989366D00EAFE2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F505E1C2989366D00EAFE2E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				5FB8F4A2298AD9DD00B8A158 /* Alert.swift */,
+				5F4AB471298BCBD20007815D /*  DependencyProvider.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				5FC3A531298A44B60071FA66 /* UIImage+Extension.swift in Sources */,
 				5F505E1F2989366D00EAFE2E /* CurrentLocationViewController.swift in Sources */,
 				5FB8F4A3298AD9DD00B8A158 /* Alert.swift in Sources */,
+				5F4AB472298BCBD20007815D /*  DependencyProvider.swift in Sources */,
 				5F505E1B2989366D00EAFE2E /* AppDelegate.swift in Sources */,
 				5FC3A536298A6F440071FA66 /* Configuration.swift in Sources */,
 				5FC3A533298A6A850071FA66 /* WeatherRequest.swift in Sources */,

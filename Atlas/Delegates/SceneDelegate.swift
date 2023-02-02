@@ -17,16 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        // Initialize Root View Controller
-        let rootViewController = UIStoryboard(name: "Main", bundle: .main).instantiateInitialViewController { coder in
-            TabBarController(coder: coder, viewModel: CurrentLocationViewModel())
-        }
-        
         // Initialize Window
         window = UIWindow(windowScene: windowScene)
         
         // Configure Window
-        window?.rootViewController = rootViewController
+        window?.rootViewController = DependencyProvider.rootViewController
         
         // Make Window Key Window
         window?.makeKeyAndVisible()
