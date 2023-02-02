@@ -84,7 +84,6 @@ final class ForecastViewController: UIViewController {
 // swiftlint:disable explicit_init
 extension ForecastViewController: ThemeableColor {
     func registerForTheme() {
-        print("gggggggggggggggggggggggggggggg")
         NotificationCenter.default.addObserver(
             self, selector: #selector(colorChanged), name: NSNotification.Name.init("ColorChanged"),
             object: nil)

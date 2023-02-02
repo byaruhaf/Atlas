@@ -98,7 +98,6 @@ final class DayViewController: UIViewController {
 // swiftlint:disable explicit_init
 extension DayViewController: ThemeableImage, ThemeableColor {
     func registerForTheme() {
-        print("gggggggggggggggggggggggggggggg")
         NotificationCenter.default.addObserver(
             self, selector: #selector(imageChanged), name: NSNotification.Name.init("ImageChanged"),
             object: nil)

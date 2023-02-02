@@ -25,11 +25,11 @@ class ThemeManager {
     
     private init() {}
     
-    func set(theme: ImageTheme) {
-        self.currentImageTheme = theme
+    func set(imageTheme: ImageTheme) {
+        self.currentImageTheme = imageTheme
     }
     
-    func set(backgroundColor: ColorTheme) {
-        self.currentBackgroundColor = backgroundColor
+    func set(colorTheme: ColorTheme) {
+        self.currentBackgroundColor = colorTheme
     }
 }

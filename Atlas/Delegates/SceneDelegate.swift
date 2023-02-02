@@ -18,7 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         // Default ColorTheme
-        ThemeManager.shared.currentBackgroundColor = SunnyColorTheme()
+        ThemeManager.shared.set(colorTheme: SunnyColorTheme())
+        
+        // Default ColorTheme
+        ThemeManager.shared.set(imageTheme: ForestImageTheme())
         
         // Initialize Window
         window = UIWindow(windowScene: windowScene)

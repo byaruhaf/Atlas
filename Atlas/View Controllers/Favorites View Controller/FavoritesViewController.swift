@@ -30,7 +30,6 @@ class FavoritesViewController: UIViewController {
 // swiftlint:disable explicit_init
 extension FavoritesViewController: ThemeableColor {
     func registerForTheme() {
-        print("gggggggggggggggggggggggggggggg")
         NotificationCenter.default.addObserver(
             self, selector: #selector(colorChanged), name: NSNotification.Name.init("ColorChanged"),
             object: nil)
