@@ -86,6 +86,14 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		5F4AB479298BD7A50007815D /* Root View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3A541298A85D70071FA66 /* TabBarController.swift */,
+			);
+			path = "Root View Controller";
+			sourceTree = "<group>";
+		};
 		5F505E0E2989366D00EAFE2E = {
 			isa = PBXGroup;
 			children = (
@@ -119,23 +127,23 @@
 			path = Atlas;
 			sourceTree = "<group>";
 		};
-		5F505E312989384600EAFE2E /* Root View Controller */ = {
+		5F505E312989384600EAFE2E /* Current Location View Controller */ = {
 			isa = PBXGroup;
 			children = (
 				5FC3A53E298A81B00071FA66 /* View Model */,
 				5F505E1E2989366D00EAFE2E /* CurrentLocationViewController.swift */,
 			);
-			path = "Root View Controller";
+			path = "Current Location View Controller";
 			sourceTree = "<group>";
 		};
 		5F505E322989385200EAFE2E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5F4AB473298BD16E0007815D /* Favorites View Controller */,
-				5FC3A541298A85D70071FA66 /* TabBarController.swift */,
-				5F505E312989384600EAFE2E /* Root View Controller */,
+				5F4AB479298BD7A50007815D /* Root View Controller */,
+				5F505E312989384600EAFE2E /* Current Location View Controller */,
 				5FC3A52D298A3CB80071FA66 /* DayViewController */,
 				5FC3A52E298A3CC30071FA66 /* ForecastViewController */,
+				5F4AB473298BD16E0007815D /* Favorites View Controller */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
