@@ -33,5 +33,22 @@ struct CurrentWeather: Codable {
     let main: Main
 }
 
+ extension CurrentWeather {
+     var weatherType: WeatherType {
+         guard let weatherType = WeatherType(rawValue: weather[0].main) else { return WeatherType.unknown}
+         return weatherType
+     }
+ }
+
 extension CurrentWeather: CurrentWeatherConditions {
 }
+
+enum WeatherType: String, Codable {
+    case rain = "Rain"
+    case clear = "Clear"
+    case clouds = "Clouds"
+    case snow = "Snow"
+    case drizzle = "Drizzle"
+    case thunderstorm = "Thunderstorm"
+    case unknown
+    }

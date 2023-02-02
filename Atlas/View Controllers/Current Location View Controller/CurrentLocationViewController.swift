@@ -70,7 +70,7 @@ final class CurrentLocationViewController: UIViewController {
                 // Configure Day View Controller
                 guard let current = viewModel.current else { return }
                 self.dayViewController.viewModel = DayViewModel(weatherData: current)
-                determineColorTheme(condtion: current.weather[0].main)
+                determineColorTheme(condtion: current.weatherType)
                 // Configure Forcast View Controller
                 guard let forecast = viewModel.forecast else { return }
                 self.forcastViewController.viewModel = ForecastViewModel(weatherData: forecast)
@@ -81,24 +81,21 @@ final class CurrentLocationViewController: UIViewController {
         }
     }
     
-    private func determineColorTheme(condtion: String) {
-        print(condtion)
-        if condtion == "Rain" {
+    private func determineColorTheme(condtion: WeatherType) {
+        switch condtion {
+        case .rain:
             ThemeManager.shared.currentBackgroundColor = RainColorTheme()
-        }
-        if condtion == "thunderstorm" {
+        case .thunderstorm:
             ThemeManager.shared.currentBackgroundColor = RainColorTheme()
-        }
-        if condtion == "snow" {
+        case .drizzle:
             ThemeManager.shared.currentBackgroundColor = RainColorTheme()
-        }
-        if condtion == "mist" {
+        case .snow:
             ThemeManager.shared.currentBackgroundColor = RainColorTheme()
-        }
-        if condtion == "Clouds" {
+        case .clouds:
             ThemeManager.shared.currentBackgroundColor = CloudyColorTheme()
-        }
-        if condtion == "Clear" {
+        case .clear:
+            ThemeManager.shared.currentBackgroundColor = SunnyColorTheme()
+        case .unknown:
             ThemeManager.shared.currentBackgroundColor = SunnyColorTheme()
         }
     }
