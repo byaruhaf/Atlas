@@ -14,11 +14,11 @@ final class CurrentLocationViewController: UIViewController {
     private let segueDayView = "SegueDayView"
     private let segueForcastView = "SegueForcastView"
     
-    // MARK: - Properties
-    
+    // MARK: - IBOutlet
     @IBOutlet private var dayViewController: DayViewController!
     @IBOutlet private var forcastViewController: ForecastViewController!
-    
+
+    // MARK: - Properties
     var viewModel: CurrentLocationViewModel? {
         didSet {
             guard let viewModel = viewModel else {
@@ -65,8 +65,8 @@ final class CurrentLocationViewController: UIViewController {
             
             do {
                 try await viewModel()
-                print(viewModel.forecast.debugDescription)
-                print(viewModel.current.debugDescription)
+//                print(viewModel.forecast.debugDescription)
+//                print(viewModel.current.debugDescription)
                 // Configure Day View Controller
                 guard let current = viewModel.current else { return }
                 self.dayViewController.viewModel = DayViewModel(weatherData: current)

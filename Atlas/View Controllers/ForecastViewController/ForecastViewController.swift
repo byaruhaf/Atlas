@@ -8,13 +8,17 @@
 import UIKit
 
 final class ForecastViewController: UIViewController {
-    @IBOutlet var flable: UILabel!
     
     // MARK: -
     
     var viewModel: ForecastViewModel? {
         didSet {
-            updateView()
+            // updateView()
+            guard let viewModel = viewModel else {
+                return
+            }
+            // Setup View Model
+            setupViewModel(with: viewModel)
         }
     }
     
@@ -26,8 +30,12 @@ final class ForecastViewController: UIViewController {
     
     // MARK: - View Methods
     
+    private func setupViewModel(with viewModel: ForecastViewModel) {
+        print(viewModel.weatherData.list[0].weather)
+    }
+    
     private func updateView() {
-        flable.text = viewModel?.weatherData.list[0].main.tempMax.description
+        
         //        activityIndicatorView.stopAnimating()
         //
         //        if let viewModel = viewModel {

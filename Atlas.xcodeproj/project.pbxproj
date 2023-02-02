@@ -10,6 +10,8 @@
 		5F4AB472298BCBD20007815D /*  DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB471298BCBD20007815D /*  DependencyProvider.swift */; };
 		5F4AB475298BD1B10007815D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB474298BD1B10007815D /* FavoritesViewController.swift */; };
 		5F4AB478298BD1D60007815D /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB477298BD1D60007815D /* FavoritesViewModel.swift */; };
+		5F4AB47C298BF9B90007815D /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB47B298BF9B90007815D /* ThemeManager.swift */; };
+		5F4AB47E298BFA210007815D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB47D298BFA210007815D /* Theme.swift */; };
 		5F505E1B2989366D00EAFE2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F505E1A2989366D00EAFE2E /* AppDelegate.swift */; };
 		5F505E1D2989366D00EAFE2E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F505E1C2989366D00EAFE2E /* SceneDelegate.swift */; };
 		5F505E1F2989366D00EAFE2E /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F505E1E2989366D00EAFE2E /* CurrentLocationViewController.swift */; };
@@ -35,6 +37,8 @@
 		5F4AB471298BCBD20007815D /*  DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " DependencyProvider.swift"; sourceTree = "<group>"; };
 		5F4AB474298BD1B10007815D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		5F4AB477298BD1D60007815D /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		5F4AB47B298BF9B90007815D /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		5F4AB47D298BFA210007815D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		5F505E172989366D00EAFE2E /* Atlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F505E1A2989366D00EAFE2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F505E1C2989366D00EAFE2E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,14 @@
 			path = "Root View Controller";
 			sourceTree = "<group>";
 		};
+		5F4AB47A298BF99D0007815D /* ThemeManager */ = {
+			isa = PBXGroup;
+			children = (
+				5F4AB47B298BF9B90007815D /* ThemeManager.swift */,
+			);
+			path = ThemeManager;
+			sourceTree = "<group>";
+		};
 		5F505E0E2989366D00EAFE2E = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +125,7 @@
 		5F505E192989366D00EAFE2E /* Atlas */ = {
 			isa = PBXGroup;
 			children = (
+				5F4AB47A298BF99D0007815D /* ThemeManager */,
 				5FB8F4A4298AF64200B8A158 /* Protocols */,
 				5FB8F4A1298AD9CB00B8A158 /* Utilities */,
 				5FC3A534298A6F310071FA66 /* Configuration */,
@@ -188,6 +201,7 @@
 				5F5CA33B298A061B006074B3 /* Forecast.swift */,
 				5FC3A532298A6A850071FA66 /* WeatherRequest.swift */,
 				5F5CA33D298A069C006074B3 /* CurrentWeather.swift */,
+				5F4AB47D298BFA210007815D /* Theme.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -367,7 +381,9 @@
 				5FB8F4A6298AF65800B8A158 /* WeatherData.swift in Sources */,
 				5F5CA33E298A069C006074B3 /* CurrentWeather.swift in Sources */,
 				5FF54D6B298B117F000FF779 /* ForecastViewModel.swift in Sources */,
+				5F4AB47E298BFA210007815D /* Theme.swift in Sources */,
 				5FC3A531298A44B60071FA66 /* UIImage+Extension.swift in Sources */,
+				5F4AB47C298BF9B90007815D /* ThemeManager.swift in Sources */,
 				5F505E1F2989366D00EAFE2E /* CurrentLocationViewController.swift in Sources */,
 				5FB8F4A3298AD9DD00B8A158 /* Alert.swift in Sources */,
 				5F4AB472298BCBD20007815D /*  DependencyProvider.swift in Sources */,

@@ -9,14 +9,24 @@ import UIKit
 
 final class DayViewController: UIViewController {
  
-    @IBOutlet var imageDayBG: UIImageView!
-    @IBOutlet var testtext: UILabel!
+    @IBOutlet var backgroundImageView: UIImageView!
+    @IBOutlet var temperatureRibbon: UIStackView!
+    @IBOutlet var centerTempLabel: UILabel!
+    @IBOutlet var conditonLabel: UILabel!
+    @IBOutlet var minTempLabel: UILabel!
+    @IBOutlet var maxTempLabel: UILabel!
+    @IBOutlet var currentTempLabel: UILabel!
     
     // MARK: -
     
     var viewModel: DayViewModel? {
         didSet {
-            updateView()
+            //            updateView()
+            guard let viewModel = viewModel else {
+                return
+            }
+            // Setup View Model
+            setupViewModel(with: viewModel)
         }
     }
     
@@ -28,8 +38,16 @@ final class DayViewController: UIViewController {
     
     // MARK: - View Methods
     
+    private func setupViewModel(with viewModel: DayViewModel) {
+        print(viewModel.weatherData.main.tempMin.description)
+        print(viewModel.weatherData.main.tempMax.description)
+        print(viewModel.weatherData.main.feelsLike.description)
+        print(viewModel.weatherData.main.temp.description)
+        print(viewModel.weatherData.weather[0].main)
+    }
+    
     private func updateView() {
-        testtext.text = viewModel?.weatherData.main.feelsLike.description
+        
 //        activityIndicatorView.stopAnimating()
 //
 //        if let viewModel = viewModel {
@@ -66,6 +84,6 @@ final class DayViewController: UIViewController {
     private func setupView() {
         // Configure View
         view.backgroundColor = UIColor(named: "SUNNY")
-        imageDayBG.image = UIImage(named: "forest_sunny")
+        backgroundImageView.image = UIImage(named: "forest_sunny")
     }
 }
