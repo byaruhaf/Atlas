@@ -10,5 +10,12 @@ import Foundation
 protocol Themeable {
     func registerForTheme()
     func unregisterForTheme()
-    func themeChanged()
+}
+
+protocol ThemeableColor: Themeable {
+    func colorChanged()
+}
+
+protocol ThemeableImage: Themeable {
+    func imageChanged()
 }

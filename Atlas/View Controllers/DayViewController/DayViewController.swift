@@ -75,7 +75,8 @@ final class DayViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Register for Observer
+        registerForTheme()
         // Setup View
         setupView()
     }
@@ -85,5 +86,48 @@ final class DayViewController: UIViewController {
         // Configure View
         view.backgroundColor = UIColor(named: "SUNNY")
         backgroundImageView.image = UIImage(named: "forest_sunny")
+    }
+    
+    deinit {
+        // Register for Observer
+        registerForTheme()
+    }
+}
+
+// swiftlint:disable notification_center_detachment
+// swiftlint:disable explicit_init
+extension DayViewController: ThemeableImage, ThemeableColor {
+    func registerForTheme() {
+        print("gggggggggggggggggggggggggggggg")
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(imageChanged), name: NSNotification.Name.init("ImageChanged"),
+            object: nil)
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(colorChanged), name: NSNotification.Name.init("ColorChanged"),
+            object: nil)
+    }
+    
+    func unregisterForTheme() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func imageChanged() {
+        animateImage()
+    }
+    
+    @objc func colorChanged() {
+        animateColor()
+    }
+    
+    func animateImage() {
+        UIView.animate(withDuration: 0.2) {
+            self.backgroundImageView.image = ThemeManager.shared.currentImageTheme?.cloudy
+        }
+    }
+    
+    func animateColor() {
+        UIView.animate(withDuration: 0.2) {
+            self.view.backgroundColor = ThemeManager.shared.currentBackgroundColor?.backgroundColor
+        }
     }
 }

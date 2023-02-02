@@ -118,7 +118,6 @@
                                 <color key="backgroundColor" red="0.35401046279999998" green="0.43445932869999998" blue="0.47451621290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="dyi-DA-pNS"/>
-                                    <constraint firstAttribute="width" constant="393" id="wet-wv-Khx"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8MI-JI-FGJ">
