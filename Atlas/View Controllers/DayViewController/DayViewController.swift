@@ -54,6 +54,7 @@ final class DayViewController: UIViewController {
         didSet {
             activityIndicatorView.startAnimating()
             activityIndicatorView.hidesWhenStopped = true
+            activityIndicatorView.transform = CGAffineTransform(scaleX: 3, y: 3)
         }
     }
     // MARK: -
