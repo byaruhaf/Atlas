@@ -8,7 +8,7 @@
 import UIKit
 
 final class DayViewController: UIViewController {
- 
+    
     @IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet var temperatureRibbon: UIStackView!
     @IBOutlet var centerTempLabel: UILabel!
@@ -32,44 +32,48 @@ final class DayViewController: UIViewController {
     
     // MARK: - Public Interface
     
-//    override func reloadData() {
-//        updateView()
-//    }
+    //    override func reloadData() {
+    //        updateView()
+    //    }
     
     // MARK: - View Methods
     
     private func setupViewModel(with viewModel: DayViewModel) {
-        print(viewModel.weatherData.main.tempMin.description)
-        print(viewModel.weatherData.main.tempMax.description)
-        print(viewModel.weatherData.main.feelsLike.description)
-        print(viewModel.weatherData.main.temp.description)
-        print(viewModel.weatherData.weather[0].main)
+        UIView.animate(withDuration: 1) { [self] in
+            // Configure Labels
+            minTempLabel.text = viewModel.minTemperature
+            maxTempLabel.text = viewModel.maxTemperature
+            currentTempLabel.text = viewModel.temperature
+            centerTempLabel.text = viewModel.temperature
+            conditonLabel.text = viewModel.weatherCondition
+            backgroundImageView.image = UIImage(named: viewModel.backgroundImageName)
+        }
     }
     
     private func updateView() {
         
-//        activityIndicatorView.stopAnimating()
-//
-//        if let viewModel = viewModel {
-//            updateWeatherDataContainerView(with: viewModel)
-//
-//        } else {
-//            messageLabel.isHidden = false
-//            messageLabel.text = "Cloudy was unable to fetch weather data."
-//        }
+        //        activityIndicatorView.stopAnimating()
+        //
+        //        if let viewModel = viewModel {
+        //            updateWeatherDataContainerView(with: viewModel)
+        //
+        //        } else {
+        //            messageLabel.isHidden = false
+        //            messageLabel.text = "Cloudy was unable to fetch weather data."
+        //        }
     }
     
     // MARK: -
     
     private func updateWeatherDataContainerView(with viewModel: DayViewModel) {
-//        weatherDataContainerView.isHidden = false
-//
-//        dateLabel.text = viewModel.date
-//        timeLabel.text = viewModel.time
-//        iconImageView.image = viewModel.image
-//        windSpeedLabel.text = viewModel.windSpeed
-//        descriptionLabel.text = viewModel.summary
-//        temperatureLabel.text = viewModel.temperature
+        //        weatherDataContainerView.isHidden = false
+        //
+        //        dateLabel.text = viewModel.date
+        //        timeLabel.text = viewModel.time
+        //        iconImageView.image = viewModel.image
+        //        windSpeedLabel.text = viewModel.windSpeed
+        //        descriptionLabel.text = viewModel.summary
+        //        temperatureLabel.text = viewModel.temperature
     }
     
     // MARK: - View Life Cycle

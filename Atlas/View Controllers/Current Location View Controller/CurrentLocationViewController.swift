@@ -83,19 +83,11 @@ final class CurrentLocationViewController: UIViewController {
     
     private func determineColorTheme(condtion: WeatherType) {
         switch condtion {
-        case .rain:
-            ThemeManager.shared.currentBackgroundColor = RainColorTheme()
-        case .thunderstorm:
-            ThemeManager.shared.currentBackgroundColor = RainColorTheme()
-        case .drizzle:
-            ThemeManager.shared.currentBackgroundColor = RainColorTheme()
-        case .snow:
+        case .rain, .thunderstorm, .drizzle, .snow:
             ThemeManager.shared.currentBackgroundColor = RainColorTheme()
         case .clouds:
             ThemeManager.shared.currentBackgroundColor = CloudyColorTheme()
-        case .clear:
-            ThemeManager.shared.currentBackgroundColor = SunnyColorTheme()
-        case .unknown:
+        case .clear, .unknown:
             ThemeManager.shared.currentBackgroundColor = SunnyColorTheme()
         }
     }
