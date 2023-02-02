@@ -34,15 +34,42 @@ class TabBarController: UITabBarController {
     // MARK: - Helper Methods
 
     private func setupChildViewControllers() {
+//        guard let viewControllers = viewControllers else {
+//            return
+//        }
+//
+//        // Dependency Injection
+//        for viewController in viewControllers {
+//            switch viewController {
+//            case let viewController as CurrentLocationViewController:
+//                viewController.viewModel = self.viewModel
+//            default:
+//                break
+//            }
+//        }
         guard let viewControllers = viewControllers else {
             return
         }
         
-        // Dependency Injection
         for viewController in viewControllers {
-            switch viewController {
+            var childViewController: UIViewController?
+            
+            if let navigationController = viewController as? UINavigationController {
+                childViewController = navigationController.viewControllers.first
+            } else {
+                childViewController = viewController
+            }
+            
+            switch childViewController {
             case let viewController as CurrentLocationViewController:
+                // Initialize View Model
                 viewController.viewModel = self.viewModel
+            case let viewController as FavoritesViewController:
+                // Initialize View Model
+                let viewModel = FavoritesViewModel()
+                
+                // Configure View Controller
+                viewController.viewModel = viewModel
             default:
                 break
             }

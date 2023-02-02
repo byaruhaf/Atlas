@@ -92,7 +92,7 @@
         <!--Favorites-->
         <scene sceneID="UPu-JB-lnc">
             <objects>
-                <viewController id="6YX-2p-LE5" sceneMemberID="viewController">
+                <viewController id="6YX-2p-LE5" customClass="FavoritesViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6gC-TJ-5c0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
