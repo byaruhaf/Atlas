@@ -84,8 +84,7 @@ final class DayViewController: UIViewController {
     // MARK: - Helper Methods
     private func setupView() {
         // Configure View
-        view.backgroundColor = UIColor(named: "SUNNY")
-        temperatureRibbon.backgroundColor = UIColor(named: "SUNNY")
+        animateColor()
         backgroundImageView.image = UIImage(named: "forest_sunny")
     }
     
