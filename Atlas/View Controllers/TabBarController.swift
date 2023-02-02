@@ -8,13 +8,26 @@
 import UIKit
 
 class TabBarController: UITabBarController {
+    // MARK: - Properties
+    
+    private var viewModel: CurrentLocationViewModel
+    
+    // MARK: - Initialization
+    
+    init?(coder: NSCoder, viewModel: CurrentLocationViewModel) {
+        self.viewModel = viewModel
+        
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Use `init(coder:viewModel:)` to instantiate a `ViewController` instance.")
+    }
 
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Setup Child View Controllers
         setupChildViewControllers()
     }
     
@@ -29,10 +42,7 @@ class TabBarController: UITabBarController {
         for viewController in viewControllers {
             switch viewController {
             case let viewController as CurrentLocationViewController:
-                // Initialize View Model
-                let viewModel = CurrentLocationViewModel()
-                // Configure View Controller
-                viewController.viewModel = viewModel
+                viewController.viewModel = self.viewModel
             default:
                 break
             }
