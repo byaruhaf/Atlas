@@ -15,37 +15,21 @@ enum WeatherDataError: Error {
 
 // @MainActor
 final class CurrentLocationViewModel: WeatherData {
-    private var currentWeatherTaskHandle: Task<CurrentWeather, Error>?
-    private var forecastTaskHandle: Task<Forecast, Error>?
     var current: CurrentWeatherConditions?
     var forecast: ForecastWeatherConditions?
         
     func callAsFunction() async throws {
         do {
-            let task1 = Task.detached {
-                try await self.loadCurrentWeatherData()
-            }
-            let task2 = Task.detached {
-                try await self.loadForecastWeatherData()
-            }
-            currentWeatherTaskHandle = task1
-            forecastTaskHandle = task2
-            
-            let currentWeather = try await task1.value
-            let forecast = try await task2.value
-            self.current = currentWeather
-            self.forecast = forecast
+            async let current = try await self.loadCurrentWeatherData()
+            async let forecast = try await self.loadForecastWeatherData()
+            self.current = try await current
+            self.forecast = try await forecast
         } catch {
             print(error.localizedDescription) // TODO: Log this with Logger
             throw  WeatherDataError.noWeatherDataAvailable
         }
     }
-    
-    deinit {
-        currentWeatherTaskHandle?.cancel()
-        forecastTaskHandle?.cancel()
-    }
-    
+
     func loadCurrentWeatherData() async throws -> CurrentWeather {
         let weatherRequest = WeatherRequest(requestType: .weather, units: .metric, location: Defaults.location)
         return try await fetch(from: weatherRequest.urlRequest)
