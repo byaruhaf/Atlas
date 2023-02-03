@@ -12,6 +12,7 @@
 		5F328298298C9B380079CF67 /* ForecastListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */; };
 		5F32829A298C9C5F0079CF67 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F328299298C9C5F0079CF67 /* ReusableView.swift */; };
 		5F32829C298C9C7B0079CF67 /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F32829B298C9C7B0079CF67 /* SelfConfiguringCell.swift */; };
+		5F3282A4298CD2790079CF67 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3282A3298CD2790079CF67 /* SettingsView.swift */; };
 		5F4AB472298BCBD20007815D /*  DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB471298BCBD20007815D /*  DependencyProvider.swift */; };
 		5F4AB475298BD1B10007815D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB474298BD1B10007815D /* FavoritesViewController.swift */; };
 		5F4AB478298BD1D60007815D /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB477298BD1D60007815D /* FavoritesViewModel.swift */; };
@@ -47,6 +48,7 @@
 		5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastListCollectionViewCell.xib; sourceTree = "<group>"; };
 		5F328299298C9C5F0079CF67 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		5F32829B298C9C7B0079CF67 /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
+		5F3282A3298CD2790079CF67 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5F4AB471298BCBD20007815D /*  DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " DependencyProvider.swift"; sourceTree = "<group>"; };
 		5F4AB474298BD1B10007815D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		5F4AB477298BD1D60007815D /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 				5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */,
 			);
 			path = "Collection View Cells";
+			sourceTree = "<group>";
+		};
+		5F3282A2298CD26B0079CF67 /* Settings View */ = {
+			isa = PBXGroup;
+			children = (
+				5F3282A3298CD2790079CF67 /* SettingsView.swift */,
+			);
+			path = "Settings View";
 			sourceTree = "<group>";
 		};
 		5F4AB473298BD16E0007815D /* Favorites View Controller */ = {
@@ -177,6 +187,7 @@
 		5F505E322989385200EAFE2E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5F3282A2298CD26B0079CF67 /* Settings View */,
 				5F4AB479298BD7A50007815D /* Root View Controller */,
 				5F505E312989384600EAFE2E /* Current Location View Controller */,
 				5FC3A52D298A3CB80071FA66 /* DayViewController */,
@@ -426,6 +437,7 @@
 				5F4AB472298BCBD20007815D /*  DependencyProvider.swift in Sources */,
 				5F4AB475298BD1B10007815D /* FavoritesViewController.swift in Sources */,
 				5F505E1B2989366D00EAFE2E /* AppDelegate.swift in Sources */,
+				5F3282A4298CD2790079CF67 /* SettingsView.swift in Sources */,
 				5FC3A536298A6F440071FA66 /* Configuration.swift in Sources */,
 				5FC3A533298A6A850071FA66 /* WeatherRequest.swift in Sources */,
 				5FC3A53D298A818D0071FA66 /* CurrentLocationViewModel.swift in Sources */,
