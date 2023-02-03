@@ -601,7 +601,7 @@
 				DEVELOPMENT_TEAM = WV9WZS43J9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Atlas/Supporting Files/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Atlas;
+				INFOPLIST_KEY_CFBundleDisplayName = "Atlas Weather";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -614,7 +614,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.appbantu.Atlas;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appbantu.AtlasWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -635,7 +635,7 @@
 				DEVELOPMENT_TEAM = WV9WZS43J9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Atlas/Supporting Files/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Atlas;
+				INFOPLIST_KEY_CFBundleDisplayName = "Atlas Weather";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -648,7 +648,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.appbantu.Atlas;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appbantu.AtlasWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
