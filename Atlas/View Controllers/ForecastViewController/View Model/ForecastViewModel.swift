@@ -21,7 +21,7 @@ struct ForecastViewModel {
     }
 }
 
-struct WeatherDayData {
+struct WeatherDayData: Hashable {
     var day: String
     var condition: String
     var temperature: Double

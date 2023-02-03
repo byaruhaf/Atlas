@@ -230,9 +230,31 @@
                     <view key="view" contentMode="scaleToFill" id="l76-K1-GpH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="368.66666666666669"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GyX-pn-wk7">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="368.66666666666669"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pBz-EX-Im8">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3Sr-lf-MS3"/>
                         <color key="backgroundColor" name="CLOUDY"/>
+                        <constraints>
+                            <constraint firstItem="GyX-pn-wk7" firstAttribute="leading" secondItem="3Sr-lf-MS3" secondAttribute="leading" id="QAu-4r-Py7"/>
+                            <constraint firstItem="3Sr-lf-MS3" firstAttribute="trailing" secondItem="GyX-pn-wk7" secondAttribute="trailing" id="Ql2-PU-gpg"/>
+                            <constraint firstItem="GyX-pn-wk7" firstAttribute="top" secondItem="l76-K1-GpH" secondAttribute="top" id="ZjB-u3-Nqc"/>
+                            <constraint firstItem="3Sr-lf-MS3" firstAttribute="bottom" secondItem="GyX-pn-wk7" secondAttribute="bottom" id="eaN-4Z-8c0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="forecastListCollection" destination="GyX-pn-wk7" id="62g-VP-b5f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SnL-yy-4ky" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

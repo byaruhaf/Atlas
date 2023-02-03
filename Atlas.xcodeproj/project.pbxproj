@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F328292298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */; };
+		5F328297298C9B380079CF67 /* ForecastListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F328295298C9B380079CF67 /* ForecastListCollectionViewCell.swift */; };
+		5F328298298C9B380079CF67 /* ForecastListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */; };
+		5F32829A298C9C5F0079CF67 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F328299298C9C5F0079CF67 /* ReusableView.swift */; };
+		5F32829C298C9C7B0079CF67 /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F32829B298C9C7B0079CF67 /* SelfConfiguringCell.swift */; };
 		5F4AB472298BCBD20007815D /*  DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB471298BCBD20007815D /*  DependencyProvider.swift */; };
 		5F4AB475298BD1B10007815D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB474298BD1B10007815D /* FavoritesViewController.swift */; };
 		5F4AB478298BD1D60007815D /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB477298BD1D60007815D /* FavoritesViewModel.swift */; };
@@ -37,6 +42,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension .swift"; sourceTree = "<group>"; };
+		5F328295298C9B380079CF67 /* ForecastListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListCollectionViewCell.swift; sourceTree = "<group>"; };
+		5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastListCollectionViewCell.xib; sourceTree = "<group>"; };
+		5F328299298C9C5F0079CF67 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		5F32829B298C9C7B0079CF67 /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
 		5F4AB471298BCBD20007815D /*  DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " DependencyProvider.swift"; sourceTree = "<group>"; };
 		5F4AB474298BD1B10007815D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		5F4AB477298BD1D60007815D /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
@@ -79,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F32828C298C99D20079CF67 /* Collection View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5F328295298C9B380079CF67 /* ForecastListCollectionViewCell.swift */,
+				5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */,
+			);
+			path = "Collection View Cells";
+			sourceTree = "<group>";
+		};
 		5F4AB473298BD16E0007815D /* Favorites View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +246,8 @@
 			children = (
 				5FB8F4A5298AF65800B8A158 /* WeatherData.swift */,
 				5F4AB47F298C121A0007815D /* Themeable.swift */,
+				5F328299298C9C5F0079CF67 /* ReusableView.swift */,
+				5F32829B298C9C7B0079CF67 /* SelfConfiguringCell.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -243,6 +264,7 @@
 		5FC3A52E298A3CC30071FA66 /* ForecastViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5F32828C298C99D20079CF67 /* Collection View Cells */,
 				5FF54D69298B116A000FF779 /* View Model */,
 				5F5CA341298A1BC7006074B3 /* ForecastViewController.swift */,
 			);
@@ -253,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				5FC3A530298A44B60071FA66 /* UIImage+Extension.swift */,
+				5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -350,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F505E272989366F00EAFE2E /* LaunchScreen.storyboard in Resources */,
+				5F328298298C9B380079CF67 /* ForecastListCollectionViewCell.xib in Resources */,
 				5F505E242989366F00EAFE2E /* Assets.xcassets in Resources */,
 				5F505E222989366D00EAFE2E /* Main.storyboard in Resources */,
 			);
@@ -384,10 +408,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F32829A298C9C5F0079CF67 /* ReusableView.swift in Sources */,
 				5F5CA33C298A061B006074B3 /* Forecast.swift in Sources */,
 				5F5CA342298A1BC7006074B3 /* ForecastViewController.swift in Sources */,
 				5FF54D68298B10EE000FF779 /* DayViewModel.swift in Sources */,
 				5F4AB484298C595E0007815D /* Styles.swift in Sources */,
+				5F328292298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift in Sources */,
+				5F328297298C9B380079CF67 /* ForecastListCollectionViewCell.swift in Sources */,
 				5FB8F4A6298AF65800B8A158 /* WeatherData.swift in Sources */,
 				5F5CA33E298A069C006074B3 /* CurrentWeather.swift in Sources */,
 				5FF54D6B298B117F000FF779 /* ForecastViewModel.swift in Sources */,
@@ -402,6 +429,7 @@
 				5FC3A536298A6F440071FA66 /* Configuration.swift in Sources */,
 				5FC3A533298A6A850071FA66 /* WeatherRequest.swift in Sources */,
 				5FC3A53D298A818D0071FA66 /* CurrentLocationViewModel.swift in Sources */,
+				5F32829C298C9C7B0079CF67 /* SelfConfiguringCell.swift in Sources */,
 				5F4AB480298C121A0007815D /* Themeable.swift in Sources */,
 				5FC3A542298A85D70071FA66 /* TabBarController.swift in Sources */,
 				5F505E1D2989366D00EAFE2E /* SceneDelegate.swift in Sources */,
