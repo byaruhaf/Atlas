@@ -13,18 +13,22 @@ struct SettingsView: View {
         case forest, sea
     }
     
+    @State private var bgColor: Color = .white
     @State private var imageScheme: ImageScheme = .forest
     
     var body: some View {
         NavigationStack {
-            Form {
-                Section("Themes") {
-                    Picker("Image Themes", selection: $imageScheme) {
-                        Text("🌴 Forest").tag(ImageScheme.forest)
-                        Text("🌊 Sea").tag(ImageScheme.sea)
+                Form {
+                    Section("Themes") {
+                        Picker("Image Themes", selection: $imageScheme) {
+                            Text("🌴 Forest").tag(ImageScheme.forest)
+                            Text("🌊 Sea").tag(ImageScheme.sea)
+                        }
                     }
                 }
-            }.navigationTitle("Settings")
+                .background(Color(uiColor: ThemeManager.shared.currentBackgroundColor!.backgroundColor))
+                .scrollContentBackground(.hidden)
+                .navigationTitle("Settings")
                 .onChange(of: imageScheme) { newValue in
                     switch newValue {
                     case .forest:

@@ -41,11 +41,12 @@ struct DayViewModel {
         let weatherType = weatherData.weather[0].weatherType
         switch weatherType {
         case .rain, .thunderstorm, .drizzle, .snow:
-            return "forest_rainy"
+            
+            return ThemeManager.shared.currentImageTheme!.rain
         case .clouds:
-            return "forest_cloudy"
+            return ThemeManager.shared.currentImageTheme!.cloudy
         case .clear, .unknown:
-            return "forest_sunny"
+            return ThemeManager.shared.currentImageTheme!.sunny
         }
     }
 }

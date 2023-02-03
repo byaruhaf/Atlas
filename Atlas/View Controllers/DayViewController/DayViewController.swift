@@ -135,7 +135,7 @@ extension DayViewController: ThemeableImage, ThemeableColor {
     
     func animateImage() {
         UIView.animate(withDuration: 0.2) {
-            self.backgroundImageView.image = ThemeManager.shared.currentImageTheme?.cloudy
+            self.backgroundImageView.image = UIImage(named: self.viewModel!.backgroundImageName) // TODO: not happy with need to change it.
         }
     }
     

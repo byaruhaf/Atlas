@@ -8,19 +8,19 @@
 import UIKit.UIImage
 
 protocol ImageTheme {
-    var cloudy: UIImage { get }
-    var sunny: UIImage { get }
-    var rain: UIImage { get }
+    var cloudy: String { get }
+    var sunny: String { get }
+    var rain: String { get }
 }
 
 struct ForestImageTheme: ImageTheme {
-    let cloudy = UIImage(named: "forest_cloudy") ?? UIImage(systemName: "exclamationmark.triangle.fill")!
-    let sunny = UIImage(named: "forest_sunny") ?? UIImage(systemName: "exclamationmark.triangle.fill")!
-    let rain = UIImage(named: "forest_rainy") ?? UIImage(systemName: "exclamationmark.triangle.fill")!
+    let cloudy = "forest_cloudy"
+    let sunny = "forest_sunny"
+    let rain = "forest_rainy"
 }
 
 struct SeaImageTheme: ImageTheme {
-    let cloudy = UIImage(named: "sea_cloudy") ?? UIImage(systemName: "exclamationmark.triangle.fill")!
-    let sunny = UIImage(named: "sea_sunny") ?? UIImage(systemName: "exclamationmark.triangle.fill")!
-    let rain = UIImage(named: "sea_rainy") ?? UIImage(systemName: "exclamationmark.triangle.fill")!
+    let cloudy = "sea_cloudy"
+    let sunny = "sea_sunny"
+    let rain = "sea_rainy"
 }
