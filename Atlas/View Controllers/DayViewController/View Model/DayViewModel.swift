@@ -26,7 +26,15 @@ struct DayViewModel {
     }
     
     var weatherCondition: String {
-        weatherData.weather[0].main
+        let weatherType = weatherData.weather[0].weatherType
+        switch weatherType {
+        case .rain, .thunderstorm, .drizzle, .snow:
+            return "RAINY"
+        case .clouds:
+            return "CLOUDY"
+        case .clear, .unknown:
+            return "SUNNY"
+        }
     }
     
     var backgroundImageName: String {
