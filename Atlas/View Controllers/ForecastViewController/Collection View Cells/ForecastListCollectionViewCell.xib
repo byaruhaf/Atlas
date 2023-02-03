@@ -65,6 +65,8 @@
                 <outlet property="dayOfWeekLable" destination="XcK-iz-pdE" id="EMi-rk-xmf"/>
                 <outlet property="iconImageView" destination="rnd-Lr-a15" id="F1b-az-c2S"/>
                 <outlet property="temperatureLable" destination="cj7-T8-0Ma" id="RcU-JK-Gwa"/>
+                <outletCollection property="smallTitleLabels" destination="XcK-iz-pdE" collectionClass="NSMutableArray" id="kad-PW-LIX"/>
+                <outletCollection property="smallTitleLabels" destination="cj7-T8-0Ma" collectionClass="NSMutableArray" id="dt3-5P-3xy"/>
             </connections>
             <point key="canvasLocation" x="98" y="4"/>
         </collectionViewCell>
