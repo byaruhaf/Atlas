@@ -13,6 +13,7 @@
 		5F32829A298C9C5F0079CF67 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F328299298C9C5F0079CF67 /* ReusableView.swift */; };
 		5F32829C298C9C7B0079CF67 /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F32829B298C9C7B0079CF67 /* SelfConfiguringCell.swift */; };
 		5F3282A4298CD2790079CF67 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3282A3298CD2790079CF67 /* SettingsView.swift */; };
+		5F3282AA298CDCF50079CF67 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3282A9298CDCF50079CF67 /* SettingsViewController.swift */; };
 		5F4AB472298BCBD20007815D /*  DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB471298BCBD20007815D /*  DependencyProvider.swift */; };
 		5F4AB475298BD1B10007815D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB474298BD1B10007815D /* FavoritesViewController.swift */; };
 		5F4AB478298BD1D60007815D /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB477298BD1D60007815D /* FavoritesViewModel.swift */; };
@@ -49,6 +50,7 @@
 		5F328299298C9C5F0079CF67 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		5F32829B298C9C7B0079CF67 /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
 		5F3282A3298CD2790079CF67 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5F3282A9298CDCF50079CF67 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5F4AB471298BCBD20007815D /*  DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " DependencyProvider.swift"; sourceTree = "<group>"; };
 		5F4AB474298BD1B10007815D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		5F4AB477298BD1D60007815D /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				5F3282A3298CD2790079CF67 /* SettingsView.swift */,
+				5F3282A9298CDCF50079CF67 /* SettingsViewController.swift */,
 			);
 			path = "Settings View";
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				5FC3A533298A6A850071FA66 /* WeatherRequest.swift in Sources */,
 				5FC3A53D298A818D0071FA66 /* CurrentLocationViewModel.swift in Sources */,
 				5F32829C298C9C7B0079CF67 /* SelfConfiguringCell.swift in Sources */,
+				5F3282AA298CDCF50079CF67 /* SettingsViewController.swift in Sources */,
 				5F4AB480298C121A0007815D /* Themeable.swift in Sources */,
 				5FC3A542298A85D70071FA66 /* TabBarController.swift in Sources */,
 				5F505E1D2989366D00EAFE2E /* SceneDelegate.swift in Sources */,

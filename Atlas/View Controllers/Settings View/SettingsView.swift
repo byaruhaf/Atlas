@@ -20,8 +20,8 @@ struct SettingsView: View {
             Form {
                 Section("Themes") {
                     Picker("Image Themes", selection: $imageScheme) {
-                        Text("Forest").tag(ImageScheme.forest)
-                        Text("Sea").tag(ImageScheme.sea)
+                        Text("🌴 Forest").tag(ImageScheme.forest)
+                        Text("🌊 Sea").tag(ImageScheme.sea)
                     }
                 }
             }.navigationTitle("Settings")
