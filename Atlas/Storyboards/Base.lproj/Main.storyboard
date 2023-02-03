@@ -191,7 +191,7 @@
             </objects>
             <point key="canvasLocation" x="-153.43511450381678" y="-752.46478873239437"/>
         </scene>
-        <!--Favorites-->
+        <!--Favorites View Controller-->
         <scene sceneID="UPu-JB-lnc">
             <objects>
                 <viewController id="6YX-2p-LE5" customClass="FavoritesViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
@@ -201,11 +201,11 @@
                         <viewLayoutGuide key="safeArea" id="rVl-XB-Jd4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="XtT-Sp-uP4"/>
+                    <navigationItem key="navigationItem" id="nL8-cj-6ro"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xEQ-oD-B5H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="996" y="-582"/>
+            <point key="canvasLocation" x="1921.3740458015266" y="-582.3943661971831"/>
         </scene>
         <!--Settings-->
         <scene sceneID="SEF-Rd-8bG">
@@ -215,7 +215,7 @@
                 </hostingController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSS-XI-ZFc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1940" y="-579"/>
+            <point key="canvasLocation" x="2866.4122137404579" y="-579.57746478873241"/>
         </scene>
         <!--Forecast View Controller-->
         <scene sceneID="6tM-Yu-Snz">
@@ -266,13 +266,32 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="UE9-BG-dco"/>
-                        <segue destination="6YX-2p-LE5" kind="relationship" relationship="viewControllers" id="bkY-28-cO4"/>
+                        <segue destination="7ET-zx-2Zo" kind="relationship" relationship="viewControllers" id="bkY-28-cO4"/>
                         <segue destination="WzM-aY-zyO" kind="relationship" relationship="viewControllers" id="cBK-vc-RpO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYW-ID-CFB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="822" y="-1463"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="hZS-EE-gp7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7ET-zx-2Zo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="XtT-Sp-uP4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wvg-kU-SNh">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6YX-2p-LE5" kind="relationship" relationship="rootViewController" id="tdJ-8J-cnB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IYW-Bk-wbb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="994.6564885496183" y="-582.3943661971831"/>
         </scene>
     </scenes>
     <resources>
