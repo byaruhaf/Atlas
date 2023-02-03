@@ -11,11 +11,13 @@ struct List: Codable {
     let date: Date
     let main: Main
     let weather: [Weather]
-    
+    let dtTxt: String
+
     private enum CodingKeys: String, CodingKey {
         case date = "dt"
         case main
         case weather
+        case dtTxt = "dt_txt"
     }
 }
 
