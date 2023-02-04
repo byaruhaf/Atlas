@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 enum WeatherDataError: Error {
     case notAuthorizedToRequestLocation
@@ -20,8 +21,8 @@ final class CurrentLocationViewModel: WeatherData {
         
     func callAsFunction() async throws {
         do {
-            async let current = try await self.loadCurrentWeatherData()
-            async let forecast = try await self.loadForecastWeatherData()
+            async let current = try await self.loadCurrentWeatherData(for: Defaults.location)
+            async let forecast = try await self.loadForecastWeatherData(for: Defaults.location)
             self.current = try await current
             self.forecast = try await forecast
         } catch {
@@ -30,13 +31,13 @@ final class CurrentLocationViewModel: WeatherData {
         }
     }
 
-    func loadCurrentWeatherData() async throws -> CurrentWeather {
-        let weatherRequest = WeatherRequest(requestType: .weather, units: .metric, location: Defaults.location)
+    func loadCurrentWeatherData(for location: CLLocation) async throws -> CurrentWeather {
+        let weatherRequest = WeatherRequest(requestType: .weather, units: .metric, location: location)
         return try await fetch(from: weatherRequest.urlRequest)
     }
     
-    func loadForecastWeatherData() async throws -> Forecast {
-        let weatherRequest = WeatherRequest(requestType: .forecast, units: .metric, location: Defaults.location)
+    func loadForecastWeatherData(for location: CLLocation) async throws -> Forecast {
+        let weatherRequest = WeatherRequest(requestType: .forecast, units: .metric, location: location)
         return try await fetch(from: weatherRequest.urlRequest)
     }
     
