@@ -40,6 +40,7 @@
 		5FC3A536298A6F440071FA66 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3A535298A6F440071FA66 /* Configuration.swift */; };
 		5FC3A53D298A818D0071FA66 /* CurrentLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3A53C298A818D0071FA66 /* CurrentLocationViewModel.swift */; };
 		5FC3A542298A85D70071FA66 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3A541298A85D70071FA66 /* TabBarController.swift */; };
+		5FCCAEFC298DF71A00A652C4 /* ci_post_clone.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5FCCAEFB298DF71A00A652C4 /* ci_post_clone.sh */; };
 		5FF54D68298B10EE000FF779 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF54D67298B10EE000FF779 /* DayViewModel.swift */; };
 		5FF54D6B298B117F000FF779 /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF54D6A298B117F000FF779 /* ForecastViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		5FC3A53C298A818D0071FA66 /* CurrentLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewModel.swift; sourceTree = "<group>"; };
 		5FC3A541298A85D70071FA66 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5FCCAEF9298DF34D00A652C4 /* secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = secrets.xcconfig; sourceTree = "<group>"; };
+		5FCCAEFB298DF71A00A652C4 /* ci_post_clone.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ci_post_clone.sh; sourceTree = "<group>"; };
 		5FF54D67298B10EE000FF779 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		5FF54D6A298B117F000FF779 /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +153,7 @@
 		5F505E0E2989366D00EAFE2E = {
 			isa = PBXGroup;
 			children = (
+				5FCCAEFA298DF6C600A652C4 /* ci_scripts */,
 				5F505E192989366D00EAFE2E /* Atlas */,
 				5F505E182989366D00EAFE2E /* Products */,
 			);
@@ -318,6 +321,14 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		5FCCAEFA298DF6C600A652C4 /* ci_scripts */ = {
+			isa = PBXGroup;
+			children = (
+				5FCCAEFB298DF71A00A652C4 /* ci_post_clone.sh */,
+			);
+			path = ci_scripts;
+			sourceTree = "<group>";
+		};
 		5FF54D66298B10D7000FF779 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +407,7 @@
 				5F505E272989366F00EAFE2E /* LaunchScreen.storyboard in Resources */,
 				5F328298298C9B380079CF67 /* ForecastListCollectionViewCell.xib in Resources */,
 				5F505E242989366F00EAFE2E /* Assets.xcassets in Resources */,
+				5FCCAEFC298DF71A00A652C4 /* ci_post_clone.sh in Resources */,
 				5F505E222989366D00EAFE2E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
