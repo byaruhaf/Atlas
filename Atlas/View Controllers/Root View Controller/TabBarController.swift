@@ -34,19 +34,6 @@ class TabBarController: UITabBarController {
     // MARK: - Helper Methods
 
     private func setupChildViewControllers() {
-//        guard let viewControllers = viewControllers else {
-//            return
-//        }
-//
-//        // Dependency Injection
-//        for viewController in viewControllers {
-//            switch viewController {
-//            case let viewController as CurrentLocationViewController:
-//                viewController.viewModel = self.viewModel
-//            default:
-//                break
-//            }
-//        }
         guard let viewControllers = viewControllers else {
             return
         }
@@ -60,6 +47,7 @@ class TabBarController: UITabBarController {
                 childViewController = viewController
             }
             
+            // Dependency Injection
             switch childViewController {
             case let viewController as CurrentLocationViewController:
                 // Initialize View Model
