@@ -10,7 +10,7 @@ import UIKit
 // move to utilities and call feom here
 enum WeatherConditionIcon {
     static func image(for condition: WeatherType) -> UIImage {
-        let pointSize = UIImage.SymbolConfiguration(pointSize: 3)
+        let pointSize = UIImage.SymbolConfiguration(pointSize: 30)
         let caption = UIImage.SymbolConfiguration(textStyle: .caption2)
         let thin = UIImage.SymbolConfiguration(weight: .thin)
         let combined = caption.applying(pointSize).applying(thin)
