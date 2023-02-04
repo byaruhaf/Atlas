@@ -24,9 +24,6 @@ final class DayViewModelTests: XCTestCase {
         // Initialize JSON Decoder
         let decoder = JSONDecoder()
         
-        // Configure JSON Decoder
-        decoder.dateDecodingStrategy = .secondsSince1970
-        
         // Initialize Dark Sky Response
         let currentWeatherResponse = try! decoder.decode(CurrentWeather.self, from: data)
         

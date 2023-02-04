@@ -32,6 +32,7 @@
 		5F56FFAA298E342F0085DAD0 /* current.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F56FFA9298E342F0085DAD0 /* current.json */; };
 		5F56FFAD298E34740085DAD0 /* XCTestCase+Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F56FFAC298E34740085DAD0 /* XCTestCase+Extension .swift */; };
 		5F56FFAF298E3A6C0085DAD0 /* forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F56FFAE298E3A6C0085DAD0 /* forecast.json */; };
+		5F56FFB1298E3CB10085DAD0 /* ForecastViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F56FFB0298E3CB10085DAD0 /* ForecastViewModelTests.swift */; };
 		5F5CA33C298A061B006074B3 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CA33B298A061B006074B3 /* Forecast.swift */; };
 		5F5CA33E298A069C006074B3 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CA33D298A069C006074B3 /* CurrentWeather.swift */; };
 		5F5CA340298A1B61006074B3 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CA33F298A1B61006074B3 /* DayViewController.swift */; };
@@ -91,6 +92,7 @@
 		5F56FFA9298E342F0085DAD0 /* current.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = current.json; sourceTree = "<group>"; };
 		5F56FFAC298E34740085DAD0 /* XCTestCase+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension .swift"; sourceTree = "<group>"; };
 		5F56FFAE298E3A6C0085DAD0 /* forecast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forecast.json; sourceTree = "<group>"; };
+		5F56FFB0298E3CB10085DAD0 /* ForecastViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModelTests.swift; sourceTree = "<group>"; };
 		5F5CA33B298A061B006074B3 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		5F5CA33D298A069C006074B3 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		5F5CA33F298A1B61006074B3 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				5F56FFA6298E319E0085DAD0 /* DayViewModelTests.swift */,
+				5F56FFB0298E3CB10085DAD0 /* ForecastViewModelTests.swift */,
 			);
 			path = "Test Cases";
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F56FFB1298E3CB10085DAD0 /* ForecastViewModelTests.swift in Sources */,
 				5F56FFA7298E319E0085DAD0 /* DayViewModelTests.swift in Sources */,
 				5F56FFAD298E34740085DAD0 /* XCTestCase+Extension .swift in Sources */,
 			);
