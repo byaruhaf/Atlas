@@ -128,19 +128,19 @@
                                 </constraints>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="9cO-Z4-Wwe">
-                                <rect key="frame" x="186.66666666666666" y="190.33333333333334" width="20" height="20"/>
+                                <rect key="frame" x="201.33333333333334" y="190.33333333333334" width="20" height="20"/>
                             </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="J49-vt-SbW">
-                                <rect key="frame" x="133" y="80" width="127.33333333333331" height="120.66666666666669"/>
+                                <rect key="frame" x="133" y="80" width="156.66666666666663" height="120.66666666666669"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 °" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPk-TH-hPe">
-                                        <rect key="frame" x="0.0" y="0.0" width="127.33333333333333" height="74"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="156.66666666666666" height="74"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="62"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUNNY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="II2-8K-Vml">
-                                        <rect key="frame" x="0.0" y="75" width="127.33333333333333" height="45.666666666666657"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="II2-8K-Vml">
+                                        <rect key="frame" x="0.0" y="75" width="156.66666666666666" height="45.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
