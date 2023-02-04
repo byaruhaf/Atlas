@@ -22,7 +22,7 @@ if [ -f $FILE ]; then
     echo "$FILE already exists. Skipping."
 else
     echo "Creating $FILE..."
-    cp $CI_WORKSPACE/Meet/Configuration/secrets.template.xcconfig $FILE
+    cp $CI_WORKSPACE/Atlas/Configuration/secrets.template.xcconfig $FILE
     # Replace the line "API_KEY =" with "API_KEY = $API_KEY""
     sed -i -e "s/API_KEY =/API_KEY = $API_KEY/g" "$FILE"
     echo "update API Key"
