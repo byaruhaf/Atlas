@@ -40,7 +40,7 @@ final class ForecastViewController: UIViewController {
     
     // MARK: - View Methods
     private func setupViewModel(with viewModel: ForecastViewModel) {
-        print(viewModel.weeksDayWeatherData)
+//        print(viewModel.weeksDayWeatherData)
         configureDataSource()
         reloadData(weatherDayData: viewModel.weeksDayWeatherData)
     }
