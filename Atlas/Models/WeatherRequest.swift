@@ -10,16 +10,23 @@ import CoreLocation
 
 enum RequestType: String {
     case weather, forecast
+    
+    func callAsFunction() -> String {
+        self.rawValue
+    }
 }
 
 enum TemperatureUnit: String {
     case metric, forecast
+    
+    func callAsFunction() -> String {
+        self.rawValue
+    }
 }
 
 enum Defaults {
-    static let location = CLLocation(latitude: 0.347596, longitude: 32.582520)
-//    static let location = CLLocation(latitude: 44.34, longitude: 10.99)
-
+//    static let location = CLLocation(latitude: 0.347596, longitude: 32.582520)
+    static let location = CLLocation(latitude: 44.34, longitude: 10.99)
 }
 
 struct WeatherRequest {
@@ -45,12 +52,12 @@ struct WeatherRequest {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.openweathermap.org"
-        urlComponents.path = "/data/2.5/\(requestType.rawValue)"
+        urlComponents.path = "/data/2.5/\(requestType())"
         urlComponents.queryItems = [
             .init(name: "lat", value: "\(latitude)"),
             .init(name: "lon", value: "\(longitude)"),
             .init(name: "appid", value: "\(WeatherService.apiKey)"),
-            .init(name: "units", value: "\(units.rawValue)")
+            .init(name: "units", value: "\(units())")
         ]
         
         guard let url = urlComponents.url else {
