@@ -9,11 +9,15 @@ import UIKit
 
 class ForecastListCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
     
-    @IBOutlet var backgroundVDayiew: UIView!
     @IBOutlet var dayOfWeekLable: UILabel!
     @IBOutlet var iconImageView: UIImageView!
     @IBOutlet var temperatureLable: UILabel!
-    
+    @IBOutlet var backgroundVDayiew: UIView! {
+        didSet {
+            backgroundVDayiew.tintColor = .white
+            backgroundVDayiew.contentMode = .scaleAspectFit
+        }
+    }
     @IBOutlet var smallTitleLabels: [UILabel]! {
         didSet {
             for label in smallTitleLabels {
@@ -31,7 +35,7 @@ class ForecastListCollectionViewCell: UICollectionViewCell, SelfConfiguringCell 
     func configure(with weatherDayData: WeatherDayData) {
         self.dayOfWeekLable.text = weatherDayData.day
         self.temperatureLable.text = weatherDayData.temperature.description
-        self.iconImageView.image = UIImage(named: weatherDayData.backgroundImageName)
+        self.iconImageView.image = weatherDayData.backgroundImageName
         backgroundView?.backgroundColor = ThemeManager.shared.currentBackgroundColor?.backgroundColor
         backgroundVDayiew.backgroundColor = ThemeManager.shared.currentBackgroundColor?.backgroundColor
     }

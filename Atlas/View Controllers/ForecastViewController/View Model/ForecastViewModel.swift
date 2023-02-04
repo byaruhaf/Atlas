@@ -20,21 +20,3 @@ struct ForecastViewModel {
         return temp
     }
 }
-
-struct WeatherDayData: Hashable {
-    var day: String
-    var condition: String
-    var temperature: Double
-    
-    var backgroundImageName: String {
-    guard let weatherType = WeatherType(rawValue: condition) else { return "" }
-        switch weatherType {
-        case .rain, .thunderstorm, .drizzle, .snow:
-            return "rain"
-        case .clouds:
-            return "partlysunny"
-        case .clear, .unknown:
-            return "clear"
-        }
-    }
-}
