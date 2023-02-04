@@ -88,18 +88,3 @@ final class CurrentLocationViewController: UIViewController {
         }
     }
 }
-
-enum CustomError: Error, CustomStringConvertible {
-    case message(String)
-    
-    var description: String {
-        switch self {
-        case let .message(message):
-            return message
-        }
-    }
-    
-    init(_ message: String) {
-        self = .message(message)
-    }
-}
