@@ -7,7 +7,7 @@
 
 import UIKit.UIImage
 
-struct WeatherDayData: Hashable {
+struct WeatherDayData {
     var day: String
     var condition: String
     var temperature: Double
@@ -16,4 +16,7 @@ struct WeatherDayData: Hashable {
         guard let weatherType = WeatherType(rawValue: condition) else { return UIImage(systemName: "cloud")! }
         return WeatherConditionIcon.image(for: weatherType)
     }
+}
+
+extension WeatherDayData: WeekDayRepresentable {
 }

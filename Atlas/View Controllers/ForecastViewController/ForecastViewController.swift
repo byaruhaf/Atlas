@@ -67,7 +67,7 @@ final class ForecastViewController: UIViewController {
 // MARK: - Data Source
 extension ForecastViewController {
     // Configure Cell
-    func configure<T: SelfConfiguringCell  & ReusableView >(_ cellType: T.Type, with weatherDayData: WeatherDayData, for indexPath: IndexPath) -> T {
+    func configure<T: SelfConfiguringCell  & ReusableView >(_ cellType: T.Type, with weatherDayData: any WeekDayRepresentable, for indexPath: IndexPath) -> T {
         guard let cell = forecastListCollection.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
             fatalError("Unable to dequeue \(cellType)")
         }

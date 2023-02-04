@@ -32,7 +32,7 @@ class ForecastListCollectionViewCell: UICollectionViewCell, SelfConfiguringCell 
         // Initialization code
     }
 
-    func configure(with weatherDayData: WeatherDayData) {
+    func configure(with weatherDayData: any WeekDayRepresentable) {
         self.dayOfWeekLable.text = weatherDayData.day
         self.temperatureLable.text = weatherDayData.temperature.description
         self.iconImageView.image = weatherDayData.backgroundImageName
