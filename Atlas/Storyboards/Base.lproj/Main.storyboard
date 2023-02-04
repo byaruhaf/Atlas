@@ -3,27 +3,11 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favorites View Controller-->
-        <scene sceneID="UPu-JB-lnc">
-            <objects>
-                <viewController id="6YX-2p-LE5" customClass="FavoritesViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6gC-TJ-5c0">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="rVl-XB-Jd4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="nL8-cj-6ro"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xEQ-oD-B5H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1921.3740458015266" y="-582.3943661971831"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4yx-wQ-zH7">
             <objects>
@@ -36,32 +20,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="9Cl-I2-STH" kind="relationship" relationship="viewControllers" id="UE9-BG-dco"/>
-                        <segue destination="7ET-zx-2Zo" kind="relationship" relationship="viewControllers" id="bkY-28-cO4"/>
+                        <segue destination="0rr-Xp-c0N" kind="relationship" relationship="viewControllers" id="PNO-Mx-a5g"/>
                         <segue destination="D0l-Pc-p5f" kind="relationship" relationship="viewControllers" id="cBK-vc-RpO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYW-ID-CFB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="822" y="-1463"/>
-        </scene>
-        <!--Favorites-->
-        <scene sceneID="hZS-EE-gp7">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7ET-zx-2Zo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="XtT-Sp-uP4"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wvg-kU-SNh">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="6YX-2p-LE5" kind="relationship" relationship="rootViewController" id="tdJ-8J-cnB"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IYW-Bk-wbb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="994.6564885496183" y="-582.3943661971831"/>
         </scene>
         <!--Settings-->
         <scene sceneID="LvP-Vj-Q5h">
@@ -82,6 +47,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wj2-8S-UnF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="340" y="-1037"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="6K7-n6-9rX">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="0rr-Xp-c0N" customClass="FavoritesViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="Frx-3P-Qxr"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pVd-lc-lUL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="-693"/>
+        </scene>
+        <!--Favorites Collection View Controller-->
+        <scene sceneID="fj9-83-4Rm">
+            <objects>
+                <collectionViewController storyboardIdentifier="FavoritesCollection" id="ywy-5P-8cR" customClass="FavoritesCollectionViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vxY-f2-7aP">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ckA-7r-jws">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="city" id="OCC-xc-Se0">
+                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4aU-2n-8FB">
+                                    <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="ywy-5P-8cR" id="LAO-b8-h5y"/>
+                            <outlet property="delegate" destination="ywy-5P-8cR" id="ZN6-1k-afZ"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ude-ys-6Tv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1717" y="-265"/>
         </scene>
     </scenes>
     <resources>

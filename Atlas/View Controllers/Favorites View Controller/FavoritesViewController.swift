@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController {
+class FavoritesViewController: UIPageViewController {
     var viewModel: FavoritesViewModel?
     
     override func viewDidLoad() {
