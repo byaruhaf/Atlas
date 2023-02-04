@@ -28,6 +28,10 @@
 		5F505E222989366D00EAFE2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F505E202989366D00EAFE2E /* Main.storyboard */; };
 		5F505E242989366F00EAFE2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F505E232989366F00EAFE2E /* Assets.xcassets */; };
 		5F505E272989366F00EAFE2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F505E252989366F00EAFE2E /* LaunchScreen.storyboard */; };
+		5F56FFA7298E319E0085DAD0 /* DayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F56FFA6298E319E0085DAD0 /* DayViewModelTests.swift */; };
+		5F56FFAA298E342F0085DAD0 /* current.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F56FFA9298E342F0085DAD0 /* current.json */; };
+		5F56FFAD298E34740085DAD0 /* XCTestCase+Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F56FFAC298E34740085DAD0 /* XCTestCase+Extension .swift */; };
+		5F56FFAF298E3A6C0085DAD0 /* forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F56FFAE298E3A6C0085DAD0 /* forecast.json */; };
 		5F5CA33C298A061B006074B3 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CA33B298A061B006074B3 /* Forecast.swift */; };
 		5F5CA33E298A069C006074B3 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CA33D298A069C006074B3 /* CurrentWeather.swift */; };
 		5F5CA340298A1B61006074B3 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CA33F298A1B61006074B3 /* DayViewController.swift */; };
@@ -47,6 +51,16 @@
 		5FF54D68298B10EE000FF779 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF54D67298B10EE000FF779 /* DayViewModel.swift */; };
 		5FF54D6B298B117F000FF779 /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF54D6A298B117F000FF779 /* ForecastViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5F56FFA0298E30F80085DAD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F505E0F2989366D00EAFE2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F505E162989366D00EAFE2E;
+			remoteInfo = Atlas;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension .swift"; sourceTree = "<group>"; };
@@ -72,6 +86,11 @@
 		5F505E232989366F00EAFE2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F505E262989366F00EAFE2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F505E282989366F00EAFE2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F56FF9C298E30F80085DAD0 /* AtlasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AtlasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F56FFA6298E319E0085DAD0 /* DayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModelTests.swift; sourceTree = "<group>"; };
+		5F56FFA9298E342F0085DAD0 /* current.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = current.json; sourceTree = "<group>"; };
+		5F56FFAC298E34740085DAD0 /* XCTestCase+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension .swift"; sourceTree = "<group>"; };
+		5F56FFAE298E3A6C0085DAD0 /* forecast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forecast.json; sourceTree = "<group>"; };
 		5F5CA33B298A061B006074B3 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		5F5CA33D298A069C006074B3 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		5F5CA33F298A1B61006074B3 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +115,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		5F505E142989366D00EAFE2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F56FF99298E30F80085DAD0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -161,6 +187,7 @@
 			children = (
 				5FCCAEFA298DF6C600A652C4 /* ci_scripts */,
 				5F505E192989366D00EAFE2E /* Atlas */,
+				5F56FF9D298E30F80085DAD0 /* AtlasTests */,
 				5F505E182989366D00EAFE2E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -169,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				5F505E172989366D00EAFE2E /* Atlas.app */,
+				5F56FF9C298E30F80085DAD0 /* AtlasTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -247,6 +275,41 @@
 				5F505E282989366F00EAFE2E /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F56FF9D298E30F80085DAD0 /* AtlasTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F56FFAB298E34500085DAD0 /* Extensions */,
+				5F56FFA8298E33F60085DAD0 /* Stubs */,
+				5F56FFA5298E315B0085DAD0 /* Test Cases */,
+			);
+			path = AtlasTests;
+			sourceTree = "<group>";
+		};
+		5F56FFA5298E315B0085DAD0 /* Test Cases */ = {
+			isa = PBXGroup;
+			children = (
+				5F56FFA6298E319E0085DAD0 /* DayViewModelTests.swift */,
+			);
+			path = "Test Cases";
+			sourceTree = "<group>";
+		};
+		5F56FFA8298E33F60085DAD0 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				5F56FFAE298E3A6C0085DAD0 /* forecast.json */,
+				5F56FFA9298E342F0085DAD0 /* current.json */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		5F56FFAB298E34500085DAD0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5F56FFAC298E34740085DAD0 /* XCTestCase+Extension .swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		5F5CA33A298A0607006074B3 /* Models */ = {
@@ -375,6 +438,24 @@
 			productReference = 5F505E172989366D00EAFE2E /* Atlas.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5F56FF9B298E30F80085DAD0 /* AtlasTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F56FFA2298E30F80085DAD0 /* Build configuration list for PBXNativeTarget "AtlasTests" */;
+			buildPhases = (
+				5F56FF98298E30F80085DAD0 /* Sources */,
+				5F56FF99298E30F80085DAD0 /* Frameworks */,
+				5F56FF9A298E30F80085DAD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F56FFA1298E30F80085DAD0 /* PBXTargetDependency */,
+			);
+			name = AtlasTests;
+			productName = AtlasTests;
+			productReference = 5F56FF9C298E30F80085DAD0 /* AtlasTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -387,6 +468,10 @@
 				TargetAttributes = {
 					5F505E162989366D00EAFE2E = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					5F56FF9B298E30F80085DAD0 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 5F505E162989366D00EAFE2E;
 					};
 				};
 			};
@@ -404,6 +489,7 @@
 			projectRoot = "";
 			targets = (
 				5F505E162989366D00EAFE2E /* Atlas */,
+				5F56FF9B298E30F80085DAD0 /* AtlasTests */,
 			);
 		};
 /* End PBXProject section */
@@ -420,6 +506,15 @@
 				5F72E1C6298E00A500858576 /* CurrentLocation.storyboard in Resources */,
 				5FCCAEFC298DF71A00A652C4 /* ci_post_clone.sh in Resources */,
 				5F505E222989366D00EAFE2E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F56FF9A298E30F80085DAD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F56FFAF298E3A6C0085DAD0 /* forecast.json in Resources */,
+				5F56FFAA298E342F0085DAD0 /* current.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,7 +582,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5F56FF98298E30F80085DAD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F56FFA7298E319E0085DAD0 /* DayViewModelTests.swift in Sources */,
+				5F56FFAD298E34740085DAD0 /* XCTestCase+Extension .swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F56FFA1298E30F80085DAD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F505E162989366D00EAFE2E /* Atlas */;
+			targetProxy = 5F56FFA0298E30F80085DAD0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5F505E202989366D00EAFE2E /* Main.storyboard */ = {
@@ -705,6 +817,42 @@
 			};
 			name = Release;
 		};
+		5F56FFA3298E30F80085DAD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WV9WZS43J9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appbantu.AtlasTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Atlas.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Atlas";
+			};
+			name = Debug;
+		};
+		5F56FFA4298E30F80085DAD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WV9WZS43J9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appbantu.AtlasTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Atlas.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Atlas";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -722,6 +870,15 @@
 			buildConfigurations = (
 				5F505E2C2989366F00EAFE2E /* Debug */,
 				5F505E2D2989366F00EAFE2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F56FFA2298E30F80085DAD0 /* Build configuration list for PBXNativeTarget "AtlasTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F56FFA3298E30F80085DAD0 /* Debug */,
+				5F56FFA4298E30F80085DAD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
