@@ -303,6 +303,7 @@
 		5FC3A52F298A44660071FA66 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5F4AB483298C595E0007815D /* Styles.swift */,
 				5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */,
 			);
 			path = Extensions;
@@ -312,7 +313,6 @@
 			isa = PBXGroup;
 			children = (
 				5FC3A535298A6F440071FA66 /* Configuration.swift */,
-				5F4AB483298C595E0007815D /* Styles.swift */,
 				5FBA09C7298DF0D60027D55C /* secrets.template.xcconfig */,
 				5FCCAEF9298DF34D00A652C4 /* secrets.xcconfig */,
 			);
