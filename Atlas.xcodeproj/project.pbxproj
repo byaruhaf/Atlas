@@ -34,7 +34,7 @@
 		5F5CA342298A1BC7006074B3 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CA341298A1BC7006074B3 /* ForecastViewController.swift */; };
 		5F72E1C4298DFFE700858576 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F72E1C2298DFFE700858576 /* Settings.storyboard */; };
 		5F72E1C6298E00A500858576 /* CurrentLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F72E1C5298E00A500858576 /* CurrentLocation.storyboard */; };
-		5F72E1C8298E201200858576 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F72E1C7298E201200858576 /* CustomError.swift */; };
+		5F72E1C8298E201200858576 /* AtlasError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F72E1C7298E201200858576 /* AtlasError.swift */; };
 		5FB8F4A3298AD9DD00B8A158 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8F4A2298AD9DD00B8A158 /* Alert.swift */; };
 		5FB8F4A6298AF65800B8A158 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8F4A5298AF65800B8A158 /* WeatherData.swift */; };
 		5FBA09C6298DD2CB0027D55C /* WeatherDayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA09C5298DD2CB0027D55C /* WeatherDayData.swift */; };
@@ -78,7 +78,7 @@
 		5F5CA341298A1BC7006074B3 /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		5F72E1C3298DFFE700858576 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Atlas/Storyboards/Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		5F72E1C5298E00A500858576 /* CurrentLocation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CurrentLocation.storyboard; sourceTree = "<group>"; };
-		5F72E1C7298E201200858576 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		5F72E1C7298E201200858576 /* AtlasError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtlasError.swift; sourceTree = "<group>"; };
 		5FB8F4A2298AD9DD00B8A158 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		5FB8F4A5298AF65800B8A158 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		5FBA09C5298DD2CB0027D55C /* WeatherDayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDayData.swift; sourceTree = "<group>"; };
@@ -266,7 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				5FB8F4A2298AD9DD00B8A158 /* Alert.swift */,
-				5F72E1C7298E201200858576 /* CustomError.swift */,
+				5F72E1C7298E201200858576 /* AtlasError.swift */,
 				5FC3A530298A44B60071FA66 /* WeatherConditionIcon.swift */,
 				5F4AB471298BCBD20007815D /*  DependencyProvider.swift */,
 			);
@@ -469,7 +469,7 @@
 				5FB8F4A3298AD9DD00B8A158 /* Alert.swift in Sources */,
 				5F4AB472298BCBD20007815D /*  DependencyProvider.swift in Sources */,
 				5F4AB475298BD1B10007815D /* FavoritesViewController.swift in Sources */,
-				5F72E1C8298E201200858576 /* CustomError.swift in Sources */,
+				5F72E1C8298E201200858576 /* AtlasError.swift in Sources */,
 				5F505E1B2989366D00EAFE2E /* AppDelegate.swift in Sources */,
 				5F3282A4298CD2790079CF67 /* SettingsView.swift in Sources */,
 				5FC3A536298A6F440071FA66 /* Configuration.swift in Sources */,

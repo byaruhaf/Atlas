@@ -1,5 +1,5 @@
 //
-//  CustomError.swift
+//  AtlasError.swift
 //  Atlas
 //
 //  Created by Franklin Byaruhanga on 04/02/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CustomError: Error, CustomStringConvertible {
+enum AtlasError: Error, CustomStringConvertible {
     case message(String)
     
     var description: String {
