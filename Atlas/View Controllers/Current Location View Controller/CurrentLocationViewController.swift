@@ -17,7 +17,7 @@ final class CurrentLocationViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet private var dayViewController: DayViewController!
     @IBOutlet private var forcastViewController: ForecastViewController!
-
+    
     // MARK: - Properties
     var viewModel: CurrentLocationViewModel? {
         didSet {
@@ -60,21 +60,24 @@ final class CurrentLocationViewController: UIViewController {
     
     private func setupViewModel(with viewModel: CurrentLocationViewModel) {
         Task(priority: .userInitiated) {
-            
             do {
                 try await viewModel()
-                // Configure Day View Controller
-                guard let current = viewModel.current else { return }
-                self.dayViewController.viewModel = DayViewModel(weatherData: current)
-                determineColorTheme(condtion: current.weather[0].weatherType)
-                // Configure Forcast View Controller
-                guard let forecast = viewModel.forecast else { return }
-                self.forcastViewController.viewModel = ForecastViewModel(weatherData: forecast)
+                updateChildViewControllerViewModels(with: viewModel)
             } catch {
-                Alert.showBasic(title: "Unable to Fetch Weather Data", message: "The application is unable to fetch weather data. Please make sure your device is connected over Wi-Fi or cellular.", viewController: self)
+                Alert.presentDefaultError(for: self)
                 print(error.localizedDescription) // TODO: Log this with Logger
             }
         }
+    }
+    
+    private func updateChildViewControllerViewModels(with: CurrentLocationViewModel) {
+        // Configure Day View Controller
+        guard let current = viewModel?.current else { return }
+        self.dayViewController.viewModel = DayViewModel(weatherData: current)
+        determineColorTheme(condtion: current.weather[0].weatherType)
+        // Configure Forcast View Controller
+        guard let forecast = viewModel?.forecast else { return }
+        self.forcastViewController.viewModel = ForecastViewModel(weatherData: forecast)
     }
     
     private func determineColorTheme(condtion: WeatherType) {

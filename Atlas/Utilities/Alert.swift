@@ -15,4 +15,7 @@ class Alert {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         viewController.present(alert, animated: true)
     }
+    class func presentDefaultError(for viewController: UIViewController) {
+        Alert.showBasic(title: "Unable to Fetch Weather Data", message: "The application is unable to fetch weather data. Please make sure your device is connected over Wi-Fi or cellular.", viewController: viewController)
+    }
 }
