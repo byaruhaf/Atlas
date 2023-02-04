@@ -207,6 +207,16 @@
             </objects>
             <point key="canvasLocation" x="1921.3740458015266" y="-582.3943661971831"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="SEF-Rd-8bG">
+            <objects>
+                <hostingController id="WzM-aY-zyO" customClass="SettingsViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="eI9-sY-z36"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LSS-XI-ZFc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2866.4122137404579" y="-579.57746478873241"/>
+        </scene>
         <!--Forecast View Controller-->
         <scene sceneID="6tM-Yu-Snz">
             <objects>
@@ -257,7 +267,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="UE9-BG-dco"/>
                         <segue destination="7ET-zx-2Zo" kind="relationship" relationship="viewControllers" id="bkY-28-cO4"/>
-                        <segue destination="D0l-Pc-p5f" kind="relationship" relationship="viewControllers" id="cBK-vc-RpO"/>
+                        <segue destination="WzM-aY-zyO" kind="relationship" relationship="viewControllers" id="cBK-vc-RpO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYW-ID-CFB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -283,19 +293,10 @@
             </objects>
             <point key="canvasLocation" x="994.6564885496183" y="-582.3943661971831"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="LvP-Vj-Q5h">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Settings" id="D0l-Pc-p5f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="wKJ-hr-Koq"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ohd-7W-HTs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2263" y="-1037"/>
-        </scene>
     </scenes>
     <resources>
         <image name="forest_cloudy" width="360" height="321"/>
+        <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="location.fill" catalog="system" width="128" height="119"/>
         <namedColor name="CLOUDY">

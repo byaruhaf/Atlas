@@ -32,6 +32,7 @@
 		5F5CA33E298A069C006074B3 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CA33D298A069C006074B3 /* CurrentWeather.swift */; };
 		5F5CA340298A1B61006074B3 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CA33F298A1B61006074B3 /* DayViewController.swift */; };
 		5F5CA342298A1BC7006074B3 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CA341298A1BC7006074B3 /* ForecastViewController.swift */; };
+		5F72E1C4298DFFE700858576 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F72E1C2298DFFE700858576 /* Settings.storyboard */; };
 		5FB8F4A3298AD9DD00B8A158 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8F4A2298AD9DD00B8A158 /* Alert.swift */; };
 		5FB8F4A6298AF65800B8A158 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8F4A5298AF65800B8A158 /* WeatherData.swift */; };
 		5FBA09C6298DD2CB0027D55C /* WeatherDayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA09C5298DD2CB0027D55C /* WeatherDayData.swift */; };
@@ -73,6 +74,7 @@
 		5F5CA33D298A069C006074B3 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		5F5CA33F298A1B61006074B3 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		5F5CA341298A1BC7006074B3 /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
+		5F72E1C3298DFFE700858576 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Atlas/Storyboards/Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		5FB8F4A2298AD9DD00B8A158 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		5FB8F4A5298AF65800B8A158 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		5FBA09C5298DD2CB0027D55C /* WeatherDayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDayData.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				5F505E202989366D00EAFE2E /* Main.storyboard */,
+				5F72E1C2298DFFE700858576 /* Settings.storyboard */,
 				5F505E252989366F00EAFE2E /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -407,6 +410,7 @@
 				5F505E272989366F00EAFE2E /* LaunchScreen.storyboard in Resources */,
 				5F328298298C9B380079CF67 /* ForecastListCollectionViewCell.xib in Resources */,
 				5F505E242989366F00EAFE2E /* Assets.xcassets in Resources */,
+				5F72E1C4298DFFE700858576 /* Settings.storyboard in Resources */,
 				5FCCAEFC298DF71A00A652C4 /* ci_post_clone.sh in Resources */,
 				5F505E222989366D00EAFE2E /* Main.storyboard in Resources */,
 			);
@@ -492,6 +496,14 @@
 				5F505E262989366F00EAFE2E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5F72E1C2298DFFE700858576 /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F72E1C3298DFFE700858576 /* Base */,
+			);
+			name = Settings.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
