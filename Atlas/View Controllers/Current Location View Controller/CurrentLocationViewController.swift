@@ -21,9 +21,7 @@ final class CurrentLocationViewController: UIViewController {
     // MARK: - Properties
     var viewModel: CurrentLocationViewModel? {
         didSet {
-            guard let viewModel = viewModel else {
-                return
-            }
+            guard let viewModel else { return }
             // Setup View Model
             setupViewModel(with: viewModel)
         }

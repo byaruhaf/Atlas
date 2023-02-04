@@ -61,10 +61,7 @@ final class DayViewController: UIViewController {
     
     var viewModel: DayViewModel? {
         didSet {
-            //            updateView()
-            guard let viewModel = viewModel else {
-                return
-            }
+            guard let viewModel else { return }
             // Setup View Model
             setupViewModel(with: viewModel)
         }

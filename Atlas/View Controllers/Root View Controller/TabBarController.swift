@@ -34,9 +34,7 @@ class TabBarController: UITabBarController {
     // MARK: - Helper Methods
 
     private func setupChildViewControllers() {
-        guard let viewControllers = viewControllers else {
-            return
-        }
+        guard let viewControllers else { return }
         
         for viewController in viewControllers {
             var childViewController: UIViewController?
