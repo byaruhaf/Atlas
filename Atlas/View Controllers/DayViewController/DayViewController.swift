@@ -42,7 +42,7 @@ final class DayViewController: UIViewController {
     @IBOutlet var smallTitleLabels: [UILabel]! {
         didSet {
             for label in smallTitleLabels {
-                label.textColor = .white
+                label.textColor = UIColor.Atlas.baseTextColor
                 label.font = UIFont.Atlas.bodyRegular
             }
         }
