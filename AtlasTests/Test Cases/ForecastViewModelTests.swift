@@ -37,35 +37,19 @@ final class ForecastViewModelTests: XCTestCase {
     override func tearDownWithError() throws {
         try super.tearDownWithError()
     }
-
-    // MARK: - Tests for day
-    func testWeeksDayWeatherData_day() throws {
-        let firstDay = viewModel.weeksDayWeatherData.first!
-        XCTAssertEqual(firstDay.day, "  Sat 12:00 PM")
+    
+    // MARK: - Tests weatherData count forecasted
+    
+    func testNumberOfDays() {
+        XCTAssertEqual(viewModel.weatherData.list.count, 40)
     }
     
-    // MARK: - Tests for condition
-    func testWeeksDayWeatherData_condition() throws {
-        let firstDay = viewModel.weeksDayWeatherData.first!
-        XCTAssertEqual(firstDay.condition, "Clouds")
-    }
+    // MARK: - Tests for forecast Day ViewModel generation
     
-    // MARK: - Tests for temperature
-    func testWeeksDayWeatherData_temperature() throws {
-        let firstDay = viewModel.weeksDayWeatherData.first!
-        XCTAssertEqual(firstDay.temperature.description, "3.28")
-    }
-
-    // MARK: - Tests for backgroundImageName
-    func testWeeksDayWeatherData_backgroundImageName() throws {
-        let firstDay = viewModel.weeksDayWeatherData.first!
-        let viewModelImage = firstDay.backgroundImageName
-        let imageDataViewModel = viewModelImage.pngData()!
-        let pointSize = UIImage.SymbolConfiguration(pointSize: 30)
-        let caption = UIImage.SymbolConfiguration(textStyle: .caption2)
-        let thin = UIImage.SymbolConfiguration(weight: .thin)
-        let combined = caption.applying(pointSize).applying(thin)
-        let imageDataReference = UIImage(systemName: "cloud", withConfiguration: combined)!.pngData()!
-        XCTAssertEqual(imageDataViewModel, imageDataReference)
+    func testViewModelForIndex() {
+        let forecastDayViewModel = viewModel.generateForecastDayViewModel(from: viewModel.weatherData)
+        
+        XCTAssertEqual(forecastDayViewModel.first?.day, "  Sat 12:00 PM")
+        XCTAssertEqual(forecastDayViewModel.first?.temperature.description, "3.28")
     }
 }

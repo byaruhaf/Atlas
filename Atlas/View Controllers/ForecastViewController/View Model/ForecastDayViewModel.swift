@@ -1,5 +1,5 @@
 //
-//  WeatherDayData.swift
+//  ForecastDayViewModel.swift
 //  Atlas
 //
 //  Created by Franklin Byaruhanga on 04/02/2023.
@@ -7,7 +7,7 @@
 
 import UIKit.UIImage
 
-struct WeatherDayData {
+struct ForecastDayViewModel {
     var day: String
     var condition: String
     var temperature: Double
@@ -18,5 +18,5 @@ struct WeatherDayData {
     }
 }
 
-extension WeatherDayData: WeekDayRepresentable {
+extension ForecastDayViewModel: WeekDayRepresentable {
 }

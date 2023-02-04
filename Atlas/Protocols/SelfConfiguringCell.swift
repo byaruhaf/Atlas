@@ -8,5 +8,5 @@
 import Foundation
 
 protocol SelfConfiguringCell {
-    func configure(with weatherDayData: any WeekDayRepresentable)
+    func configure(with forecastDayViewModel: any WeekDayRepresentable)
 }

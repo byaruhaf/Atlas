@@ -13,7 +13,7 @@ final class ForecastViewController: UIViewController {
         case main
     }
     
-    var dataSource: UICollectionViewDiffableDataSource<Section, WeatherDayData>!
+    var dataSource: UICollectionViewDiffableDataSource<Section, ForecastDayViewModel>!
     
     @IBOutlet var forecastListCollection: UICollectionView! {
         didSet {
@@ -40,7 +40,7 @@ final class ForecastViewController: UIViewController {
     private func setupViewModel(with viewModel: ForecastViewModel) {
 //        print(viewModel.weeksDayWeatherData)
         configureDataSource()
-        reloadData(weatherDayData: viewModel.weeksDayWeatherData)
+        reloadData(forecastDayViewModel: viewModel.generateForecastDayViewModel(from: viewModel.weatherData))
     }
 
     // MARK: - View Life Cycle
@@ -67,26 +67,26 @@ final class ForecastViewController: UIViewController {
 // MARK: - Data Source
 extension ForecastViewController {
     // Configure Cell
-    func configure<T: SelfConfiguringCell  & ReusableView >(_ cellType: T.Type, with weatherDayData: any WeekDayRepresentable, for indexPath: IndexPath) -> T {
+    func configure<T: SelfConfiguringCell  & ReusableView >(_ cellType: T.Type, with forecastDayViewModel: any WeekDayRepresentable, for indexPath: IndexPath) -> T {
         guard let cell = forecastListCollection.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
             fatalError("Unable to dequeue \(cellType)")
         }
-        cell.configure(with: weatherDayData)
+        cell.configure(with: forecastDayViewModel)
         return cell
     }
     
     // Configure Collection Data Source
     func configureDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, WeatherDayData>(collectionView: forecastListCollection) { _, indexPath, weatherDayData -> UICollectionViewCell? in
-            self.configure(ForecastListCollectionViewCell.self, with: weatherDayData, for: indexPath)
+        dataSource = UICollectionViewDiffableDataSource<Section, ForecastDayViewModel>(collectionView: forecastListCollection) { _, indexPath, forecastDayViewModel -> UICollectionViewCell? in
+            self.configure(ForecastListCollectionViewCell.self, with: forecastDayViewModel, for: indexPath)
         }
     }
     
     // load snapshot of Data
-    func reloadData(weatherDayData: [WeatherDayData]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, WeatherDayData>()
+    func reloadData(forecastDayViewModel: [ForecastDayViewModel]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, ForecastDayViewModel>()
         snapshot.appendSections([.main])
-        snapshot.appendItems(weatherDayData, toSection: .main)
+        snapshot.appendItems(forecastDayViewModel, toSection: .main)
         dataSource.apply(snapshot)
     }
 }
