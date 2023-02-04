@@ -8,5 +8,5 @@
 import Foundation
 
 enum WeatherService {
-    static let apiKey = "5a568ba1adb3fc3e8806cb1a4e00b623"
+    static let apiKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as! String
 }
