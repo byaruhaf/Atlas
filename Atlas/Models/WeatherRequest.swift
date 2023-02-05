@@ -25,8 +25,8 @@ enum TemperatureUnit: String {
 }
 
 enum Defaults {
-//    static let location = CLLocation(latitude: 0.347596, longitude: 32.582520)
-    static let location = CLLocation(latitude: 44.34, longitude: 10.99)
+    static let location = CLLocation(latitude: 0.347596, longitude: 32.582520)
+//    static let location = CLLocation(latitude: 44.34, longitude: 10.99)
 }
 
 struct WeatherRequest {

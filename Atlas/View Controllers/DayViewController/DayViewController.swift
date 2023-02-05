@@ -82,6 +82,18 @@ final class DayViewController: UIViewController {
             conditonLabel.text = viewModel.weatherCondition
             backgroundImageView.image = UIImage(named: viewModel.backgroundImageName)
         }
+        determineColorTheme(condtion: viewModel.weatherData.weather[0].weatherType)
+    }
+    
+    private func determineColorTheme(condtion: WeatherType) {
+        switch condtion {
+        case .rain, .thunderstorm, .drizzle, .snow:
+            ThemeManager.shared.currentBackgroundColor = RainColorTheme()
+        case .clouds:
+            ThemeManager.shared.currentBackgroundColor = CloudyColorTheme()
+        case .clear, .unknown:
+            ThemeManager.shared.currentBackgroundColor = SunnyColorTheme()
+        }
     }
     
     // MARK: - View Life Cycle

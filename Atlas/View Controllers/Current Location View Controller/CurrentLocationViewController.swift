@@ -61,33 +61,17 @@ final class CurrentLocationViewController: UIViewController {
     private func setupViewModel(with viewModel: CurrentLocationViewModel) {
         Task(priority: .userInitiated) {
             do {
-                try await viewModel()
-                updateChildViewControllerViewModels(with: viewModel)
+//                try await viewModel()
+                // Configure Day View Controller
+                async let current = try await viewModel.loadCurrentWeatherData(for: Defaults.location)
+                self.dayViewController.viewModel = await DayViewModel(weatherData: try current)
+                // Configure Forcast View Controller
+                async let forecast = try await viewModel.loadForecastWeatherData(for: Defaults.location)
+                self.forcastViewController.viewModel = await ForecastViewModel(weatherData: try forecast)
             } catch {
                 Alert.presentDefaultError(for: self)
                 print(error.localizedDescription) // TODO: Log this with Logger
             }
-        }
-    }
-    
-    private func updateChildViewControllerViewModels(with: CurrentLocationViewModel) {
-        // Configure Day View Controller
-        guard let current = viewModel?.current else { return }
-        self.dayViewController.viewModel = DayViewModel(weatherData: current)
-        determineColorTheme(condtion: current.weather[0].weatherType)
-        // Configure Forcast View Controller
-        guard let forecast = viewModel?.forecast else { return }
-        self.forcastViewController.viewModel = ForecastViewModel(weatherData: forecast)
-    }
-    
-    private func determineColorTheme(condtion: WeatherType) {
-        switch condtion {
-        case .rain, .thunderstorm, .drizzle, .snow:
-            ThemeManager.shared.currentBackgroundColor = RainColorTheme()
-        case .clouds:
-            ThemeManager.shared.currentBackgroundColor = CloudyColorTheme()
-        case .clear, .unknown:
-            ThemeManager.shared.currentBackgroundColor = SunnyColorTheme()
         }
     }
 }

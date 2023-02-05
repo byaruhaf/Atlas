@@ -7,15 +7,6 @@
 
 import Foundation
 
-protocol WeatherData {
-//
-//    var latitude: Double { get }
-//    var longitude: Double { get }
-    
-    var current: CurrentWeatherConditions? { get set }
-    var forecast: ForecastWeatherConditions? { get set }
-}
-
 protocol CurrentWeatherConditions {
     var weather: [Weather] { get }
     var main: Main { get }

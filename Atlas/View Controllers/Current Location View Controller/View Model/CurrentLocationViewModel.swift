@@ -14,22 +14,7 @@ enum WeatherDataError: Error {
     case noWeatherDataAvailable
 }
 
-// @MainActor
-final class CurrentLocationViewModel: WeatherData {
-    var current: CurrentWeatherConditions?
-    var forecast: ForecastWeatherConditions?
-        
-    func callAsFunction() async throws {
-        do {
-            async let current = try await self.loadCurrentWeatherData(for: Defaults.location)
-            async let forecast = try await self.loadForecastWeatherData(for: Defaults.location)
-            self.current = try await current
-            self.forecast = try await forecast
-        } catch {
-            print(error.localizedDescription) // TODO: Log this with Logger
-            throw  WeatherDataError.noWeatherDataAvailable
-        }
-    }
+final class CurrentLocationViewModel {
 
     func loadCurrentWeatherData(for location: CLLocation) async throws -> CurrentWeather {
         let weatherRequest = WeatherRequest(requestType: .weather, units: .metric, location: location)
