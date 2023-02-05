@@ -10,6 +10,7 @@
 		5F13599C298FA5D1005B8100 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F13599B298FA5D1005B8100 /* Location.swift */; };
 		5F13599E298FA921005B8100 /* LocationServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F13599D298FA921005B8100 /* LocationServicing.swift */; };
 		5F1359A1298FADD7005B8100 /* LocationSservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359A0298FADD7005B8100 /* LocationSservice.swift */; };
+		5F1359A3298FB6FB005B8100 /* NetworkServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359A2298FB6FB005B8100 /* NetworkServicing.swift */; };
 		5F328292298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */; };
 		5F328297298C9B380079CF67 /* ForecastListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F328295298C9B380079CF67 /* ForecastListCollectionViewCell.swift */; };
 		5F328298298C9B380079CF67 /* ForecastListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */; };
@@ -73,6 +74,7 @@
 		5F13599B298FA5D1005B8100 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		5F13599D298FA921005B8100 /* LocationServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServicing.swift; sourceTree = "<group>"; };
 		5F1359A0298FADD7005B8100 /* LocationSservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSservice.swift; sourceTree = "<group>"; };
+		5F1359A2298FB6FB005B8100 /* NetworkServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServicing.swift; sourceTree = "<group>"; };
 		5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension .swift"; sourceTree = "<group>"; };
 		5F328295298C9B380079CF67 /* ForecastListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastListCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 				5F328299298C9C5F0079CF67 /* ReusableView.swift */,
 				5F32829B298C9C7B0079CF67 /* SelfConfiguringCell.swift */,
 				5F13599D298FA921005B8100 /* LocationServicing.swift */,
+				5F1359A2298FB6FB005B8100 /* NetworkServicing.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				5F4AB484298C595E0007815D /* Styles.swift in Sources */,
 				5F328292298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift in Sources */,
 				5F328297298C9B380079CF67 /* ForecastListCollectionViewCell.swift in Sources */,
+				5F1359A3298FB6FB005B8100 /* NetworkServicing.swift in Sources */,
 				5FB8F4A6298AF65800B8A158 /* WeatherData.swift in Sources */,
 				5F5CA33E298A069C006074B3 /* CurrentWeather.swift in Sources */,
 				5FF54D6B298B117F000FF779 /* ForecastViewModel.swift in Sources */,

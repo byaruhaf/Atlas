@@ -70,9 +70,8 @@ extension LocationSservice: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let latitude = locations.first?.coordinate.latitude else { return }
-        guard let longitude = locations.first?.coordinate.longitude else { return }
-        let location = Location(latitude: latitude, longitude: longitude)
+        guard let selectedLocation = locations.first?.coordinate else { return }
+        let location = Location(location: selectedLocation)
         locationContinuation?.resume(returning: location)
     }
     

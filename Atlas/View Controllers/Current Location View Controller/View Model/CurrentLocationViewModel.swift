@@ -17,14 +17,16 @@ enum WeatherDataError: Error {
 final class CurrentLocationViewModel {
     
     private let locationService: LocationServicing
+    private let networkService: NetworkServicing
     
     lazy var isNotAuthorized: Bool = {
         locationService.isNotAuthorized
     }()
     // MARK: - Initialization
     
-    init(locationService: LocationServicing) {
+    init(locationService: LocationServicing, networkService: NetworkServicing) {
         self.locationService = locationService
+        self.networkService = networkService
     }
     
     // MARK: - Helper Methods

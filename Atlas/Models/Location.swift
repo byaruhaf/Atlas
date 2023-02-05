@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct Location {
     
@@ -13,4 +14,14 @@ struct Location {
     
     let latitude: Double
     let longitude: Double
+}
+
+extension Location {
+    
+    // MARK: - Initialization
+    
+    init(location: CLLocationCoordinate2D) {
+        latitude = location.latitude
+        longitude = location.longitude
+    }
 }

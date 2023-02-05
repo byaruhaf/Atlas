@@ -66,11 +66,11 @@ final class CurrentLocationViewController: UIViewController {
                 }
                 let location = try await viewModel.fetchUserLocation()
                 // Configure Day View Controller
-                let current = try await viewModel.loadCurrentWeatherData(for: location)
-                self.dayViewController.viewModel = DayViewModel(weatherData: current)
+                async let current = try await viewModel.loadCurrentWeatherData(for: location)
+                self.dayViewController.viewModel = await DayViewModel(weatherData: try current)
                 // Configure Forcast View Controller
-                let forecast = try await viewModel.loadForecastWeatherData(for: location)
-                self.forcastViewController.viewModel = ForecastViewModel(weatherData: forecast)
+                async let forecast = try await viewModel.loadForecastWeatherData(for: location)
+                self.forcastViewController.viewModel = await ForecastViewModel(weatherData: try forecast)
             } catch {
                 Alert.presentDefaultError(for: self)
                 print(error.localizedDescription) // TODO: Log this with Logger

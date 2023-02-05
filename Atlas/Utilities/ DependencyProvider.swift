@@ -13,8 +13,12 @@ enum DependencyProvider {
         LocationSservice()
     }
     
+    static var networkSservice: NetworkServicing {
+        NetworkSservice()
+    }
+    
     static var viewModel: CurrentLocationViewModel {
-        CurrentLocationViewModel(locationService: self.locationSservice)
+        CurrentLocationViewModel(locationService: self.locationSservice, networkService: self.networkSservice)
     }
     
     static var rootViewController: TabBarController {
