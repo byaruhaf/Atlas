@@ -14,7 +14,45 @@ enum WeatherDataError: Error {
     case noWeatherDataAvailable
 }
 
-final class CurrentLocationViewModel {
+final class CurrentLocationViewModel: NSObject {
+    
+    // MARK: - Type Aliases
+    
+    typealias DidFetchLocationCompletion = (CLLocation?, WeatherDataError?) -> Void
+    
+    // MARK: - Properties
+    
+    var didFetchLocationData: DidFetchLocationCompletion?
+
+    // MARK: -
+    
+    private lazy var locationManager: CLLocationManager = {
+        // Initialize Location Manager
+        let locationManager = CLLocationManager()
+        
+        // Configure Location Manager
+        locationManager.delegate = self
+        
+        return locationManager
+    }()
+    
+    // MARK: - Initialization
+    
+    override init() {
+        super.init()
+
+        Task {
+            // Fetch Location
+            await fetchLocation()
+        }
+    }
+    
+    // MARK: - Helper Methods
+    @MainActor
+    private func fetchLocation() {
+        // Request Location
+        locationManager.requestLocation()
+    }
 
     func loadCurrentWeatherData(for location: CLLocation) async throws -> CurrentWeather {
         let weatherRequest = WeatherRequest(requestType: .weather, units: .metric, location: location)
@@ -40,5 +78,33 @@ final class CurrentLocationViewModel {
         } catch {
             throw  WeatherDataError.noWeatherDataAvailable
         }
+    }
+}
+
+extension CurrentLocationViewModel: CLLocationManagerDelegate {
+    
+    @MainActor
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .notDetermined {
+            // Request Authorization
+            locationManager.requestWhenInUseAuthorization()
+        } else if status == .authorizedWhenInUse {
+            // Fetch Location
+            fetchLocation()
+        } else {
+            // Invoke Completion Handler
+            didFetchLocationData?(nil, .notAuthorizedToRequestLocation)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else {
+            return
+        }
+        didFetchLocationData?(location, nil)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Unable to Fetch Location (\(error))")
     }
 }

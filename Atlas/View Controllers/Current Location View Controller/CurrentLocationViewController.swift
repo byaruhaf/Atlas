@@ -59,17 +59,27 @@ final class CurrentLocationViewController: UIViewController {
     // MARK: - Helper Methods
     
     private func setupViewModel(with viewModel: CurrentLocationViewModel) {
-        Task(priority: .userInitiated) {
-            do {
-                // Configure Day View Controller
-                async let current = try await viewModel.loadCurrentWeatherData(for: Defaults.location)
-                self.dayViewController.viewModel = await DayViewModel(weatherData: try current)
-                // Configure Forcast View Controller
-                async let forecast = try await viewModel.loadForecastWeatherData(for: Defaults.location)
-                self.forcastViewController.viewModel = await ForecastViewModel(weatherData: try forecast)
-            } catch {
-                Alert.presentDefaultError(for: self)
-                print(error.localizedDescription) // TODO: Log this with Logger
+        viewModel.didFetchLocationData = { [weak self] (location, error) in
+            if let error = error {
+                print(error)
+            } else if let location = location {
+                
+                Task(priority: .userInitiated) {
+                    do {
+                        // Configure Day View Controller
+                        async let current = try await viewModel.loadCurrentWeatherData(for: location)
+                        self?.dayViewController.viewModel = await DayViewModel(weatherData: try current)
+                        // Configure Forcast View Controller
+                        async let forecast = try await viewModel.loadForecastWeatherData(for: location)
+                        self?.forcastViewController.viewModel = await ForecastViewModel(weatherData: try forecast)
+                    } catch {
+                        Alert.presentDefaultError(for: self!)
+                        print(error.localizedDescription) // TODO: Log this with Logger
+                    }
+                }
+            } else {
+                // Notify User
+            print("noWeatherDataAvailable")
             }
         }
     }
