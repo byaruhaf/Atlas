@@ -25,7 +25,9 @@ final class CurrentLocationViewModel {
     // MARK: - Initialization
     
     init(locationService: LocationServicing, networkService: NetworkServicing) {
+        // Set Location Service
         self.locationService = locationService
+        // Set Network Service
         self.networkService = networkService
     }
     
