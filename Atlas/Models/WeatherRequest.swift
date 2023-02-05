@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CoreLocation
 
 enum RequestType: String {
     case weather, forecast
@@ -34,7 +33,7 @@ struct WeatherRequest {
     // MARK: - Properties
     let requestType: RequestType
     let units: TemperatureUnit
-    let location: CLLocationCoordinate2D
+    let location: Location
     
     // MARK: -
     

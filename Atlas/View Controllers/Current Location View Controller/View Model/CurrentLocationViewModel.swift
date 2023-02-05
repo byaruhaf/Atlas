@@ -14,56 +14,34 @@ enum WeatherDataError: Error {
     case noWeatherDataAvailable
 }
 
-final class CurrentLocationViewModel: NSObject {
-    var locationContinuation: CheckedContinuation<CLLocationCoordinate2D?, Error>?
-    var authorizationContinuation: CheckedContinuation<CLAuthorizationStatus?, Error>?
-    private let locationManager: CLLocationManager
-    lazy var isNotAuthorized: Bool = {
-        switch locationManager.authorizationStatus {
-        case .notDetermined:
-            return true
-        case .restricted:
-            return true
-        case .denied:
-            return true
-        case .authorizedAlways, .authorizedWhenInUse:
-            return false
-        @unknown default:
-            return true
-        }
-    }()
+final class CurrentLocationViewModel {
     
+    private let locationService: LocationServicing
+    
+    lazy var isNotAuthorized: Bool = {
+        locationService.isNotAuthorized
+    }()
     // MARK: - Initialization
     
-    override init() {
-        locationManager = CLLocationManager()
-        super.init()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
+    init(locationService: LocationServicing) {
+        self.locationService = locationService
     }
     
     // MARK: - Helper Methods
-    func fetchUserLocation() async throws -> CLLocationCoordinate2D? {
-        try await withCheckedThrowingContinuation { continuation in
-            self.locationContinuation = continuation
-            locationManager.requestLocation()
-        }
+    func fetchUserLocation() async throws -> Location {
+        try await locationService.fetchUserLocation()
     }
     
-    func fetchUserAuthorizatio() async throws -> CLAuthorizationStatus? {
-        try await withCheckedThrowingContinuation { continuation in
-            self.authorizationContinuation = continuation
-            locationManager.requestWhenInUseAuthorization()
-        }
+    func fetchUserAuthorizatio() async throws {
+        try await locationService.fetchUserAuthorizatio()
     }
     
-    func loadCurrentWeatherData(for location: CLLocationCoordinate2D) async throws -> CurrentWeather {
+    func loadCurrentWeatherData(for location: Location) async throws -> CurrentWeather {
         let weatherRequest = WeatherRequest(requestType: .weather, units: .metric, location: location)
         return try await fetch(from: weatherRequest.urlRequest)
     }
     
-    func loadForecastWeatherData(for location: CLLocationCoordinate2D) async throws -> Forecast {
+    func loadForecastWeatherData(for location: Location) async throws -> Forecast {
         let weatherRequest = WeatherRequest(requestType: .forecast, units: .metric, location: location)
         return try await fetch(from: weatherRequest.urlRequest)
     }
@@ -82,33 +60,5 @@ final class CurrentLocationViewModel: NSObject {
         } catch {
             throw  WeatherDataError.noWeatherDataAvailable
         }
-    }
-}
-
-extension CurrentLocationViewModel: CLLocationManagerDelegate {
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        switch locationManager.authorizationStatus {
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-        case .restricted:
-            print("Your location is restricted.") /// TODO: Log this with Logger
-            locationContinuation?.resume(throwing: WeatherDataError.notAuthorizedToRequestLocation)
-        case .denied:
-            print("You have denied this app location permission. Go to setting to change it") /// TODO: Log this with Logger
-            locationContinuation?.resume(throwing: WeatherDataError.notAuthorizedToRequestLocation)
-        case .authorizedAlways, .authorizedWhenInUse:
-            authorizationContinuation?.resume(returning: manager.authorizationStatus)
-        @unknown default:
-            break
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        locationContinuation?.resume(returning: locations.first?.coordinate)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription) /// TODO: Log this with Logger
-        locationContinuation?.resume(throwing: WeatherDataError.failedToRequestLocation)
     }
 }

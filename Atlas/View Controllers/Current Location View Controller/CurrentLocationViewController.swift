@@ -65,7 +65,6 @@ final class CurrentLocationViewController: UIViewController {
                     _ = try await viewModel.fetchUserAuthorizatio()
                 }
                 let location = try await viewModel.fetchUserLocation()
-                guard let location else { return }
                 // Configure Day View Controller
                 let current = try await viewModel.loadCurrentWeatherData(for: location)
                 self.dayViewController.viewModel = DayViewModel(weatherData: current)

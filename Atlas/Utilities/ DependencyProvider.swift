@@ -9,28 +9,17 @@ import Foundation
 import UIKit
 
 enum DependencyProvider {
-//    static var service: Servicing {
-//        return Service()
-//    }
-//
-//    static var viewModel: ViewModel {
-//        return ViewModel(service: self.service)
-//    }
-//
-//    static var viewController: ViewController {
-//        let vc = UIStoryboard(name: "Main",
-//                              bundle: nil).instantiateInitialViewController() as! ViewController
-//        vc.viewModel = viewModel
-//        return vc
-//    }
+    static var locationSservice: LocationServicing {
+        LocationSservice()
+    }
     
     static var viewModel: CurrentLocationViewModel {
-        CurrentLocationViewModel()
+        CurrentLocationViewModel(locationService: self.locationSservice)
     }
     
     static var rootViewController: TabBarController {
         let rootVC = UIStoryboard(name: "Main", bundle: .main).instantiateInitialViewController { coder in
-            TabBarController(coder: coder, viewModel: CurrentLocationViewModel())
+            TabBarController(coder: coder, viewModel: self.viewModel)
         }
         return rootVC!
     }
