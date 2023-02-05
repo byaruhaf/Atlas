@@ -15,46 +15,55 @@ enum WeatherDataError: Error {
 }
 
 final class CurrentLocationViewModel: NSObject {
-    
-    // MARK: - Type Aliases
-    
-    typealias DidFetchLocationCompletion = (CLLocation?, WeatherDataError?) -> Void
-    
-    // MARK: - Properties
-    
-    var didFetchLocationData: DidFetchLocationCompletion?
-
-    // MARK: -
-    
-    private lazy var locationManager: CLLocationManager = {
-        // Initialize Location Manager
-        let locationManager = CLLocationManager()
-        
-        // Configure Location Manager
-        locationManager.delegate = self
-        
-        return locationManager
+    var locationContinuation: CheckedContinuation<CLLocationCoordinate2D?, Error>?
+    var authorizationContinuation: CheckedContinuation<CLAuthorizationStatus?, Error>?
+    private let locationManager: CLLocationManager
+    lazy var isNotAuthorized: Bool = {
+        switch locationManager.authorizationStatus {
+        case .notDetermined:
+            return true
+        case .restricted:
+            return true
+        case .denied:
+            return true
+        case .authorizedAlways, .authorizedWhenInUse:
+            return false
+        @unknown default:
+            return true
+        }
     }()
     
     // MARK: - Initialization
     
     override init() {
+        locationManager = CLLocationManager()
         super.init()
-        fetchLocation()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
     }
     
     // MARK: - Helper Methods
-    private func fetchLocation() {
-        // Request Location
-        locationManager.requestLocation()
+    func fetchUserLocation() async throws -> CLLocationCoordinate2D? {
+        try await withCheckedThrowingContinuation { continuation in
+            self.locationContinuation = continuation
+            locationManager.requestLocation()
+        }
     }
-
-    func loadCurrentWeatherData(for location: CLLocation) async throws -> CurrentWeather {
+    
+    func fetchUserAuthorizatio() async throws -> CLAuthorizationStatus? {
+        try await withCheckedThrowingContinuation { continuation in
+            self.authorizationContinuation = continuation
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    func loadCurrentWeatherData(for location: CLLocationCoordinate2D) async throws -> CurrentWeather {
         let weatherRequest = WeatherRequest(requestType: .weather, units: .metric, location: location)
         return try await fetch(from: weatherRequest.urlRequest)
     }
     
-    func loadForecastWeatherData(for location: CLLocation) async throws -> Forecast {
+    func loadForecastWeatherData(for location: CLLocationCoordinate2D) async throws -> Forecast {
         let weatherRequest = WeatherRequest(requestType: .forecast, units: .metric, location: location)
         return try await fetch(from: weatherRequest.urlRequest)
     }
@@ -77,28 +86,26 @@ final class CurrentLocationViewModel: NSObject {
 }
 
 extension CurrentLocationViewModel: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .notDetermined {
-            // Request Authorization
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch locationManager.authorizationStatus {
+        case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
-        } else if status == .authorizedWhenInUse {
-            // Fetch Location
-            fetchLocation()
-        } else {
-            // Invoke Completion Handler
-            didFetchLocationData?(nil, .notAuthorizedToRequestLocation)
+        case .restricted:
+            print("Your location is restricted.")
+        case .denied:
+            print("You have denied this app location permission. Go to setting to change it")
+        case .authorizedAlways, .authorizedWhenInUse:
+            authorizationContinuation?.resume(returning: manager.authorizationStatus)
+        @unknown default:
+            break
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else {
-            return
-        }
-        didFetchLocationData?(location, nil)
+        locationContinuation?.resume(returning: locations.first?.coordinate)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Unable to Fetch Location (\(error))")
+        locationContinuation?.resume(throwing: error)
     }
 }

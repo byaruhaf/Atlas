@@ -59,27 +59,22 @@ final class CurrentLocationViewController: UIViewController {
     // MARK: - Helper Methods
     
     private func setupViewModel(with viewModel: CurrentLocationViewModel) {
-        viewModel.didFetchLocationData = { [weak self] location, error in
-            if let error = error {
-                print(error)
-            } else if let location = location {
-                
-                Task(priority: .userInitiated) {
-                    do {
-                        // Configure Day View Controller
-                        async let current = try await viewModel.loadCurrentWeatherData(for: location)
-                        self?.dayViewController.viewModel = await DayViewModel(weatherData: try current)
-                        // Configure Forcast View Controller
-                        async let forecast = try await viewModel.loadForecastWeatherData(for: location)
-                        self?.forcastViewController.viewModel = await ForecastViewModel(weatherData: try forecast)
-                    } catch {
-                        Alert.presentDefaultError(for: self!)
-                        print(error.localizedDescription) // TODO: Log this with Logger
-                    }
+        Task(priority: .userInitiated) {
+            do {
+                if viewModel.isNotAuthorized {
+                    _ = try await viewModel.fetchUserAuthorizatio()
                 }
-            } else {
-                // Notify User
-            print("noWeatherDataAvailable")
+                let location = try await viewModel.fetchUserLocation()
+                guard let location else { return }
+                // Configure Day View Controller
+                let current = try await viewModel.loadCurrentWeatherData(for: location)
+                self.dayViewController.viewModel = DayViewModel(weatherData: current)
+                // Configure Forcast View Controller
+                let forecast = try await viewModel.loadForecastWeatherData(for: location)
+                self.forcastViewController.viewModel = ForecastViewModel(weatherData: forecast)
+            } catch {
+                Alert.presentDefaultError(for: self)
+                print(error.localizedDescription) // TODO: Log this with Logger
             }
         }
     }
