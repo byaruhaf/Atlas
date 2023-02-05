@@ -61,7 +61,6 @@ final class CurrentLocationViewController: UIViewController {
     private func setupViewModel(with viewModel: CurrentLocationViewModel) {
         Task(priority: .userInitiated) {
             do {
-//                try await viewModel()
                 // Configure Day View Controller
                 async let current = try await viewModel.loadCurrentWeatherData(for: Defaults.location)
                 self.dayViewController.viewModel = await DayViewModel(weatherData: try current)
