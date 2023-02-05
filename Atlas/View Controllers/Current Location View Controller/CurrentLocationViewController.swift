@@ -59,7 +59,7 @@ final class CurrentLocationViewController: UIViewController {
     // MARK: - Helper Methods
     
     private func setupViewModel(with viewModel: CurrentLocationViewModel) {
-        viewModel.didFetchLocationData = { [weak self] (location, error) in
+        viewModel.didFetchLocationData = { [weak self] location, error in
             if let error = error {
                 print(error)
             } else if let location = location {

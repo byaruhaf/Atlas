@@ -40,15 +40,10 @@ final class CurrentLocationViewModel: NSObject {
     
     override init() {
         super.init()
-
-        Task {
-            // Fetch Location
-            await fetchLocation()
-        }
+        fetchLocation()
     }
     
     // MARK: - Helper Methods
-    @MainActor
     private func fetchLocation() {
         // Request Location
         locationManager.requestLocation()
@@ -83,7 +78,6 @@ final class CurrentLocationViewModel: NSObject {
 
 extension CurrentLocationViewModel: CLLocationManagerDelegate {
     
-    @MainActor
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .notDetermined {
             // Request Authorization
