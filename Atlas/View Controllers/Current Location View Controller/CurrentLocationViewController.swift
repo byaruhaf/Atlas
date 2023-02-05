@@ -29,6 +29,10 @@ final class CurrentLocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//         Setup Notification Handling
+//        setupNotificationHandling()
+        // Register for Observer
+        registerForegroundNotification()
     }
     
     // MARK: - Navigation
@@ -61,7 +65,7 @@ final class CurrentLocationViewController: UIViewController {
     private func setupViewModel(with viewModel: CurrentLocationViewModel) {
         Task(priority: .userInitiated) {
             do {
-                if viewModel.isNotAuthorized {
+                if viewModel.isNotAuthorized && (UserDefaults.getDidDataRefresh == nil) {
                     _ = try await viewModel.fetchUserAuthorizatio()
                 }
                 
@@ -80,10 +84,45 @@ final class CurrentLocationViewController: UIViewController {
                 let forcastViewModel = await ForecastViewModel(weatherData: try forecast)
                 // Update Forcast View Controller
                 self.forcastViewController.viewModel = forcastViewModel
+                
+                // Update User Defaults Refresh Time
+                UserDefaults.setDidDataRefresh(Date())
             } catch {
                 Alert.presentDefaultError(for: self)
                 print(error.localizedDescription) // TODO: Log this with Logger
             }
+        }
+    }
+    
+    private func refresh() {
+        guard let viewModel else { return }
+        setupViewModel(with: viewModel)
+    }
+    deinit {
+        // Register for Observer
+        unregisterForegroundNotification()
+    }
+}
+
+// swiftlint:disable notification_center_detachment
+extension CurrentLocationViewController {
+    func registerForegroundNotification() {
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(enteringForeground), name: UIApplication.willEnterForegroundNotification,
+            object: nil)
+    }
+    
+    func unregisterForegroundNotification() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func enteringForeground() {
+        guard let lastDataRefresh = UserDefaults.getDidDataRefresh else {
+            return
+        }
+        
+        if Date().timeIntervalSince(lastDataRefresh) > Configuration.refreshThreshold {
+            self.refresh()
         }
     }
 }

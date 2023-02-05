@@ -59,11 +59,14 @@ extension LocationSservice: CLLocationManagerDelegate {
         case .restricted:
             print("Your location is restricted.") /// TODO: Log this with Logger
             authorizationContinuation?.resume(throwing: WeatherDataError.notAuthorizedToRequestLocation)
+            authorizationContinuation = nil
         case .denied:
             print("You have denied this app location permission. Go to setting to change it") /// TODO: Log this with Logger
             authorizationContinuation?.resume(throwing: WeatherDataError.notAuthorizedToRequestLocation)
+            authorizationContinuation = nil
         case .authorizedAlways, .authorizedWhenInUse:
             authorizationContinuation?.resume(returning: manager.authorizationStatus)
+            authorizationContinuation = nil
         @unknown default:
             break
         }
@@ -73,10 +76,12 @@ extension LocationSservice: CLLocationManagerDelegate {
         guard let selectedLocation = locations.first?.coordinate else { return }
         let location = Location(location: selectedLocation)
         locationContinuation?.resume(returning: location)
+        locationContinuation = nil
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription) /// TODO: Log this with Logger
         locationContinuation?.resume(throwing: WeatherDataError.failedToRequestLocation)
+        locationContinuation = nil
     }
 }

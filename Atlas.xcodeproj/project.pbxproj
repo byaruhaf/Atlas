@@ -11,6 +11,7 @@
 		5F13599E298FA921005B8100 /* LocationServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F13599D298FA921005B8100 /* LocationServicing.swift */; };
 		5F1359A1298FADD7005B8100 /* LocationSservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359A0298FADD7005B8100 /* LocationSservice.swift */; };
 		5F1359A3298FB6FB005B8100 /* NetworkServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359A2298FB6FB005B8100 /* NetworkServicing.swift */; };
+		5F1359A5298FEB71005B8100 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359A4298FEB71005B8100 /* UserDefaults+Extension.swift */; };
 		5F328292298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */; };
 		5F328297298C9B380079CF67 /* ForecastListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F328295298C9B380079CF67 /* ForecastListCollectionViewCell.swift */; };
 		5F328298298C9B380079CF67 /* ForecastListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */; };
@@ -75,6 +76,7 @@
 		5F13599D298FA921005B8100 /* LocationServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServicing.swift; sourceTree = "<group>"; };
 		5F1359A0298FADD7005B8100 /* LocationSservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSservice.swift; sourceTree = "<group>"; };
 		5F1359A2298FB6FB005B8100 /* NetworkServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServicing.swift; sourceTree = "<group>"; };
+		5F1359A4298FEB71005B8100 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension .swift"; sourceTree = "<group>"; };
 		5F328295298C9B380079CF67 /* ForecastListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastListCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 			children = (
 				5F4AB483298C595E0007815D /* Styles.swift */,
 				5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */,
+				5F1359A4298FEB71005B8100 /* UserDefaults+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				5F4AB472298BCBD20007815D /*  DependencyProvider.swift in Sources */,
 				5F4AB475298BD1B10007815D /* FavoritesViewController.swift in Sources */,
 				5F72E1C8298E201200858576 /* AtlasError.swift in Sources */,
+				5F1359A5298FEB71005B8100 /* UserDefaults+Extension.swift in Sources */,
 				5F505E1B2989366D00EAFE2E /* AppDelegate.swift in Sources */,
 				5F3282A4298CD2790079CF67 /* SettingsView.swift in Sources */,
 				5FC3A536298A6F440071FA66 /* Configuration.swift in Sources */,
