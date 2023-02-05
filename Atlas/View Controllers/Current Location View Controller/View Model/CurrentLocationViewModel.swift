@@ -91,9 +91,11 @@ extension CurrentLocationViewModel: CLLocationManagerDelegate {
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
         case .restricted:
-            print("Your location is restricted.")
+            print("Your location is restricted.") /// TODO: Log this with Logger
+            locationContinuation?.resume(throwing: WeatherDataError.notAuthorizedToRequestLocation)
         case .denied:
-            print("You have denied this app location permission. Go to setting to change it")
+            print("You have denied this app location permission. Go to setting to change it") /// TODO: Log this with Logger
+            locationContinuation?.resume(throwing: WeatherDataError.notAuthorizedToRequestLocation)
         case .authorizedAlways, .authorizedWhenInUse:
             authorizationContinuation?.resume(returning: manager.authorizationStatus)
         @unknown default:
@@ -106,6 +108,7 @@ extension CurrentLocationViewModel: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        locationContinuation?.resume(throwing: error)
+        print(error.localizedDescription) /// TODO: Log this with Logger
+        locationContinuation?.resume(throwing: WeatherDataError.failedToRequestLocation)
     }
 }
