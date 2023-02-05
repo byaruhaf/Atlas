@@ -64,13 +64,22 @@ final class CurrentLocationViewController: UIViewController {
                 if viewModel.isNotAuthorized {
                     _ = try await viewModel.fetchUserAuthorizatio()
                 }
+                
                 let location = try await viewModel.fetchUserLocation()
+                
                 // Configure Day View Controller
                 async let current = try await viewModel.loadCurrentWeatherData(for: location)
-                self.dayViewController.viewModel = await DayViewModel(weatherData: try current)
+                // Initialize Day View Model
+                let dayViewModel = await DayViewModel(weatherData: try current)
+                // Update Day View Controller
+                self.dayViewController.viewModel = dayViewModel
+                
                 // Configure Forcast View Controller
                 async let forecast = try await viewModel.loadForecastWeatherData(for: location)
-                self.forcastViewController.viewModel = await ForecastViewModel(weatherData: try forecast)
+                // Initialize Forcast View Model
+                let forcastViewModel = await ForecastViewModel(weatherData: try forecast)
+                // Update Forcast View Controller
+                self.forcastViewController.viewModel = forcastViewModel
             } catch {
                 Alert.presentDefaultError(for: self)
                 print(error.localizedDescription) // TODO: Log this with Logger
