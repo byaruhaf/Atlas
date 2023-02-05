@@ -77,6 +77,7 @@
 		5F1359A0298FADD7005B8100 /* LocationSservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSservice.swift; sourceTree = "<group>"; };
 		5F1359A2298FB6FB005B8100 /* NetworkServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServicing.swift; sourceTree = "<group>"; };
 		5F1359A4298FEB71005B8100 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		5F1359A629901E56005B8100 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension .swift"; sourceTree = "<group>"; };
 		5F328295298C9B380079CF67 /* ForecastListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastListCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -211,6 +212,7 @@
 		5F505E0E2989366D00EAFE2E = {
 			isa = PBXGroup;
 			children = (
+				5F1359A629901E56005B8100 /* README.md */,
 				5FCCAEFA298DF6C600A652C4 /* ci_scripts */,
 				5F505E192989366D00EAFE2E /* Atlas */,
 				5F56FF9D298E30F80085DAD0 /* AtlasTests */,
