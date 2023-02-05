@@ -46,7 +46,7 @@ final class ForecastDayViewModelTests: XCTestCase {
 
     // MARK: - Tests for day
     func testWeeksDayWeatherData_day() throws {
-        XCTAssertEqual(viewModel.day, "  Sat 12:00 PM")
+        XCTAssertEqual(viewModel.day, " Sat 1:00 AM")
     }
     
     // MARK: - Tests for condition
