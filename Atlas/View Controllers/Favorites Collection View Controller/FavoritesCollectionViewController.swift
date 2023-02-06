@@ -10,7 +10,7 @@ import Combine
 
 class FavoritesCollectionViewController: UIViewController {
     private var chosenCityCancellable: AnyCancellable?
-    private var cancellables = Set<AnyCancellable>()
+//    private var cancellables = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class FavoritesCollectionViewController: UIViewController {
                 addCityNav.dismiss(animated: true, completion: nil)
                 
                 if let city = city {
-                    print("Chosen city: \(city)")
+                    print("Save Chosen city: \(city)")
                 }
             }
     }

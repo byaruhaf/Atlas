@@ -11,7 +11,6 @@ class CityViewModel: Equatable, Hashable {
     private let city: Location
     private let networkService: NetworkServicing
 
-    
     init(city: Location, networkService: NetworkServicing) {
         // Set City Location
         self.city = city
@@ -33,8 +32,8 @@ class CityViewModel: Equatable, Hashable {
 }
 
 extension CityViewModel {
-    static func ==(lhs: CityViewModel, rhs: CityViewModel) -> Bool {
-        return lhs.city == rhs.city
+    static func == (lhs: CityViewModel, rhs: CityViewModel) -> Bool {
+        lhs.city == rhs.city
     }
     
     func hash(into hasher: inout Hasher) {

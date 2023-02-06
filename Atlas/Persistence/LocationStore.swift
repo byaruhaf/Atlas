@@ -9,7 +9,6 @@ import Foundation
 
 // swiftlint:disable force_try
 class LocationStore {
-    @Published
     private(set) var cities: [Location]
     
     init(cities: [Location]) {

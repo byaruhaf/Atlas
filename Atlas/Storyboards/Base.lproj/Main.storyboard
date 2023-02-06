@@ -85,7 +85,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="HB3-f7-vxB">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CityCell" id="HB3-f7-vxB" customClass="CityCell" customModule="Atlas" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="N6k-qv-4Fh">
@@ -133,6 +133,9 @@
                             <constraint firstItem="QuL-Lj-Sw4" firstAttribute="trailing" secondItem="jF9-M4-UdQ" secondAttribute="trailing" constant="16" id="nHp-Vd-pyM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="jF9-M4-UdQ" id="ud0-8M-RfU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwo-mJ-vGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

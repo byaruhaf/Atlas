@@ -8,18 +8,52 @@
 import UIKit
 import MapKit
 
-class FavoritesMapViewController: UIViewController {
+class FavoritesMapViewController: UIViewController, MKMapViewDelegate {
+    
+        override var preferredStatusBarStyle: UIStatusBarStyle {
+            .darkContent
+        }
+    
+        @IBOutlet var mapView: MKMapView!
+    
+        let locations = [
+            Location(name: "New York", locality: "NY", latitude: 40.7129822, longitude: -74.007205),
+            Location(name: "Khartoum", locality: "Khartoum", latitude: 15.5885494, longitude: 32.535473),
+            Location(name: "Durban", locality: "KZN", latitude: -29.8565296, longitude: 31.0193343),
+            Location(name: "Cairo", locality: "Cairo", latitude: 30.0214489, longitude: 31.4904086)
+        ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         registerForTheme()
-        // Do any additional setup after loading the view.
+                mapView.delegate = self
+                annotationsOnMap()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animateColor()
     }
+    
+    func annotationsOnMap() {
+        
+        for location in locations {
+            
+            let annotations = MKPointAnnotation()
+            
+            annotations.title = location.name
+            annotations.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+            
+            mapView.addAnnotation(annotations)
+            
+            let locationCoordinate2d = annotations.coordinate
+            let span = MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
+            let region = MKCoordinateRegion(center: locationCoordinate2d, span: span)
+            
+            mapView.setRegion(region, animated: true)
+        }
+    }
+    
     deinit {
         // Register for Observer
         registerForTheme()
