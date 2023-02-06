@@ -8,6 +8,7 @@
 import XCTest
 @testable import Atlas
 
+// swiftlint:disable force_try
 final class CurrentLocationViewModelTests: XCTestCase {
     
     // MARK: - Properties
@@ -16,12 +17,11 @@ final class CurrentLocationViewModelTests: XCTestCase {
     var networkService: MockNetworkService!
     var locationService: MockLocationService!
     
-    
     override func setUpWithError() throws {
+        try super.setUpWithError()
         // Initialize Mock Network Service
         networkService = MockNetworkService()
-        
-        
+    
         // Load Stub
         let currentData = loadStub(name: "current", extension: "json")
         let forecastData = loadStub(name: "forecast", extension: "json")
@@ -45,6 +45,35 @@ final class CurrentLocationViewModelTests: XCTestCase {
     }
     
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        try super.tearDownWithError()
+    }
+    
+    // MARK: - Tests for fetchUserLocation
+    func testfetchUserLocation() async throws {
+        let location = try await viewModel.fetchUserLocation()
+        let latitude = 44.34
+        let longitude = 10.99
+        XCTAssertEqual(location.latitude, latitude)
+        XCTAssertEqual(location.longitude, longitude)
+    }
+    
+    // MARK: - Tests for isNotAuthorized
+    func testisNotAuthorized() {
+        let authorized = viewModel.isNotAuthorized
+        XCTAssertTrue(authorized)
+    }
+    
+    // MARK: - Tests for loadCurrentWeatherData
+    func testloadCurrentWeatherData() async throws {
+        let location = try await viewModel.fetchUserLocation()
+        let currentWeatherData = try await viewModel.loadCurrentWeatherData(for: location)
+        XCTAssertEqual(currentWeatherData.weather.first?.main, "Clouds")
+    }
+    
+    // MARK: - Tests for loadForecastWeatherData
+    func testloadForecastWeatherData() async throws {
+        let location = try await viewModel.fetchUserLocation()
+        let forecastWeatherData = try await viewModel.loadForecastWeatherData(for: location)
+        XCTAssertEqual(forecastWeatherData.list.first?.main.tempMax, 6.39)
     }
 }
