@@ -49,12 +49,23 @@ final class CurrentLocationViewModelTests: XCTestCase {
     }
     
     // MARK: - Tests for fetchUserLocation
-    func testfetchUserLocation() async throws {
+    func testfetchUserLocation_Success() async throws {
         let location = try await viewModel.fetchUserLocation()
         let latitude = 44.34
         let longitude = 10.99
         XCTAssertEqual(location.latitude, latitude)
         XCTAssertEqual(location.longitude, longitude)
+    }
+    
+    func testfetchUserLocation_RequestFailed() async throws {
+        locationService.location = nil
+        do {
+            _ = try await viewModel.fetchUserLocation()
+        } catch {
+            if let error = error as? Atlas.WeatherDataError {
+                XCTAssertEqual(error, Atlas.WeatherDataError.failedToRequestLocation)
+            }
+        }
     }
     
     // MARK: - Tests for isNotAuthorized
