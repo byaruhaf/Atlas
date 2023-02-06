@@ -12,8 +12,41 @@ class FavoritesMapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        registerForTheme()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        animateColor()
+    }
+    deinit {
+        // Register for Observer
+        registerForTheme()
+    }
+}
+
+// swiftlint:disable notification_center_detachment
+// swiftlint:disable explicit_init
+extension FavoritesMapViewController: ThemeableColor {
+    func registerForTheme() {
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(colorChanged), name: NSNotification.Name.init("ColorChanged"),
+            object: nil)
+    }
+    
+    func unregisterForTheme() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func colorChanged() {
+        animateColor()
+    }
+    
+    func animateColor() {
+        UIView.animate(withDuration: 0.2) {
+            self.view.backgroundColor = ThemeManager.shared.currentBackgroundColor?.backgroundColor
+        }
     }
 }
 

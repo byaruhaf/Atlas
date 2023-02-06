@@ -27,5 +27,5 @@ extension Location {
     }
 }
 
-extension Location: Equatable, Hashable {
+extension Location: Equatable, Hashable, Codable {
 }

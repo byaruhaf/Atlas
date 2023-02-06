@@ -64,6 +64,8 @@
 		5FF3FA622991A7880074FBAF /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA612991A7880074FBAF /* AddCityViewController.swift */; };
 		5FF3FA642991A7980074FBAF /* AddCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA632991A7980074FBAF /* AddCityViewModel.swift */; };
 		5FF3FA682991AD6E0074FBAF /* FavoritesNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA672991AD6E0074FBAF /* FavoritesNavigationViewController.swift */; };
+		5FF3FA6B2991BC290074FBAF /* LocationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA6A2991BC290074FBAF /* LocationStore.swift */; };
+		5FF3FA6D2991BEF20074FBAF /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA6C2991BEF20074FBAF /* CityViewModel.swift */; };
 		5FF54D68298B10EE000FF779 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF54D67298B10EE000FF779 /* DayViewModel.swift */; };
 		5FF54D6B298B117F000FF779 /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF54D6A298B117F000FF779 /* ForecastViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -143,6 +145,8 @@
 		5FF3FA612991A7880074FBAF /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 		5FF3FA632991A7980074FBAF /* AddCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewModel.swift; sourceTree = "<group>"; };
 		5FF3FA672991AD6E0074FBAF /* FavoritesNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNavigationViewController.swift; sourceTree = "<group>"; };
+		5FF3FA6A2991BC290074FBAF /* LocationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStore.swift; sourceTree = "<group>"; };
+		5FF3FA6C2991BEF20074FBAF /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
 		5FF54D67298B10EE000FF779 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		5FF54D6A298B117F000FF779 /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,6 +261,7 @@
 		5F505E192989366D00EAFE2E /* Atlas */ = {
 			isa = PBXGroup;
 			children = (
+				5FF3FA692991BC170074FBAF /* Persistence */,
 				5F13599F298FADC1005B8100 /* Services */,
 				5F4AB47A298BF99D0007815D /* ThemeManager */,
 				5FB8F4A4298AF64200B8A158 /* Protocols */,
@@ -378,6 +383,7 @@
 			children = (
 				5F56FFB3298E52E70085DAD0 /* FavoritesCollectionViewController.swift */,
 				5FF3FA672991AD6E0074FBAF /* FavoritesNavigationViewController.swift */,
+				5FF3FA6C2991BEF20074FBAF /* CityViewModel.swift */,
 			);
 			path = "Favorites Collection View Controller";
 			sourceTree = "<group>";
@@ -498,6 +504,14 @@
 				5FF3FA632991A7980074FBAF /* AddCityViewModel.swift */,
 			);
 			path = "AddCity View Controller";
+			sourceTree = "<group>";
+		};
+		5FF3FA692991BC170074FBAF /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				5FF3FA6A2991BC290074FBAF /* LocationStore.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		5FF54D66298B10D7000FF779 /* View Model */ = {
@@ -663,6 +677,7 @@
 				5FF54D6B298B117F000FF779 /* ForecastViewModel.swift in Sources */,
 				5F4AB47E298BFA210007815D /* ImageTheme.swift in Sources */,
 				5FC3A531298A44B60071FA66 /* WeatherConditionIcon.swift in Sources */,
+				5FF3FA6D2991BEF20074FBAF /* CityViewModel.swift in Sources */,
 				5F4AB47C298BF9B90007815D /* ThemeManager.swift in Sources */,
 				5F505E1F2989366D00EAFE2E /* CurrentLocationViewController.swift in Sources */,
 				5F56FFB7298E55940085DAD0 /* WeekDayRepresentable.swift in Sources */,
@@ -671,6 +686,7 @@
 				5F4AB475298BD1B10007815D /* FavoritesViewController.swift in Sources */,
 				5F72E1C8298E201200858576 /* AtlasError.swift in Sources */,
 				5FAC3698299181BF0037E7A5 /* FavoritesMapViewController.swift in Sources */,
+				5FF3FA6B2991BC290074FBAF /* LocationStore.swift in Sources */,
 				5F1359A5298FEB71005B8100 /* UserDefaults+Extension.swift in Sources */,
 				5F505E1B2989366D00EAFE2E /* AppDelegate.swift in Sources */,
 				5F3282A4298CD2790079CF67 /* SettingsView.swift in Sources */,

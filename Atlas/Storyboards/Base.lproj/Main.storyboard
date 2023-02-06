@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -21,8 +22,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="9Cl-I2-STH" kind="relationship" relationship="viewControllers" id="UE9-BG-dco"/>
-                        <segue destination="D0l-Pc-p5f" kind="relationship" relationship="viewControllers" id="cBK-vc-RpO"/>
                         <segue destination="6pg-JU-eZB" kind="relationship" relationship="viewControllers" id="lFP-sq-PpO"/>
+                        <segue destination="D0l-Pc-p5f" kind="relationship" relationship="viewControllers" id="cBK-vc-RpO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYW-ID-CFB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -39,11 +40,11 @@
             </objects>
             <point key="canvasLocation" x="1532" y="-1037"/>
         </scene>
-        <!--Item-->
+        <!--Favorites-->
         <scene sceneID="jso-Rj-oeU">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="6pg-JU-eZB" customClass="FavoritesViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="l0P-xg-gjz"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="l0P-xg-gjz"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mtL-V1-kYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,18 +119,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGJ-QI-16o">
-                                <rect key="frame" x="175.66666666666666" y="415.66666666666669" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jF9-M4-UdQ">
+                                <rect key="frame" x="16" y="59" width="361" height="759"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QuL-Lj-Sw4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="lGJ-QI-16o" firstAttribute="centerX" secondItem="mXs-xn-k41" secondAttribute="centerX" id="4ca-jM-MyD"/>
-                            <constraint firstItem="lGJ-QI-16o" firstAttribute="centerY" secondItem="mXs-xn-k41" secondAttribute="centerY" id="L4s-Al-WLG"/>
+                            <constraint firstItem="jF9-M4-UdQ" firstAttribute="leading" secondItem="QuL-Lj-Sw4" secondAttribute="leading" constant="16" id="TjB-d2-sgm"/>
+                            <constraint firstItem="QuL-Lj-Sw4" firstAttribute="bottom" secondItem="jF9-M4-UdQ" secondAttribute="bottom" id="eRb-mC-o7g"/>
+                            <constraint firstItem="jF9-M4-UdQ" firstAttribute="top" secondItem="QuL-Lj-Sw4" secondAttribute="top" id="g86-bU-aUs"/>
+                            <constraint firstItem="QuL-Lj-Sw4" firstAttribute="trailing" secondItem="jF9-M4-UdQ" secondAttribute="trailing" constant="16" id="nHp-Vd-pyM"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -157,6 +158,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
