@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -66,24 +67,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEY-Qy-eZh">
-                                <rect key="frame" x="187.33333333333334" y="415.66666666666669" width="18.666666666666657" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Mkv-VI-rPH">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gu8-Kc-h9Z">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0m7-YN-U5b">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="715"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="HB3-f7-vxB">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="N6k-qv-4Fh">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f1P-88-Gye"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="AEY-Qy-eZh" firstAttribute="centerY" secondItem="aOo-oj-jml" secondAttribute="centerY" id="UtN-Lh-dSC"/>
-                            <constraint firstItem="AEY-Qy-eZh" firstAttribute="centerX" secondItem="aOo-oj-jml" secondAttribute="centerX" id="YFf-iF-Vwy"/>
+                            <constraint firstItem="f1P-88-Gye" firstAttribute="trailing" secondItem="Mkv-VI-rPH" secondAttribute="trailing" id="GIV-Zv-uHX"/>
+                            <constraint firstItem="Mkv-VI-rPH" firstAttribute="leading" secondItem="f1P-88-Gye" secondAttribute="leading" id="GyS-3t-CbR"/>
+                            <constraint firstItem="Mkv-VI-rPH" firstAttribute="top" secondItem="f1P-88-Gye" secondAttribute="top" id="VzU-1b-Mar"/>
+                            <constraint firstItem="f1P-88-Gye" firstAttribute="bottom" secondItem="Mkv-VI-rPH" secondAttribute="bottom" id="oZi-Tw-VoW"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="b98-yu-WBM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6A2-Al-Stc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1644" y="-242"/>
+            <point key="canvasLocation" x="2570.2290076335876" y="-242.25352112676057"/>
         </scene>
         <!--Favorites Map View Controller-->
         <scene sceneID="NxJ-zZ-ump">
@@ -93,8 +118,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HE3-1c-nU2">
-                                <rect key="frame" x="186" y="415.66666666666669" width="21" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGJ-QI-16o">
+                                <rect key="frame" x="175.66666666666666" y="415.66666666666669" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -103,14 +128,32 @@
                         <viewLayoutGuide key="safeArea" id="QuL-Lj-Sw4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HE3-1c-nU2" firstAttribute="centerY" secondItem="mXs-xn-k41" secondAttribute="centerY" id="I3T-Jq-2PR"/>
-                            <constraint firstItem="HE3-1c-nU2" firstAttribute="centerX" secondItem="mXs-xn-k41" secondAttribute="centerX" id="qEv-qG-1AH"/>
+                            <constraint firstItem="lGJ-QI-16o" firstAttribute="centerX" secondItem="mXs-xn-k41" secondAttribute="centerX" id="4ca-jM-MyD"/>
+                            <constraint firstItem="lGJ-QI-16o" firstAttribute="centerY" secondItem="mXs-xn-k41" secondAttribute="centerY" id="L4s-Al-WLG"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwo-mJ-vGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2485" y="-246"/>
+            <point key="canvasLocation" x="3411.450381679389" y="-246.47887323943664"/>
+        </scene>
+        <!--Favorites Navigation View Controller-->
+        <scene sceneID="66t-SP-oej">
+            <objects>
+                <navigationController storyboardIdentifier="FavoritesNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Njt-Nx-c58" customClass="FavoritesNavigationViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hPm-d9-79P">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qYx-dL-GMZ" kind="relationship" relationship="rootViewController" id="Wyf-OW-5sH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CkH-tn-6eR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1643.5114503816794" y="-242.25352112676057"/>
         </scene>
     </scenes>
     <resources>
