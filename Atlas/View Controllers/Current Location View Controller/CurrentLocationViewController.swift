@@ -19,20 +19,21 @@ final class CurrentLocationViewController: UIViewController {
     @IBOutlet private var forcastViewController: ForecastViewController!
     
     // MARK: - Properties
-    var viewModel: CurrentLocationViewModel? {
-        didSet {
-            guard let viewModel else { return }
-            // Setup View Model
-            setupViewModel(with: viewModel)
-        }
-    }
+    var viewModel: CurrentLocationViewModel?
+//    {
+//        didSet {
+//            guard let viewModel else { return }
+//            // Setup View Model
+//            setupViewModel(with: viewModel)
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//         Setup Notification Handling
-//        setupNotificationHandling()
+        self.forcastViewController.delegate = self
         // Register for Observer
         registerForegroundNotification()
+        refresh()
     }
     
     // MARK: - Navigation
@@ -94,7 +95,7 @@ final class CurrentLocationViewController: UIViewController {
         }
     }
     
-    private func refresh() {
+    func refresh() {
         guard let viewModel else { return }
         setupViewModel(with: viewModel)
     }
@@ -124,5 +125,12 @@ extension CurrentLocationViewController {
         if Date().timeIntervalSince(lastDataRefresh) > Configuration.refreshThreshold {
             self.refresh()
         }
+    }
+}
+
+extension CurrentLocationViewController: ForecastViewControllerDelegate {
+    
+    func controllerDidRefresh(_ controller: ForecastViewController) {
+        self.refresh()
     }
 }

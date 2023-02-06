@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ForecastViewControllerDelegate: AnyObject {
+    func controllerDidRefresh(_ controller: ForecastViewController)
+}
+
 final class ForecastViewController: UIViewController {
     
     enum Section {
@@ -15,6 +19,10 @@ final class ForecastViewController: UIViewController {
     
     var dataSource: UICollectionViewDiffableDataSource<Section, ForecastDayViewModel>!
     
+    // MARK: - Properties
+    
+    weak var delegate: ForecastViewControllerDelegate?
+    
     @IBOutlet var forecastListCollection: UICollectionView! {
         didSet {
             // Create Collection View Layout
@@ -22,6 +30,8 @@ final class ForecastViewController: UIViewController {
             // Register day Collection View Cell
             let forecastListCollectionCellxib = UINib(nibName: ForecastListCollectionViewCell.nibName, bundle: .main)
             forecastListCollection.register(forecastListCollectionCellxib, forCellWithReuseIdentifier: ForecastListCollectionViewCell.reuseIdentifier)
+            // Set Refresh Control
+            forecastListCollection.refreshControl = refreshControl
         }
     }
     
@@ -29,12 +39,25 @@ final class ForecastViewController: UIViewController {
     
     var viewModel: ForecastViewModel? {
         didSet {
+            refreshControl.endRefreshing()
             // updateView()
             guard let viewModel else { return }
             // Setup View Model
             setupViewModel(with: viewModel)
         }
     }
+    
+    // MARK: -
+    
+    private lazy var refreshControl: UIRefreshControl = {
+        // Initialize Refresh Control
+        let refreshControl = UIRefreshControl()
+        
+        // Configure Refresh Control
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh(_:)), for: .valueChanged)
+        
+        return refreshControl
+    }()
     
     // MARK: - View Methods
     private func setupViewModel(with viewModel: ForecastViewModel) {
@@ -56,6 +79,14 @@ final class ForecastViewController: UIViewController {
     private func setupView() {
         // Configure View
         view.backgroundColor = UIColor(named: "SUNNY")
+    }
+    
+    // MARK: - Actions
+    
+    @objc
+    private func didPullToRefresh(_ sender: Any) {
+        delegate?.controllerDidRefresh(self)
+        refreshControl.endRefreshing()
     }
     
     deinit {
