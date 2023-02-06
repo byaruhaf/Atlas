@@ -85,6 +85,7 @@
 		5F1359AE29909984005B8100 /* MockLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationService.swift; sourceTree = "<group>"; };
 		5F1359B02990B907005B8100 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "XCTestCase+Extension.swift"; path = "AtlasTests/XCTestCase+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		5F1359B22990BC57005B8100 /* CurrentLocationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewModelTests.swift; sourceTree = "<group>"; };
+		5F1359B42991371F005B8100 /* Kira.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Kira.gpx; sourceTree = "<group>"; };
 		5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension .swift"; sourceTree = "<group>"; };
 		5F328295298C9B380079CF67 /* ForecastListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastListCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -227,6 +228,7 @@
 		5F505E0E2989366D00EAFE2E = {
 			isa = PBXGroup;
 			children = (
+				5F1359B42991371F005B8100 /* Kira.gpx */,
 				5F1359A629901E56005B8100 /* README.md */,
 				5FCCAEFA298DF6C600A652C4 /* ci_scripts */,
 				5F505E192989366D00EAFE2E /* Atlas */,
