@@ -27,7 +27,7 @@ final class ForecastDayViewModelTests: XCTestCase {
         // Configure JSON Decoder
         decoder.dateDecodingStrategy = .secondsSince1970
         
-        // Initialize Dark Sky Response
+        // Initialize Openweathermap Response
         let forecastResponse = try! decoder.decode(Forecast.self, from: data)
         
         // Get  weatherData

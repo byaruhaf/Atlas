@@ -24,7 +24,7 @@ final class DayViewModelTests: XCTestCase {
         // Initialize JSON Decoder
         let decoder = JSONDecoder()
         
-        // Initialize Dark Sky Response
+        // Initialize Openweathermap Response
         let currentWeatherResponse = try! decoder.decode(CurrentWeather.self, from: data)
         
         // Initialize View Model

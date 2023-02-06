@@ -12,10 +12,10 @@
 		5F1359A1298FADD7005B8100 /* LocationSservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359A0298FADD7005B8100 /* LocationSservice.swift */; };
 		5F1359A3298FB6FB005B8100 /* NetworkServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359A2298FB6FB005B8100 /* NetworkServicing.swift */; };
 		5F1359A5298FEB71005B8100 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359A4298FEB71005B8100 /* UserDefaults+Extension.swift */; };
-		5F1359AA29909841005B8100 /* CurrentLocationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359A929909841005B8100 /* CurrentLocationViewModelTests.swift */; };
 		5F1359AD2990994B005B8100 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359AC2990994B005B8100 /* MockNetworkService.swift */; };
 		5F1359AF29909984005B8100 /* MockLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359AE29909984005B8100 /* MockLocationService.swift */; };
 		5F1359B12990B907005B8100 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359B02990B907005B8100 /* XCTestCase+Extension.swift */; };
+		5F1359B32990BC57005B8100 /* CurrentLocationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359B22990BC57005B8100 /* CurrentLocationViewModelTests.swift */; };
 		5F328292298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */; };
 		5F328297298C9B380079CF67 /* ForecastListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F328295298C9B380079CF67 /* ForecastListCollectionViewCell.swift */; };
 		5F328298298C9B380079CF67 /* ForecastListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */; };
@@ -81,10 +81,10 @@
 		5F1359A2298FB6FB005B8100 /* NetworkServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServicing.swift; sourceTree = "<group>"; };
 		5F1359A4298FEB71005B8100 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		5F1359A629901E56005B8100 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		5F1359A929909841005B8100 /* CurrentLocationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewModelTests.swift; sourceTree = "<group>"; };
 		5F1359AC2990994B005B8100 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		5F1359AE29909984005B8100 /* MockLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationService.swift; sourceTree = "<group>"; };
 		5F1359B02990B907005B8100 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "XCTestCase+Extension.swift"; path = "AtlasTests/XCTestCase+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		5F1359B22990BC57005B8100 /* CurrentLocationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewModelTests.swift; sourceTree = "<group>"; };
 		5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension .swift"; sourceTree = "<group>"; };
 		5F328295298C9B380079CF67 /* ForecastListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastListCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -338,8 +338,8 @@
 			children = (
 				5F56FFA6298E319E0085DAD0 /* DayViewModelTests.swift */,
 				5F56FFB0298E3CB10085DAD0 /* ForecastViewModelTests.swift */,
-				5F1359A929909841005B8100 /* CurrentLocationViewModelTests.swift */,
 				5F56FFB8298E62240085DAD0 /* ForecastDayViewModelTests.swift */,
+				5F1359B22990BC57005B8100 /* CurrentLocationViewModelTests.swift */,
 			);
 			path = "Test Cases";
 			sourceTree = "<group>";
@@ -666,9 +666,9 @@
 				5F1359AF29909984005B8100 /* MockLocationService.swift in Sources */,
 				5F1359B12990B907005B8100 /* XCTestCase+Extension.swift in Sources */,
 				5F1359AD2990994B005B8100 /* MockNetworkService.swift in Sources */,
+				5F1359B32990BC57005B8100 /* CurrentLocationViewModelTests.swift in Sources */,
 				5F56FFB1298E3CB10085DAD0 /* ForecastViewModelTests.swift in Sources */,
 				5F56FFA7298E319E0085DAD0 /* DayViewModelTests.swift in Sources */,
-				5F1359AA29909841005B8100 /* CurrentLocationViewModelTests.swift in Sources */,
 				5F56FFB9298E62240085DAD0 /* ForecastDayViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
