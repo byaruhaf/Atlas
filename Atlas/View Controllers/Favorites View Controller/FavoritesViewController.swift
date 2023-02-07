@@ -9,7 +9,6 @@ import UIKit
 
 class FavoritesViewController: UIPageViewController {
     var pages = [UIViewController]()
-    var viewModel: FavoritesViewModel?
     let initialPage = 0
     let pageControl = UIPageControl()
 

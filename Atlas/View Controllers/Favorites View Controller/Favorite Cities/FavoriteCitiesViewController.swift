@@ -25,20 +25,21 @@ class FavoriteCitiesViewController: UICollectionViewController {
     }
     // MARK: -
     
-    var viewModel = FavoriteCitiesViewModel()
+//    var viewModel = FavoriteCitiesViewModel()
+    var favorites = UserDefaults.locations
      
     override func viewDidLoad() {
         super.viewDidLoad()
         registerForTheme()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCityTapped))
         navigationItem.rightBarButtonItem?.tintColor = .black
-        setupViewModel(with: viewModel)
+        setupViewModel(with: favorites)
     }
     
     // MARK: - View Methods
-    private func setupViewModel(with viewModel: FavoriteCitiesViewModel) {
+    private func setupViewModel(with favorites: [Location]) {
         configureDataSource()
-        reloadData(location: viewModel.favorites)
+        reloadData(location: favorites)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,9 +63,9 @@ class FavoriteCitiesViewController: UICollectionViewController {
                     UserDefaults.addLocation(city)
                     
                     // Update favorites Locations
-                    self.viewModel.favorites.append(city)
+                    self.favorites.append(city)
                     // reload
-                    self.reloadData(location: self.viewModel.favorites)
+                    self.reloadData(location: self.favorites)
                 }
             }
     }
@@ -147,11 +148,15 @@ extension FavoriteCitiesViewController {
     }
     
     func contextMenu(for index: Int) -> UIMenu {
-        let city = viewModel.favorites[index]
+        let city = favorites[index]
         let action = UIAction(title: "Delete City", attributes: [.destructive]) { [weak self] _ in
-            print(self?.viewModel.favorites)
-            self?.viewModel.favorites.remove(at: index)
-            print(self?.viewModel.favorites)
+            // Update User Defaults
+            UserDefaults.removeLocation(city)
+            print(self?.favorites)
+            self?.favorites.remove(at: index)
+            print(self?.favorites)
+            // reload
+            self?.reloadData(location: self!.favorites)
         }
         
         let menu = UIMenu(title: city.name, options: [], children: [action])

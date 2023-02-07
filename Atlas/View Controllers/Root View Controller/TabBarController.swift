@@ -50,12 +50,6 @@ class TabBarController: UITabBarController {
             case let viewController as CurrentLocationViewController:
                 // Initialize View Model
                 viewController.viewModel = self.viewModel
-            case let viewController as FavoritesViewController:
-                // Initialize View Model
-                let viewModel = FavoritesViewModel()
-                
-                // Configure View Controller
-                viewController.viewModel = viewModel
             default:
                 break
             }
