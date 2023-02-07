@@ -244,7 +244,6 @@
 		5F505E0E2989366D00EAFE2E = {
 			isa = PBXGroup;
 			children = (
-				5F1359B42991371F005B8100 /* Kira.gpx */,
 				5F1359A629901E56005B8100 /* README.md */,
 				5FCCAEFA298DF6C600A652C4 /* ci_scripts */,
 				5F505E192989366D00EAFE2E /* Atlas */,
@@ -315,6 +314,7 @@
 		5F505E35298939A400EAFE2E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5F1359B42991371F005B8100 /* Kira.gpx */,
 				5F505E232989366F00EAFE2E /* Assets.xcassets */,
 			);
 			path = Resources;
