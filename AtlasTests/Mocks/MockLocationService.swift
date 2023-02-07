@@ -11,7 +11,7 @@ import Foundation
 class MockLocationService: LocationServicing {
     // MARK: - Properties
     var isNotAuthorized = true
-    var location: Location? = Location(latitude: 44.34, longitude: 10.99)
+    var location: Location? = Location(name: "Test Name", locality: "Test Name", latitude: 44.34, longitude: 10.99)
     
     // MARK: - Location Service
     func fetchUserLocation() async throws -> Atlas.Location {
