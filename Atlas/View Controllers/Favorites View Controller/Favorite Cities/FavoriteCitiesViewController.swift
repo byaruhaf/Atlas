@@ -155,9 +155,7 @@ extension FavoriteCitiesViewController {
         let action = UIAction(title: "Delete City", attributes: [.destructive]) { [weak self] _ in
             // Update User Defaults
             UserDefaults.removeLocation(city)
-            print(self?.favorites)
             self?.favorites.remove(at: index)
-            print(self?.favorites)
             // reload
             self?.reloadData(location: self!.favorites)
         }

@@ -35,21 +35,24 @@ class FavoritesMapViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        updateLocations()
         animateColor()
     }
     
     func annotationsOnMap(with viewModel: FavoritesMapViewModel) {
+        mapView.removeAnnotations(mapView.annotations.filter { $0 !== mapView.userLocation })
         let userPins: [MapPin] = viewModel.userPins
         if userPins.isEmpty {
             return
         }
-        let coordinateRegion = MKCoordinateRegion(center: userPins[0].coordinate, latitudinalMeters: 800, longitudinalMeters: 800)
+        let coordinateRegion = MKCoordinateRegion(center: userPins.last!.coordinate, latitudinalMeters: 800, longitudinalMeters: 800)
         mapView.setRegion(coordinateRegion, animated: true)
         mapView.addAnnotations(userPins)
         mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: "Anno")
     }
     
     func updateLocations() {
+        viewModel?.locations = []
         viewModel?.locations = UserDefaults.locations
         guard let viewModel else { return }
         annotationsOnMap(with: viewModel)
