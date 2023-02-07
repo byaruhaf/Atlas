@@ -12,9 +12,19 @@ class CityCell: UICollectionViewCell, SelfConfiguringCityCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var localityLabel: UILabel!
     
+    private let networkService = NetworkSservice()
+    
     func configure(with location: Location) {
         self.nameLabel.text = location.name
         self.localityLabel.text = location.locality
+        Task {
+            self.currentTemperatureLabel.text = try await loadCurrentWeatherData(for: location).main.feelsLike.description
+        }
+    }
+    
+    func loadCurrentWeatherData(for location: Location) async throws -> CurrentWeather {
+        let weatherData = try await networkService.loadCurrentWeatherData(for: location)
+        return weatherData
     }
     
     override func layoutSubviews() {
