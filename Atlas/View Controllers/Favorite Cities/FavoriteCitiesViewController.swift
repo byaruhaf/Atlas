@@ -36,7 +36,6 @@ class FavoriteCitiesViewController: UIViewController {
     
     // MARK: - View Methods
     private func setupViewModel(with viewModel: FavoriteCitiesViewModel) {
-        print(viewModel.favorites)
         configureDataSource()
         reloadData(location: viewModel.favorites)
     }
@@ -63,6 +62,8 @@ class FavoriteCitiesViewController: UIViewController {
                     
                     // Update favorites Locations
                     self.viewModel.favorites.append(city)
+                    // reload
+                    self.reloadData(location: self.viewModel.favorites)
                 }
             }
     }
