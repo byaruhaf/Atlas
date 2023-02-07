@@ -186,6 +186,15 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		5F261720299284E7005DAD79 /* CityCell */ = {
+			isa = PBXGroup;
+			children = (
+				5FF3FA6E2991C20D0074FBAF /* CityCell.swift */,
+				5FF3FA7029920B7B0074FBAF /* CityCellViewModel.swift */,
+			);
+			path = CityCell;
+			sourceTree = "<group>";
+		};
 		5F32828C298C99D20079CF67 /* Collection View Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,10 +372,9 @@
 			isa = PBXGroup;
 			children = (
 				5FF3FA602991A76A0074FBAF /* AddCity View Controller */,
+				5F261720299284E7005DAD79 /* CityCell */,
 				5F56FFB3298E52E70085DAD0 /* FavoriteCitiesViewController.swift */,
 				5FF3FA672991AD6E0074FBAF /* FavoritesNavigationViewController.swift */,
-				5FF3FA6E2991C20D0074FBAF /* CityCell.swift */,
-				5FF3FA7029920B7B0074FBAF /* CityCellViewModel.swift */,
 			);
 			path = "Favorite Cities";
 			sourceTree = "<group>";

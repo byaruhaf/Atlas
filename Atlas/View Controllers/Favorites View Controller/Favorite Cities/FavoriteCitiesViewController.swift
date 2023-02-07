@@ -25,7 +25,6 @@ class FavoriteCitiesViewController: UICollectionViewController {
     }
     // MARK: -
     
-//    var viewModel = FavoriteCitiesViewModel()
     var favorites = UserDefaults.locations
      
     override func viewDidLoad() {
