@@ -1,5 +1,5 @@
 //
-//  FavoritesCollectionViewController.swift
+//  FavoriteCitiesViewController.swift
 //  Atlas
 //
 //  Created by Franklin Byaruhanga on 04/02/2023.
@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class FavoritesCollectionViewController: UIViewController {
+class FavoriteCitiesViewController: UIViewController {
     private var chosenCityCancellable: AnyCancellable?
 //    private var cancellables = Set<AnyCancellable>()
     

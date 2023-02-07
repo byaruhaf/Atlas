@@ -41,7 +41,7 @@
 		5F56FFAA298E342F0085DAD0 /* current.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F56FFA9298E342F0085DAD0 /* current.json */; };
 		5F56FFAF298E3A6C0085DAD0 /* forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F56FFAE298E3A6C0085DAD0 /* forecast.json */; };
 		5F56FFB1298E3CB10085DAD0 /* ForecastViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F56FFB0298E3CB10085DAD0 /* ForecastViewModelTests.swift */; };
-		5F56FFB4298E52E70085DAD0 /* FavoritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F56FFB3298E52E70085DAD0 /* FavoritesCollectionViewController.swift */; };
+		5F56FFB4298E52E70085DAD0 /* FavoriteCitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F56FFB3298E52E70085DAD0 /* FavoriteCitiesViewController.swift */; };
 		5F56FFB7298E55940085DAD0 /* WeekDayRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F56FFB6298E55940085DAD0 /* WeekDayRepresentable.swift */; };
 		5F56FFB9298E62240085DAD0 /* ForecastDayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F56FFB8298E62240085DAD0 /* ForecastDayViewModelTests.swift */; };
 		5F5CA33C298A061B006074B3 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CA33B298A061B006074B3 /* Forecast.swift */; };
@@ -65,7 +65,7 @@
 		5FF3FA642991A7980074FBAF /* AddCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA632991A7980074FBAF /* AddCityViewModel.swift */; };
 		5FF3FA682991AD6E0074FBAF /* FavoritesNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA672991AD6E0074FBAF /* FavoritesNavigationViewController.swift */; };
 		5FF3FA6B2991BC290074FBAF /* LocationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA6A2991BC290074FBAF /* LocationStore.swift */; };
-		5FF3FA6D2991BEF20074FBAF /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA6C2991BEF20074FBAF /* CityViewModel.swift */; };
+		5FF3FA6D2991BEF20074FBAF /* FavoriteCitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA6C2991BEF20074FBAF /* FavoriteCitiesViewModel.swift */; };
 		5FF3FA6F2991C20D0074FBAF /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA6E2991C20D0074FBAF /* CityCell.swift */; };
 		5FF54D68298B10EE000FF779 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF54D67298B10EE000FF779 /* DayViewModel.swift */; };
 		5FF54D6B298B117F000FF779 /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF54D6A298B117F000FF779 /* ForecastViewModel.swift */; };
@@ -121,7 +121,7 @@
 		5F56FFA9298E342F0085DAD0 /* current.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = current.json; sourceTree = "<group>"; };
 		5F56FFAE298E3A6C0085DAD0 /* forecast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forecast.json; sourceTree = "<group>"; };
 		5F56FFB0298E3CB10085DAD0 /* ForecastViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModelTests.swift; sourceTree = "<group>"; };
-		5F56FFB3298E52E70085DAD0 /* FavoritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewController.swift; sourceTree = "<group>"; };
+		5F56FFB3298E52E70085DAD0 /* FavoriteCitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCitiesViewController.swift; sourceTree = "<group>"; };
 		5F56FFB6298E55940085DAD0 /* WeekDayRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayRepresentable.swift; sourceTree = "<group>"; };
 		5F56FFB8298E62240085DAD0 /* ForecastDayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDayViewModelTests.swift; sourceTree = "<group>"; };
 		5F5CA33B298A061B006074B3 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		5FF3FA632991A7980074FBAF /* AddCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewModel.swift; sourceTree = "<group>"; };
 		5FF3FA672991AD6E0074FBAF /* FavoritesNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNavigationViewController.swift; sourceTree = "<group>"; };
 		5FF3FA6A2991BC290074FBAF /* LocationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStore.swift; sourceTree = "<group>"; };
-		5FF3FA6C2991BEF20074FBAF /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
+		5FF3FA6C2991BEF20074FBAF /* FavoriteCitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCitiesViewModel.swift; sourceTree = "<group>"; };
 		5FF3FA6E2991C20D0074FBAF /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		5FF54D67298B10EE000FF779 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		5FF54D6A298B117F000FF779 /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
@@ -383,9 +383,9 @@
 		5F56FFB2298E526F0085DAD0 /* Favorites Collection View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5F56FFB3298E52E70085DAD0 /* FavoritesCollectionViewController.swift */,
+				5F56FFB3298E52E70085DAD0 /* FavoriteCitiesViewController.swift */,
 				5FF3FA672991AD6E0074FBAF /* FavoritesNavigationViewController.swift */,
-				5FF3FA6C2991BEF20074FBAF /* CityViewModel.swift */,
+				5FF3FA6C2991BEF20074FBAF /* FavoriteCitiesViewModel.swift */,
 				5FF3FA6E2991C20D0074FBAF /* CityCell.swift */,
 			);
 			path = "Favorites Collection View Controller";
@@ -666,7 +666,7 @@
 			files = (
 				5F32829A298C9C5F0079CF67 /* ReusableView.swift in Sources */,
 				5F13599E298FA921005B8100 /* LocationServicing.swift in Sources */,
-				5F56FFB4298E52E70085DAD0 /* FavoritesCollectionViewController.swift in Sources */,
+				5F56FFB4298E52E70085DAD0 /* FavoriteCitiesViewController.swift in Sources */,
 				5F5CA33C298A061B006074B3 /* Forecast.swift in Sources */,
 				5F5CA342298A1BC7006074B3 /* ForecastViewController.swift in Sources */,
 				5FF54D68298B10EE000FF779 /* DayViewModel.swift in Sources */,
@@ -681,7 +681,7 @@
 				5FF54D6B298B117F000FF779 /* ForecastViewModel.swift in Sources */,
 				5F4AB47E298BFA210007815D /* ImageTheme.swift in Sources */,
 				5FC3A531298A44B60071FA66 /* WeatherConditionIcon.swift in Sources */,
-				5FF3FA6D2991BEF20074FBAF /* CityViewModel.swift in Sources */,
+				5FF3FA6D2991BEF20074FBAF /* FavoriteCitiesViewModel.swift in Sources */,
 				5F4AB47C298BF9B90007815D /* ThemeManager.swift in Sources */,
 				5F505E1F2989366D00EAFE2E /* CurrentLocationViewController.swift in Sources */,
 				5F56FFB7298E55940085DAD0 /* WeekDayRepresentable.swift in Sources */,

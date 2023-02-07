@@ -1,5 +1,5 @@
 //
-//  CityViewModel.swift
+//  FavoriteCitiesViewModel.swift
 //  Atlas
 //
 //  Created by Franklin Byaruhanga on 07/02/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CityViewModel: Equatable, Hashable {
+class FavoriteCitiesViewModel: Equatable, Hashable {
     private let city: Location
     private let networkService: NetworkServicing
 
@@ -31,8 +31,8 @@ class CityViewModel: Equatable, Hashable {
     }
 }
 
-extension CityViewModel {
-    static func == (lhs: CityViewModel, rhs: CityViewModel) -> Bool {
+extension FavoriteCitiesViewModel {
+    static func == (lhs: FavoriteCitiesViewModel, rhs: FavoriteCitiesViewModel) -> Bool {
         lhs.city == rhs.city
     }
     

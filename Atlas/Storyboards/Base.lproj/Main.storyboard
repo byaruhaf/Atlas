@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="340" y="-1037"/>
         </scene>
-        <!--Favorites Collection View Controller-->
+        <!--Favorite Cities View Controller-->
         <scene sceneID="YNS-uq-O5j">
             <objects>
-                <viewController storyboardIdentifier="FavoritesCollectionViewController" id="qYx-dL-GMZ" customClass="FavoritesCollectionViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoriteCitiesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qYx-dL-GMZ" customClass="FavoriteCitiesViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aOo-oj-jml">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
