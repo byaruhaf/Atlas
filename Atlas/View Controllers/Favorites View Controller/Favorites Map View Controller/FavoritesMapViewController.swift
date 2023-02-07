@@ -45,7 +45,8 @@ class FavoritesMapViewController: UIViewController {
         if userPins.isEmpty {
             return
         }
-        let coordinateRegion = MKCoordinateRegion(center: userPins.last!.coordinate, latitudinalMeters: 800, longitudinalMeters: 800)
+        mapView.showsUserLocation = true
+        let coordinateRegion = MKCoordinateRegion(center: userPins.last!.coordinate, latitudinalMeters: 1800000, longitudinalMeters: 1800000)
         mapView.setRegion(coordinateRegion, animated: true)
         mapView.addAnnotations(userPins)
         mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: "Anno")
