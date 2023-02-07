@@ -16,12 +16,13 @@ class FavoritesMapViewController: UIViewController {
     
     @IBOutlet var mapView: MKMapView!
     
-    let locations = [
-        Location(name: "New York", locality: "NY", latitude: 40.7129822, longitude: -74.007205),
-        Location(name: "Khartoum", locality: "Khartoum", latitude: 15.5885494, longitude: 32.535473),
-        Location(name: "Durban", locality: "KZN", latitude: -29.8565296, longitude: 31.0193343),
-        Location(name: "Cairo", locality: "Cairo", latitude: 30.0214489, longitude: 31.4904086)
-    ]
+//    let locations = [
+//        Location(name: "New York", locality: "NY", latitude: 40.7129822, longitude: -74.007205),
+//        Location(name: "Khartoum", locality: "Khartoum", latitude: 15.5885494, longitude: 32.535473),
+//        Location(name: "Durban", locality: "KZN", latitude: -29.8565296, longitude: 31.0193343),
+//        Location(name: "Cairo", locality: "Cairo", latitude: 30.0214489, longitude: 31.4904086)
+//    ]
+    var locations = UserDefaults.locations
     
     override func viewDidLoad() {
         super.viewDidLoad()

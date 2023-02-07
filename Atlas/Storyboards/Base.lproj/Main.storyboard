@@ -72,26 +72,64 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gu8-Kc-h9Z">
-                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="itemSize" width="134" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0m7-YN-U5b">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="715"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CityCell" id="HB3-f7-vxB" customClass="CityCell" customModule="Atlas" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="134" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="N6k-qv-4Fh">
-                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="134" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgh-Wo-qco">
+                                                    <rect key="frame" x="51.666666666666657" y="14" width="31" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="UcH-2k-hpZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CMm-Ht-ddu">
+                                                    <rect key="frame" x="12" y="49" width="110" height="67"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAo-5Q-Zyh">
+                                                            <rect key="frame" x="0.0" y="0.0" width="110" height="51.333333333333336"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Akt-lk-xIE">
+                                                            <rect key="frame" x="0.0" y="51.333333333333329" width="110" height="15.666666666666671"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Akt-lk-xIE" firstAttribute="top" secondItem="CMm-Ht-ddu" secondAttribute="top" constant="51.333333333333329" id="Iwr-cE-1D7"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="CMm-Ht-ddu" secondAttribute="bottom" constant="12" id="1rn-Qi-1S3"/>
+                                                <constraint firstItem="CMm-Ht-ddu" firstAttribute="top" secondItem="kgh-Wo-qco" secondAttribute="bottom" constant="14" id="3xR-PR-Joa"/>
+                                                <constraint firstItem="kgh-Wo-qco" firstAttribute="top" secondItem="N6k-qv-4Fh" secondAttribute="top" constant="14" id="94g-tR-2WW"/>
+                                                <constraint firstItem="kgh-Wo-qco" firstAttribute="centerX" secondItem="N6k-qv-4Fh" secondAttribute="centerX" id="PVH-Ou-m6w"/>
+                                                <constraint firstItem="CMm-Ht-ddu" firstAttribute="leading" secondItem="N6k-qv-4Fh" secondAttribute="leading" constant="12" id="fDJ-Fy-XUp"/>
+                                                <constraint firstAttribute="trailing" secondItem="CMm-Ht-ddu" secondAttribute="trailing" constant="12" id="og7-Z4-JUj"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="134" height="128"/>
+                                        <connections>
+                                            <outlet property="currentTemperatureLabel" destination="kgh-Wo-qco" id="cRG-ej-be8"/>
+                                            <outlet property="localityLabel" destination="Akt-lk-xIE" id="ZuR-Qw-vMS"/>
+                                            <outlet property="nameLabel" destination="hAo-5Q-Zyh" id="EdZ-f9-rQ4"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

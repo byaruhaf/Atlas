@@ -10,11 +10,12 @@ import Combine
 
 class FavoriteCitiesViewController: UIViewController {
     private var chosenCityCancellable: AnyCancellable?
-//    private var cancellables = Set<AnyCancellable>()
+    var favorites = UserDefaults.locations
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCityTapped))
+        print(favorites)
     }
     
     @objc private func addCityTapped() {
@@ -29,6 +30,11 @@ class FavoriteCitiesViewController: UIViewController {
                 
                 if let city = city {
                     print("Save Chosen city: \(city)")
+                    // Update User Defaults
+                    UserDefaults.addLocation(city)
+                    
+                    // Update Locations
+                    self.favorites.append(city)
                 }
             }
     }
