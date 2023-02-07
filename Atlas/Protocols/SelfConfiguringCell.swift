@@ -10,3 +10,7 @@ import Foundation
 protocol SelfConfiguringCell {
     func configure(with forecastDayViewModel: any WeekDayRepresentable)
 }
+
+protocol SelfConfiguringCityCell {
+    func configure(with location: Location)
+}

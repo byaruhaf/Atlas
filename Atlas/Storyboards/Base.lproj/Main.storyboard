@@ -86,37 +86,36 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgh-Wo-qco">
-                                                    <rect key="frame" x="51.666666666666657" y="14" width="31" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="UcH-2k-hpZ"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="51.666666666666657" y="14.000000000000004" width="31" height="51.333333333333343"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CMm-Ht-ddu">
-                                                    <rect key="frame" x="12" y="49" width="110" height="67"/>
+                                                    <rect key="frame" x="12" y="79.333333333333329" width="110" height="36.666666666666671"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAo-5Q-Zyh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="110" height="51.333333333333336"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="110" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Akt-lk-xIE">
-                                                            <rect key="frame" x="0.0" y="51.333333333333329" width="110" height="15.666666666666671"/>
+                                                            <rect key="frame" x="0.0" y="21" width="110" height="15.666666666666664"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="15.666666666666664" id="v70-RM-0k8"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="Akt-lk-xIE" firstAttribute="top" secondItem="CMm-Ht-ddu" secondAttribute="top" constant="51.333333333333329" id="Iwr-cE-1D7"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.89177280995580888" green="0.89177280995580888" blue="0.89177280995580888" alpha="0.75414473173634111" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="CMm-Ht-ddu" secondAttribute="bottom" constant="12" id="1rn-Qi-1S3"/>
+                                                <constraint firstItem="kgh-Wo-qco" firstAttribute="height" secondItem="N6k-qv-4Fh" secondAttribute="height" multiplier="0.4" id="27b-la-crG"/>
                                                 <constraint firstItem="CMm-Ht-ddu" firstAttribute="top" secondItem="kgh-Wo-qco" secondAttribute="bottom" constant="14" id="3xR-PR-Joa"/>
                                                 <constraint firstItem="kgh-Wo-qco" firstAttribute="top" secondItem="N6k-qv-4Fh" secondAttribute="top" constant="14" id="94g-tR-2WW"/>
                                                 <constraint firstItem="kgh-Wo-qco" firstAttribute="centerX" secondItem="N6k-qv-4Fh" secondAttribute="centerX" id="PVH-Ou-m6w"/>
@@ -124,6 +123,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="CMm-Ht-ddu" secondAttribute="trailing" constant="12" id="og7-Z4-JUj"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.089299890379242547" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="134" height="128"/>
                                         <connections>
                                             <outlet property="currentTemperatureLabel" destination="kgh-Wo-qco" id="cRG-ej-be8"/>
@@ -144,6 +144,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="b98-yu-WBM"/>
+                    <connections>
+                        <outlet property="favoriteCitiesCollection" destination="Mkv-VI-rPH" id="dO5-zY-JoE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6A2-Al-Stc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -157,7 +160,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jF9-M4-UdQ">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jF9-M4-UdQ">
                                 <rect key="frame" x="16" y="59" width="361" height="759"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
