@@ -31,6 +31,7 @@ class FavoriteCitiesViewController: UIViewController {
         super.viewDidLoad()
         registerForTheme()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCityTapped))
+        navigationItem.rightBarButtonItem?.tintColor = .black
         setupViewModel(with: viewModel)
     }
     
