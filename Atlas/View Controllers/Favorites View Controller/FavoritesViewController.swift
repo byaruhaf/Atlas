@@ -11,13 +11,13 @@ class FavoritesViewController: UIPageViewController {
     var pages = [UIViewController]()
     var viewModel: FavoritesViewModel?
     let initialPage = 0
-//    let pageControl = UIPageControl()
+    let pageControl = UIPageControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-//        style()
-//        layout()
+        style()
+        layout()
         // Register for Observer
         registerForTheme()
     }
@@ -30,7 +30,7 @@ class FavoritesViewController: UIPageViewController {
         dataSource = self
         delegate = self
                 
-//        pageControl.addTarget(self, action: #selector(pageControlTapped(_:)), for: .valueChanged)
+        pageControl.addTarget(self, action: #selector(pageControlTapped(_:)), for: .valueChanged)
         
         // create an array of viewController
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -43,27 +43,27 @@ class FavoritesViewController: UIPageViewController {
         setViewControllers([pages[initialPage]], direction: .forward, animated: true, completion: nil)
     }
 
-//    @objc func pageControlTapped(_ sender: UIPageControl) {
-//        setViewControllers([pages[sender.currentPage]], direction: .forward, animated: true, completion: nil)
-//    }
-//
-//    func style() {
-//        pageControl.translatesAutoresizingMaskIntoConstraints = false
-//        pageControl.currentPageIndicatorTintColor = .black
-//        pageControl.pageIndicatorTintColor = .systemGray2
-//        pageControl.numberOfPages = pages.count
-//        pageControl.currentPage = initialPage
-//    }
-//
-//    func layout() {
-//        view.addSubview(pageControl)
-//
-//        NSLayoutConstraint.activate([
-//            pageControl.widthAnchor.constraint(equalTo: view.widthAnchor),
-//            pageControl.heightAnchor.constraint(equalToConstant: 20),
-//            view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 1)
-//        ])
-//    }
+    @objc func pageControlTapped(_ sender: UIPageControl) {
+        setViewControllers([pages[sender.currentPage]], direction: .forward, animated: true, completion: nil)
+    }
+
+    func style() {
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        pageControl.currentPageIndicatorTintColor = .black
+        pageControl.pageIndicatorTintColor = .systemGray2
+        pageControl.numberOfPages = pages.count
+        pageControl.currentPage = initialPage
+    }
+
+    func layout() {
+        view.addSubview(pageControl)
+
+        NSLayoutConstraint.activate([
+            pageControl.widthAnchor.constraint(equalTo: view.widthAnchor),
+            pageControl.heightAnchor.constraint(equalToConstant: 20),
+            view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 10)
+        ])
+    }
     
     deinit {
         // Register for Observer
@@ -126,9 +126,9 @@ extension FavoritesViewController: UIPageViewControllerDelegate {
     // How we keep our pageControl in sync with viewControllers
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         
-//        guard let viewControllers = pageViewController.viewControllers else { return }
-//        guard let currentIndex = pages.firstIndex(of: viewControllers[0]) else { return }
+        guard let viewControllers = pageViewController.viewControllers else { return }
+        guard let currentIndex = pages.firstIndex(of: viewControllers[0]) else { return }
         
-//        pageControl.currentPage = currentIndex
+        pageControl.currentPage = currentIndex
     }
 }
