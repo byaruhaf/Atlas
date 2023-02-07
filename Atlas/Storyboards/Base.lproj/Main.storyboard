@@ -43,7 +43,7 @@
         <!--Favorites-->
         <scene sceneID="jso-Rj-oeU">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="6pg-JU-eZB" customClass="FavoritesViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="FavoritesViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="6pg-JU-eZB" customClass="FavoritesViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="l0P-xg-gjz"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mtL-V1-kYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
