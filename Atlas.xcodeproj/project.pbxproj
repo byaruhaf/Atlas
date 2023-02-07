@@ -15,6 +15,7 @@
 		5F1359AD2990994B005B8100 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359AC2990994B005B8100 /* MockNetworkService.swift */; };
 		5F1359AF29909984005B8100 /* MockLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359AE29909984005B8100 /* MockLocationService.swift */; };
 		5F1359B32990BC57005B8100 /* CurrentLocationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359B22990BC57005B8100 /* CurrentLocationViewModelTests.swift */; };
+		5F26171E2992845A005DAD79 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F26171D2992845A005DAD79 /* MapPin.swift */; };
 		5F328292298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */; };
 		5F328297298C9B380079CF67 /* ForecastListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F328295298C9B380079CF67 /* ForecastListCollectionViewCell.swift */; };
 		5F328298298C9B380079CF67 /* ForecastListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */; };
@@ -90,6 +91,7 @@
 		5F1359AE29909984005B8100 /* MockLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationService.swift; sourceTree = "<group>"; };
 		5F1359B22990BC57005B8100 /* CurrentLocationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewModelTests.swift; sourceTree = "<group>"; };
 		5F1359B42991371F005B8100 /* Kira.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Kira.gpx; sourceTree = "<group>"; };
+		5F26171D2992845A005DAD79 /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension .swift"; sourceTree = "<group>"; };
 		5F328295298C9B380079CF67 /* ForecastListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastListCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 				5F5CA33D298A069C006074B3 /* CurrentWeather.swift */,
 				5F4AB47D298BFA210007815D /* ImageTheme.swift */,
 				5F4AB481298C14D90007815D /* ColorTheme.swift */,
+				5F26171D2992845A005DAD79 /* MapPin.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 				5F505E1F2989366D00EAFE2E /* CurrentLocationViewController.swift in Sources */,
 				5F56FFB7298E55940085DAD0 /* WeekDayRepresentable.swift in Sources */,
 				5FB8F4A3298AD9DD00B8A158 /* Alert.swift in Sources */,
+				5F26171E2992845A005DAD79 /* MapPin.swift in Sources */,
 				5F4AB472298BCBD20007815D /*  DependencyProvider.swift in Sources */,
 				5F4AB475298BD1B10007815D /* FavoritesViewController.swift in Sources */,
 				5F72E1C8298E201200858576 /* AtlasError.swift in Sources */,

@@ -15,13 +15,6 @@ class FavoritesMapViewController: UIViewController {
     }
     
     @IBOutlet var mapView: MKMapView!
-    
-//    let locations = [
-//        Location(name: "New York", locality: "NY", latitude: 40.7129822, longitude: -74.007205),
-//        Location(name: "Khartoum", locality: "Khartoum", latitude: 15.5885494, longitude: 32.535473),
-//        Location(name: "Durban", locality: "KZN", latitude: -29.8565296, longitude: 31.0193343),
-//        Location(name: "Cairo", locality: "Cairo", latitude: 30.0214489, longitude: 31.4904086)
-//    ]
     var locations = UserDefaults.locations
     
     override func viewDidLoad() {
@@ -80,7 +73,6 @@ extension FavoritesMapViewController: ThemeableColor {
 
 extension FavoritesMapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        guard annotation is MKPointAnnotation else { return nil }
         let identifier = "Annotation"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         if annotationView == nil {
@@ -98,17 +90,5 @@ extension FavoritesMapViewController: MKMapViewDelegate {
             annotationView!.annotation = annotation
         }
         return annotationView
-    }
-}
-
-class MapPin: NSObject, MKAnnotation {
-    let title: String?
-    let locationName: String
-    let coordinate: CLLocationCoordinate2D
-    
-    init(title: String, locationName: String, coordinate: CLLocationCoordinate2D) {
-        self.title = title
-        self.locationName = locationName
-        self.coordinate = coordinate
     }
 }
