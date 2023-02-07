@@ -292,7 +292,6 @@
 		5F505E322989385200EAFE2E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5FF3FA602991A76A0074FBAF /* AddCity View Controller */,
 				5FAC3696299181870037E7A5 /* Favorites Map View Controller */,
 				5F3282A2298CD26B0079CF67 /* Settings View */,
 				5F4AB479298BD7A50007815D /* Root View Controller */,
@@ -300,7 +299,7 @@
 				5FC3A52D298A3CB80071FA66 /* DayViewController */,
 				5FC3A52E298A3CC30071FA66 /* ForecastViewController */,
 				5F4AB473298BD16E0007815D /* Favorites View Controller */,
-				5F56FFB2298E526F0085DAD0 /* Favorites Collection View Controller */,
+				5F56FFB2298E526F0085DAD0 /* Favorite Cities */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -380,15 +379,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		5F56FFB2298E526F0085DAD0 /* Favorites Collection View Controller */ = {
+		5F56FFB2298E526F0085DAD0 /* Favorite Cities */ = {
 			isa = PBXGroup;
 			children = (
+				5FF3FA602991A76A0074FBAF /* AddCity View Controller */,
 				5F56FFB3298E52E70085DAD0 /* FavoriteCitiesViewController.swift */,
 				5FF3FA672991AD6E0074FBAF /* FavoritesNavigationViewController.swift */,
 				5FF3FA6C2991BEF20074FBAF /* FavoriteCitiesViewModel.swift */,
 				5FF3FA6E2991C20D0074FBAF /* CityCell.swift */,
 			);
-			path = "Favorites Collection View Controller";
+			path = "Favorite Cities";
 			sourceTree = "<group>";
 		};
 		5F56FFB5298E550F0085DAD0 /* Protocols */ = {
