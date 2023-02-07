@@ -8,26 +8,26 @@
 import UIKit
 import MapKit
 
-class FavoritesMapViewController: UIViewController, MKMapViewDelegate {
+class FavoritesMapViewController: UIViewController {
     
-        override var preferredStatusBarStyle: UIStatusBarStyle {
-            .darkContent
-        }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
+    }
     
-        @IBOutlet var mapView: MKMapView!
+    @IBOutlet var mapView: MKMapView!
     
-        let locations = [
-            Location(name: "New York", locality: "NY", latitude: 40.7129822, longitude: -74.007205),
-            Location(name: "Khartoum", locality: "Khartoum", latitude: 15.5885494, longitude: 32.535473),
-            Location(name: "Durban", locality: "KZN", latitude: -29.8565296, longitude: 31.0193343),
-            Location(name: "Cairo", locality: "Cairo", latitude: 30.0214489, longitude: 31.4904086)
-        ]
-
+    let locations = [
+        Location(name: "New York", locality: "NY", latitude: 40.7129822, longitude: -74.007205),
+        Location(name: "Khartoum", locality: "Khartoum", latitude: 15.5885494, longitude: 32.535473),
+        Location(name: "Durban", locality: "KZN", latitude: -29.8565296, longitude: 31.0193343),
+        Location(name: "Cairo", locality: "Cairo", latitude: 30.0214489, longitude: 31.4904086)
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerForTheme()
-                mapView.delegate = self
-                annotationsOnMap()
+        mapView.delegate = self
+        annotationsOnMap()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,24 +36,17 @@ class FavoritesMapViewController: UIViewController, MKMapViewDelegate {
     }
     
     func annotationsOnMap() {
-        
+        var userPins: [MapPin] = []
         for location in locations {
             
-            let annotations = MKPointAnnotation()
-            
-            annotations.title = location.name
-            annotations.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-            
-            mapView.addAnnotation(annotations)
-            
-            let locationCoordinate2d = annotations.coordinate
-            let span = MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
-            let region = MKCoordinateRegion(center: locationCoordinate2d, span: span)
-            
-            mapView.setRegion(region, animated: true)
+            userPins.append(MapPin(title: location.name, locationName: location.locality, coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)))
         }
+        let coordinateRegion = MKCoordinateRegion(center: userPins[0].coordinate, latitudinalMeters: 800, longitudinalMeters: 800)
+        mapView.setRegion(coordinateRegion, animated: true)
+        mapView.addAnnotations(userPins)
+        mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: "Anno")
     }
-    
+        
     deinit {
         // Register for Observer
         registerForTheme()
@@ -84,52 +77,37 @@ extension FavoritesMapViewController: ThemeableColor {
     }
 }
 
-// class ViewController: UIViewController, MKMapViewDelegate {
-//
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        .darkContent
-//    }
-//
-//    @IBOutlet weak var mapView: MKMapView!
-//
-//    let locations = [
-//
-//        Location(name: "Dr. James Golf Course", latitude: 40.003252, longitude: -86.0655897),
-//        Location(name: "Avon Town Hall", latitude: 39.7636057, longitude: -86.4080829),
-//        Location(name: "Brookside Park", latitude: 39.7897185, longitude: -86.1070623)
-//    ]
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        mapView.delegate = self
-//        annotationsOnMap()
-//
-//    }
-//
-//    func annotationsOnMap() {
-//
-//        for location in locations {
-//
-//            let annotations = MKPointAnnotation()
-//
-//            annotations.title = location.name
-//            annotations.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-//
-//            mapView.addAnnotation(annotations)
-//
-//            let locationCoordinate2d = annotations.coordinate
-//            let span = MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
-//            let region = MKCoordinateRegion(center: locationCoordinate2d, span: span)
-//
-//            mapView.setRegion(region, animated: true)
-//        }
-//    }
-// }
+extension FavoritesMapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        guard annotation is MKPointAnnotation else { return nil }
+        let identifier = "Annotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        if annotationView == nil {
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = true
+            
+            let pointSize = UIImage.SymbolConfiguration(pointSize: 50)
+            let caption = UIImage.SymbolConfiguration(textStyle: .largeTitle)
+            let thin = UIImage.SymbolConfiguration(weight: .bold)
+            let combined = caption.applying(pointSize).applying(thin)
+            
+            annotationView!.image = UIImage(systemName: "cloud", withConfiguration: combined)!
+            annotationView!.clusteringIdentifier = "PinCluster"
+        } else {
+            annotationView!.annotation = annotation
+        }
+        return annotationView
+    }
+}
 
-// struct Location {
-//
-//    let title: String
-//    let latitude: Double
-//    let longitude: Double
-// }
+class MapPin: NSObject, MKAnnotation {
+    let title: String?
+    let locationName: String
+    let coordinate: CLLocationCoordinate2D
+    
+    init(title: String, locationName: String, coordinate: CLLocationCoordinate2D) {
+        self.title = title
+        self.locationName = locationName
+        self.coordinate = coordinate
+    }
+}
