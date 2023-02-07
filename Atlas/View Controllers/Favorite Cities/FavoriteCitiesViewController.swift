@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class FavoriteCitiesViewController: UIViewController {
+class FavoriteCitiesViewController: UICollectionViewController {
     
     enum Section {
         case main
@@ -134,5 +134,27 @@ extension FavoriteCitiesViewController {
         snapshot.appendSections([.main])
         snapshot.appendItems(location, toSection: .main)
         dataSource.apply(snapshot)
+    }
+}
+
+extension FavoriteCitiesViewController {
+    override func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        let menu = contextMenu(for: indexPath.row)
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { _ in
+            menu
+        })
+    }
+    
+    func contextMenu(for index: Int) -> UIMenu {
+        let city = viewModel.favorites[index]
+        let action = UIAction(title: "Delete City", attributes: [.destructive]) { [weak self] _ in
+            print(self?.viewModel.favorites)
+            self?.viewModel.favorites.remove(at: index)
+            print(self?.viewModel.favorites)
+        }
+        
+        let menu = UIMenu(title: city.name, options: [], children: [action])
+        return menu
     }
 }
