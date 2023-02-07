@@ -40,6 +40,9 @@ class FavoritesMapViewController: UIViewController {
     
     func annotationsOnMap(with viewModel: FavoritesMapViewModel) {
         let userPins: [MapPin] = viewModel.userPins
+        if userPins.isEmpty {
+            return
+        }
         let coordinateRegion = MKCoordinateRegion(center: userPins[0].coordinate, latitudinalMeters: 800, longitudinalMeters: 800)
         mapView.setRegion(coordinateRegion, animated: true)
         mapView.addAnnotations(userPins)
