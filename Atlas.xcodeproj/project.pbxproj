@@ -50,6 +50,7 @@
 		5F72E1C4298DFFE700858576 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F72E1C2298DFFE700858576 /* Settings.storyboard */; };
 		5F72E1C6298E00A500858576 /* CurrentLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F72E1C5298E00A500858576 /* CurrentLocation.storyboard */; };
 		5F72E1C8298E201200858576 /* AtlasError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F72E1C7298E201200858576 /* AtlasError.swift */; };
+		5F9280032992901F0067A2D7 /* FavoritesMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9280022992901F0067A2D7 /* FavoritesMapViewModel.swift */; };
 		5FAC3698299181BF0037E7A5 /* FavoritesMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAC3697299181BF0037E7A5 /* FavoritesMapViewController.swift */; };
 		5FB8F4A3298AD9DD00B8A158 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8F4A2298AD9DD00B8A158 /* Alert.swift */; };
 		5FB8F4A6298AF65800B8A158 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB8F4A5298AF65800B8A158 /* WeatherData.swift */; };
@@ -129,6 +130,7 @@
 		5F72E1C3298DFFE700858576 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Atlas/Storyboards/Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		5F72E1C5298E00A500858576 /* CurrentLocation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CurrentLocation.storyboard; sourceTree = "<group>"; };
 		5F72E1C7298E201200858576 /* AtlasError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtlasError.swift; sourceTree = "<group>"; };
+		5F9280022992901F0067A2D7 /* FavoritesMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesMapViewModel.swift; sourceTree = "<group>"; };
 		5FAC3697299181BF0037E7A5 /* FavoritesMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesMapViewController.swift; sourceTree = "<group>"; };
 		5FB8F4A2298AD9DD00B8A158 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		5FB8F4A5298AF65800B8A158 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				5FAC3697299181BF0037E7A5 /* FavoritesMapViewController.swift */,
+				5F9280022992901F0067A2D7 /* FavoritesMapViewModel.swift */,
 			);
 			path = "Favorites Map View Controller";
 			sourceTree = "<group>";
@@ -679,6 +682,7 @@
 				5F4AB472298BCBD20007815D /*  DependencyProvider.swift in Sources */,
 				5F4AB475298BD1B10007815D /* FavoritesViewController.swift in Sources */,
 				5F72E1C8298E201200858576 /* AtlasError.swift in Sources */,
+				5F9280032992901F0067A2D7 /* FavoritesMapViewModel.swift in Sources */,
 				5FAC3698299181BF0037E7A5 /* FavoritesMapViewController.swift in Sources */,
 				5F1359A5298FEB71005B8100 /* UserDefaults+Extension.swift in Sources */,
 				5F505E1B2989366D00EAFE2E /* AppDelegate.swift in Sources */,

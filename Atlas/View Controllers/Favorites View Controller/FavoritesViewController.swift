@@ -32,9 +32,8 @@ class FavoritesViewController: UIPageViewController {
         pageControl.addTarget(self, action: #selector(pageControlTapped(_:)), for: .valueChanged)
         
         // create an array of viewController
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let page1 = storyboard.instantiateViewController(withIdentifier: "FavoritesNavigationViewController")
-        let page2 = storyboard.instantiateViewController(withIdentifier: "FavoritesMapViewController")
+        let page1 = FavoritesNavigationViewController.newInstance()
+        let page2 = FavoritesMapViewController.newInstance(viewModel: FavoritesMapViewModel())
 
         pages.append(page1)
         pages.append(page2)

@@ -15,13 +15,22 @@ class FavoritesMapViewController: UIViewController {
     }
     
     @IBOutlet var mapView: MKMapView!
-    var locations = UserDefaults.locations
     
+    var viewModel: FavoritesMapViewModel?
+
+    private static let identifier = "FavoritesMapViewController"
+    
+    static func newInstance(viewModel: FavoritesMapViewModel) -> FavoritesMapViewController {
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: identifier) as! FavoritesMapViewController
+        controller.viewModel = viewModel
+        return controller
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         registerForTheme()
         mapView.delegate = self
-        annotationsOnMap()
+        updateLocations()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,16 +38,18 @@ class FavoritesMapViewController: UIViewController {
         animateColor()
     }
     
-    func annotationsOnMap() {
-        var userPins: [MapPin] = []
-        for location in locations {
-            
-            userPins.append(MapPin(title: location.name, locationName: location.locality, coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)))
-        }
+    func annotationsOnMap(with viewModel: FavoritesMapViewModel) {
+        let userPins: [MapPin] = viewModel.userPins
         let coordinateRegion = MKCoordinateRegion(center: userPins[0].coordinate, latitudinalMeters: 800, longitudinalMeters: 800)
         mapView.setRegion(coordinateRegion, animated: true)
         mapView.addAnnotations(userPins)
         mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: "Anno")
+    }
+    
+    func updateLocations() {
+        viewModel?.locations = UserDefaults.locations
+        guard let viewModel else { return }
+        annotationsOnMap(with: viewModel)
     }
         
     deinit {

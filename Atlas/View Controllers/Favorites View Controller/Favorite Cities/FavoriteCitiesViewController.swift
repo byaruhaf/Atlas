@@ -8,6 +8,10 @@
 import UIKit
 import Combine
 
+protocol FavoriteCitiesViewControllerDelegate: AnyObject {
+    func controllerDidRefresh(_ controller: ForecastViewController)
+}
+
 class FavoriteCitiesViewController: UICollectionViewController {
     
     enum Section {
