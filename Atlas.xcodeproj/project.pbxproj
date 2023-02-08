@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F0BE8A5299325A4001D8535 /* XCUIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BE8A4299325A4001D8535 /* XCUIApplication+Extension.swift */; };
+		5F0BE8A929934C12001D8535 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BE8A829934C12001D8535 /* XCTestCase+Extension.swift */; };
 		5F13599C298FA5D1005B8100 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F13599B298FA5D1005B8100 /* Location.swift */; };
 		5F13599E298FA921005B8100 /* LocationServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F13599D298FA921005B8100 /* LocationServicing.swift */; };
 		5F1359A1298FADD7005B8100 /* LocationSservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359A0298FADD7005B8100 /* LocationSservice.swift */; };
@@ -69,7 +70,6 @@
 		5FF3FA682991AD6E0074FBAF /* FavoritesNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA672991AD6E0074FBAF /* FavoritesNavigationViewController.swift */; };
 		5FF3FA6F2991C20D0074FBAF /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA6E2991C20D0074FBAF /* CityCell.swift */; };
 		5FF3FA7129920B7B0074FBAF /* CityCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA7029920B7B0074FBAF /* CityCellViewModel.swift */; };
-		5FF3FA74299225C20074FBAF /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA73299225C20074FBAF /* XCTestCase+Extension.swift */; };
 		5FF54D68298B10EE000FF779 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF54D67298B10EE000FF779 /* DayViewModel.swift */; };
 		5FF54D6B298B117F000FF779 /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF54D6A298B117F000FF779 /* ForecastViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -93,6 +93,7 @@
 
 /* Begin PBXFileReference section */
 		5F0BE8A4299325A4001D8535 /* XCUIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Extension.swift"; sourceTree = "<group>"; };
+		5F0BE8A829934C12001D8535 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 		5F13599B298FA5D1005B8100 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		5F13599D298FA921005B8100 /* LocationServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServicing.swift; sourceTree = "<group>"; };
 		5F1359A0298FADD7005B8100 /* LocationSservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSservice.swift; sourceTree = "<group>"; };
@@ -162,7 +163,6 @@
 		5FF3FA672991AD6E0074FBAF /* FavoritesNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNavigationViewController.swift; sourceTree = "<group>"; };
 		5FF3FA6E2991C20D0074FBAF /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		5FF3FA7029920B7B0074FBAF /* CityCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCellViewModel.swift; sourceTree = "<group>"; };
-		5FF3FA73299225C20074FBAF /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 		5FF54D67298B10EE000FF779 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		5FF54D6A298B117F000FF779 /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +196,14 @@
 			isa = PBXGroup;
 			children = (
 				5F0BE8A4299325A4001D8535 /* XCUIApplication+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5F0BE8A729934BF1001D8535 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5F0BE8A829934C12001D8535 /* XCTestCase+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -373,7 +381,7 @@
 		5F56FF9D298E30F80085DAD0 /* AtlasTests */ = {
 			isa = PBXGroup;
 			children = (
-				5FF3FA72299225C20074FBAF /* Extension */,
+				5F0BE8A729934BF1001D8535 /* Extension */,
 				5F1359AB29909923005B8100 /* Mocks */,
 				5F56FFA8298E33F60085DAD0 /* Stubs */,
 				5F56FFA5298E315B0085DAD0 /* Test Cases */,
@@ -540,15 +548,6 @@
 				5FF3FA632991A7980074FBAF /* AddCityViewModel.swift */,
 			);
 			path = "AddCity View Controller";
-			sourceTree = "<group>";
-		};
-		5FF3FA72299225C20074FBAF /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				5FF3FA73299225C20074FBAF /* XCTestCase+Extension.swift */,
-			);
-			name = Extension;
-			path = ../../../../../../../Downloads/Extension;
 			sourceTree = "<group>";
 		};
 		5FF54D66298B10D7000FF779 /* View Model */ = {
@@ -787,7 +786,7 @@
 				5F1359B32990BC57005B8100 /* CurrentLocationViewModelTests.swift in Sources */,
 				5F56FFB1298E3CB10085DAD0 /* ForecastViewModelTests.swift in Sources */,
 				5F56FFA7298E319E0085DAD0 /* DayViewModelTests.swift in Sources */,
-				5FF3FA74299225C20074FBAF /* XCTestCase+Extension.swift in Sources */,
+				5F0BE8A929934C12001D8535 /* XCTestCase+Extension.swift in Sources */,
 				5F56FFB9298E62240085DAD0 /* ForecastDayViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

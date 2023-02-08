@@ -1,8 +1,8 @@
 //
-//  XCTestCase+Extension .swift
+//  XCTestCase+Extension.swift
 //  AtlasTests
 //
-//  Created by Franklin Byaruhanga on 06/02/2023.
+//  Created by Franklin Byaruhanga on 08/02/2023.
 //
 
 import XCTest
@@ -17,3 +17,4 @@ extension XCTestCase {
         return try! Data(contentsOf: url!)
     }
 }
+
