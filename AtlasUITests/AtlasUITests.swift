@@ -22,14 +22,39 @@ final class AtlasUITests: XCTestCase {
     }
 
     func testTheme() throws {
+        // Use this before the alerts appear. I am doing it before app.launch()
+        
+        let allowButtonPredicate = NSPredicate(format: "label == 'Allow While Using App' || label == 'Allow'")
+        // 1st alert
+        _ = addUIInterruptionMonitor(withDescription: "Allow to access your location?") { alert -> Bool in
+            let alwaysAllowButton = alert.buttons.matching(allowButtonPredicate).element.firstMatch
+            if alwaysAllowButton.exists {
+                alwaysAllowButton.tap()
+                return true
+            }
+            return false
+        }
+        // Copy paste if there are more than one alerts to handle in the app
         app.launch()
         app.tabBars["Tab Bar"].buttons["Settings"].tap()
-        app.collectionViews/*@START_MENU_TOKEN@*/.buttons["Image Themes, 🌴 Forest"]/*[[".cells.buttons[\"Image Themes, 🌴 Forest\"]",".buttons[\"Image Themes, 🌴 Forest\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.collectionViews.buttons["Image Themes, 🌴 Forest"].tap()
     }
     
     func testAddFavorites() throws {
+        // Use this before the alerts appear. I am doing it before app.launch()
+        
+        let allowButtonPredicate = NSPredicate(format: "label == 'Allow While Using App' || label == 'Allow'")
+        // 1st alert
+        _ = addUIInterruptionMonitor(withDescription: "Allow to access your location?") { alert -> Bool in
+            let alwaysAllowButton = alert.buttons.matching(allowButtonPredicate).element.firstMatch
+            if alwaysAllowButton.exists {
+                alwaysAllowButton.tap()
+                return true
+            }
+            return false
+        }
+        // Copy paste if there are more than one alerts to handle in the app
         app.launch()
-//        app.alerts["Allow “Atlas Weather” to use your location?"].scrollViews.otherElements.buttons["Allow While Using App"].tap()
         app.tabBars["Tab Bar"].buttons["Favorites"].tap()
         let scrollViewsQuery = app.scrollViews
         let elementsQuery = scrollViewsQuery.otherElements
