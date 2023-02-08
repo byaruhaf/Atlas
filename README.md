@@ -75,6 +75,8 @@ Atlas uses Xcode Cloud to perform continuous integration and deployment.
 Every push to the github repo is Built, Tested, Archive and Deploy to testflight for internal testing.
 If any file changes Xcode Cloud will create a new build of the Atlas app on TestFlight.
 
+![Xcode Cloud](Demo/XcodeCloud.png)
+
 ### Coding Style
 
 SwiftLint runs as part of the build process in the local Xcode & Xcode Cloud, and errors/warnings are surfaced in Xcode as well.
