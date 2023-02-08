@@ -18,7 +18,7 @@ final class AtlasUITests: XCTestCase {
     
     override func tearDownWithError() throws {
         try super.tearDownWithError()
-        app.uninstall(name: "Atlas Weather")
+//        app.uninstall(name: "Atlas Weather")
     }
 
     func testTheme() throws {

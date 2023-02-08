@@ -11,3 +11,7 @@ Next you'll right-click on the `Configuration` folder in the Xcode sidebar, and 
 
 Secret Management API Keys are Stored in Xcode Configuration
 SSL/Certificate Pinning using Intermediate Certificate Authority (CA) certificates for openweathermap.org
+
+## Logging
+
+Proper logging using Apple unified logging system using the **Logger** type
