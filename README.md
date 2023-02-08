@@ -33,8 +33,8 @@ UserDefaults is used to store the users favorite cities and last time the users 
 
 ### Security
 
-Secret Management API Keys are Stored in Xcode Configuration
-SSL/Certificate Pinning using Intermediate Certificate Authority (CA) certificates for openweathermap.org
+- Secret Management API Keys are Stored in Xcode Configuration
+- SSL/Certificate Pinning using Intermediate Certificate Authority (CA) certificates for openweathermap.org
 
 ### Logging
 
@@ -45,3 +45,31 @@ Proper logging using Apple unified logging system using the **Logger** type
 Atlas uses Xcode Cloud to perform continuous integration and deployment.
 Every push to the github repo is Built, Tested, Archive and Deploy to testflight for internal testing.
 If any file changes Xcode Cloud will create a new build of the Atlas app on TestFlight.
+
+### Coding Style
+
+SwiftLint runs as part of the build process in the local Xcode & Xcode Cloud, and errors/warnings are surfaced in Xcode as well.
+
+### Code coverage integration
+
+with Unit & UI Testing the code coverage is 64%
+
+### Known issues
+
+- **UINavigationBar & Xcode 14 iOS 16 Bug**
+  You get the following Xcode console message if you are using UINavigationController. The warning doesn't appear in iOS 15.
+
+  ```
+  2023-02-04 05:22:52.044903+0300 Atlas[19155:581143] [Assert] UINavigationBar decoded as unlocked for UINavigationController, or navigationBar delegate set up incorrectly. Inconsistent configuration may cause problems. navigationController=<UINavigationController: 0x7fddea817600>, navigationBar=<UINavigationBar: 0x7fdddb007630; frame = (0 59; 0 50); opaque = NO; autoresize = W; layer = <CALayer: 0x600001aa9580>> delegate=0x7fddea817600
+  ```
+
+```
+
+  Various Forums also reporting the same issue are listed below. At the moment there is no fix we just have to wait for Apple to Squash this Bug.
+  I have submitted a bug report to Apple
+
+  - https://developer.apple.com/forums/thread/714278
+  - https://stackoverflow.com/questions/74449249/xcode-14-1-error-uinavigationbar-decoded-as-unlocked-for-uinavigationcontrolle
+  - https://www.reddit.com/r/iOSProgramming/comments/ytegwa/xcode_14_uinavigationbar_issue/
+  - https://codecrew.codewithchris.com/t/error-regarding-navigation-bar-customization/21713
+```
