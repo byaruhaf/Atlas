@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import os.log
 
 protocol ForecastViewControllerDelegate: AnyObject {
     func controllerDidRefresh(_ controller: ForecastViewController)
@@ -84,7 +85,7 @@ final class ForecastViewController: UIViewController {
     
     @objc
     private func didPullToRefresh(_ sender: Any) {
-        delegate?.controllerDidRefresh(self)
+//        delegate?.controllerDidRefresh(self)
         refreshControl.endRefreshing()
     }
     
@@ -99,6 +100,7 @@ extension ForecastViewController {
     // Configure Cell
     func configure<T: SelfConfiguringCell  & ReusableView >(_ cellType: T.Type, with forecastDayViewModel: any WeekDayRepresentable, for indexPath: IndexPath) -> T {
         guard let cell = forecastListCollection.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
+            Logger.network.error("Unable to dequeue \(cellType)")
             fatalError("Unable to dequeue \(cellType)")
         }
         cell.configure(with: forecastDayViewModel)

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import os.log
 
 enum RequestType: String {
     case weather, forecast
@@ -61,7 +62,7 @@ struct WeatherRequest {
         
         guard let url = urlComponents.url else {
             // if we can’t create a URL, Exit immediately and complain loudly.
-            // TODO: Log this with Logger
+            Logger.network.error("Unable to Create URL for Weather Service Request")
             fatalError("Unable to Create URL for Weather Service Request")
         }
         

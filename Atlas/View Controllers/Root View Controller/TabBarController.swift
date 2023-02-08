@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import os.log
 
 class TabBarController: UITabBarController {
     // MARK: - Properties
@@ -21,6 +22,7 @@ class TabBarController: UITabBarController {
     }
     
     required init?(coder: NSCoder) {
+        Logger.network.error("Use `init(coder:viewModel:)` to instantiate a `ViewController` instance")
         fatalError("Use `init(coder:viewModel:)` to instantiate a `ViewController` instance.")
     }
 

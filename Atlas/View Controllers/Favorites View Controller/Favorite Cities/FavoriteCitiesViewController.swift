@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import os.log
 
 protocol FavoriteCitiesViewControllerDelegate: AnyObject {
     func controllerDidRefresh(_ controller: ForecastViewController)
@@ -117,6 +118,7 @@ extension FavoriteCitiesViewController {
     // Configure Cell
     private func configure<T: SelfConfiguringCityCell  & ReusableView >(_ cellType: T.Type, with location: Location, for indexPath: IndexPath) -> T {
         guard let cell = favoriteCitiesCollection.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
+            Logger.network.error("Unable to dequeue \(cellType)")
             fatalError("Unable to dequeue \(cellType)")
         }
         cell.configure(with: location)

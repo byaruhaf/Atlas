@@ -20,21 +20,18 @@ final class CurrentLocationViewController: UIViewController {
     @IBOutlet private var forcastViewController: ForecastViewController!
     
     // MARK: - Properties
-    var viewModel: CurrentLocationViewModel?
-//    {
-//        didSet {
-//            guard let viewModel else { return }
-//            // Setup View Model
-//            setupViewModel(with: viewModel)
-//        }
-//    }
+    var viewModel: CurrentLocationViewModel? {
+        didSet {
+            refresh()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.forcastViewController.delegate = self
         // Register for Observer
         registerForegroundNotification()
-        refresh()
+//        refresh()
     }
     
     // MARK: - Navigation
@@ -45,6 +42,7 @@ final class CurrentLocationViewController: UIViewController {
         switch identifier {
         case segueDayView:
             guard let destination = segue.destination as? DayViewController else {
+                Logger.network.error("Unexpected Destination View Controller")
                 fatalError("Unexpected Destination View Controller")
             }
             
@@ -52,6 +50,7 @@ final class CurrentLocationViewController: UIViewController {
             self.dayViewController = destination
         case segueForcastView:
             guard let destination = segue.destination as? ForecastViewController else {
+                Logger.network.error("Unexpected Destination View Controller")
                 fatalError("Unexpected Destination View Controller")
             }
             

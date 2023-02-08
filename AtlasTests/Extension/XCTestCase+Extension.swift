@@ -17,4 +17,3 @@ extension XCTestCase {
         return try! Data(contentsOf: url!)
     }
 }
-
