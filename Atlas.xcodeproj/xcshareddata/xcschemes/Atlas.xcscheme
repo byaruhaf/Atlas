@@ -47,6 +47,17 @@
                ReferencedContainer = "container:Atlas.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5FCCCD592992C6C20061EB43"
+               BuildableName = "AtlasUITests.xctest"
+               BlueprintName = "AtlasUITests"
+               ReferencedContainer = "container:Atlas.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -70,7 +81,7 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <LocationScenarioReference
-         identifier = "London, England"
+         identifier = "Rio de Janeiro, Brazil"
          referenceType = "1">
       </LocationScenarioReference>
    </LaunchAction>
