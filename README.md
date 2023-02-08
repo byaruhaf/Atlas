@@ -11,7 +11,7 @@
 Atlas is a partial demo of a weather app using the openweathermap.org API.
 This branch was Compiled with Xcode 14.2.0, and Swift 5.7 and supports iOS 16 and above.
 
-Project Documentation generate using **Apples DocC** can be accessed using this link [Documentation](https://byaruhaf.github.io/Atlas/documentation/Atlas/)
+Project Documentation generate using **Apples DocC** can be accessed using this link [Documentation](https://byaruhaf.github.io/Atlas/documentation/atlas/)
 
 ## Secrets Management
 
