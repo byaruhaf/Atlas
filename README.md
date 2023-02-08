@@ -37,6 +37,7 @@ Shows the current temperature at the users current location
 #### Second Tab: Favorites
 
 Allows the user to add, remove, view and save temperature in his/her favorite cities.
+The user can also swipe to a map view to view his/her favorite cities on a map.
 
 |       Adding Favorites       | Swipe To Map View            | Removing Favorites           |
 | :--------------------------: | :--------------------------- | :--------------------------- |
@@ -47,10 +48,17 @@ Allows the user to add, remove, view and save temperature in his/her favorite ci
 Allows the user to set the image theme for the first tab the choice is between the sea images and the forest images.
 ![Navigation](Demo/Set2.gif)
 
-### Persistence Implementation
+### Persistence
 
 The Apps Persistence is implemented using UserDefaults.
 UserDefaults is used to store the users favorite cities and last time the users current location weather data was updated
+
+### Refresh Frequency
+
+The App fetch's the weather data for the current location of the device every time the user opens the application.
+The App also fetch's the weather data every time the user moves it from the background to the foreground.
+For efficiency the background to the foreground update only happens the ten minutes or more have passed.
+NB: Pull to refresh was also implemented, but disabled due to a concurrency bug.
 
 ### Security
 
