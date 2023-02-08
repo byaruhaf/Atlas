@@ -26,6 +26,27 @@ Next you'll right-click on the `Configuration` folder in the Xcode sidebar, and 
 
 ### App Navigation & Function
 
+#### First Tab: Current
+
+Shows the current temperature at the users current location
+
+|             Cloudy             | Sunny                         | Rainy                         |
+| :----------------------------: | :---------------------------- | :---------------------------- |
+| ![Navigation](Demo/Cloudy.png) | ![Navigation](Demo/Sunny.png) | ![Navigation](Demo/Rainy.png) |
+
+#### Second Tab: Favorites
+
+Allows the user to add, remove, view and save temperature in his/her favorite cities.
+
+|       Adding Favorites       | Swipe To Map View            | Removing Favorites           |
+| :--------------------------: | :--------------------------- | :--------------------------- |
+| ![Navigation](Demo/Fav1.gif) | ![Navigation](Demo/Fav2.gif) | ![Navigation](Demo/Fav3.gif) |
+
+#### Third Tab: Settings
+
+Allows the user to set the image theme for the first tab the choice is between the sea images and the forest images.
+![Navigation](Demo/Set2.gif)
+
 ### Persistence Implementation
 
 The Apps Persistence is implemented using UserDefaults.
