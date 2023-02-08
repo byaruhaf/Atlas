@@ -16,6 +16,3 @@ extension Logger {
     static let storage = Logger(subsystem: subsystem, category: "Storage")
     static let network = Logger(subsystem: subsystem, category: "Networking")
 }
-
-// Logger.network.error("❌ did NOT get categories: \(error)")
-// Logger.network.debug("✅ Got single category: \(String(describing: category))")

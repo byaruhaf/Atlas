@@ -61,10 +61,8 @@ class FavoriteCitiesViewController: UICollectionViewController {
                 addCityNav.dismiss(animated: true, completion: nil)
                 
                 if let city = city {
-                    print("Save Chosen city: \(city)")
                     // Update User Defaults
                     UserDefaults.addLocation(city)
-                    
                     // Update favorites Locations
                     self.favorites.append(city)
                     // reload

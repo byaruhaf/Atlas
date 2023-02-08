@@ -7,6 +7,7 @@
 
 import Combine
 import MapKit
+import os.log
 
 class AddCityViewModel: NSObject {
     enum Errors: Error {
@@ -89,6 +90,6 @@ extension AddCityViewModel: MKLocalSearchCompleterDelegate {
     }
     
     func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
-        print("Error: \(error)")
+         Logger.location.error("MKLocalSearchCompleter did Fail With Error: \(error)")
     }
 }

@@ -61,7 +61,6 @@ final class ForecastViewController: UIViewController {
     
     // MARK: - View Methods
     private func setupViewModel(with viewModel: ForecastViewModel) {
-//        print(viewModel.weeksDayWeatherData)
         configureDataSource()
         reloadData(forecastDayViewModel: viewModel.generateForecastDayViewModel(from: viewModel.weatherData))
     }

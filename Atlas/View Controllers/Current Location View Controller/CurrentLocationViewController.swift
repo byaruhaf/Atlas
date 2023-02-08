@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import os.log
 
 final class CurrentLocationViewController: UIViewController {
     
@@ -89,8 +90,8 @@ final class CurrentLocationViewController: UIViewController {
                 // Update User Defaults Refresh Time
                 UserDefaults.setDidDataRefresh(Date())
             } catch {
+                Logger.network.error("fetching weather failed with: \(error)")
                 Alert.presentDefaultError(for: self)
-                print(error.localizedDescription) // TODO: Log this with Logger
             }
         }
     }

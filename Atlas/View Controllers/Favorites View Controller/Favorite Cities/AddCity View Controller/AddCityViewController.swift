@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import os.log
 
 class AddCityViewController: UITableViewController {
     
@@ -87,7 +88,7 @@ class AddCityViewController: UITableViewController {
         viewModel.geolocate(selectedIndex: indexPath.row)
             .map { $0 as Location? }
             .catch { error -> Just<Location?> in
-                print("Unable to geocode \(error)")
+                Logger.network.error("Unable to geocode \(error)")
                 return Just(nil)
             }
             .compactMap { $0 }

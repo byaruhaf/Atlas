@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import os.log
 
 class LocationSservice: NSObject, LocationServicing {
     var locationContinuation: CheckedContinuation<Location, Error>?
@@ -57,11 +58,11 @@ extension LocationSservice: CLLocationManagerDelegate {
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
         case .restricted:
-            print("Your location is restricted.") /// TODO: Log this with Logger
+            Logger.location.error("Your location is restricted.")
             authorizationContinuation?.resume(throwing: WeatherDataError.notAuthorizedToRequestLocation)
             authorizationContinuation = nil
         case .denied:
-            print("You have denied this app location permission. Go to setting to change it") /// TODO: Log this with Logger
+            Logger.location.error("You have denied this app location permission. Go to setting to change it")
             authorizationContinuation?.resume(throwing: WeatherDataError.notAuthorizedToRequestLocation)
             authorizationContinuation = nil
         case .authorizedAlways, .authorizedWhenInUse:
@@ -80,7 +81,7 @@ extension LocationSservice: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription) /// TODO: Log this with Logger
+        Logger.location.error("location Manager did Fail With Error: \(error.localizedDescription)")
         locationContinuation?.resume(throwing: WeatherDataError.failedToRequestLocation)
         locationContinuation = nil
     }

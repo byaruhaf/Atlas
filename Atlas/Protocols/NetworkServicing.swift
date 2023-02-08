@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import os.log
 
 protocol NetworkServicing {
     
@@ -29,7 +30,7 @@ class NetworkSservice: NetworkServicing {
     func fetch<T: Decodable>(from urlRequest: URLRequest) async throws -> T {
         let (appNetData, response) = try await URLSession.shared.data(for: urlRequest)
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-            print("The response statusCode is \(String(describing: (response as? HTTPURLResponse)?.statusCode))") // TODO: Log this with Logger
+            Logger.network.error("The response statusCode is \(String(describing: (response as? HTTPURLResponse)?.statusCode))")
             throw  WeatherDataError.noWeatherDataAvailable
         }
         let decoder = JSONDecoder()
