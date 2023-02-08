@@ -58,6 +58,7 @@ UserDefaults is used to store the users favorite cities and last time the users 
 The App fetch's the weather data for the current location of the device every time the user opens the application.
 The App also fetch's the weather data every time the user moves it from the background to the foreground.
 For efficiency the background to the foreground update only happens the ten minutes or more have passed.
+
 NB: Pull to refresh was also implemented, but disabled due to a concurrency bug.
 
 ### Security
@@ -83,16 +84,15 @@ SwiftLint runs as part of the build process in the local Xcode & Xcode Cloud, an
 
 ### Code coverage integration
 
-with Unit & UI Testing the code coverage is 64%
+With Unit & UI Testing the code coverage is 64%
 
 ### Known issues
 
 - **UINavigationBar & Xcode 14 iOS 16 Bug**
-  You get the following Xcode console message if you are using UINavigationController. The warning doesn't appear in iOS 15.
 
-  ```
-  2023-02-04 05:22:52.044903+0300 Atlas[19155:581143] [Assert] UINavigationBar decoded as unlocked for UINavigationController, or navigationBar delegate set up incorrectly. Inconsistent configuration may cause problems. navigationController=<UINavigationController: 0x7fddea817600>, navigationBar=<UINavigationBar: 0x7fdddb007630; frame = (0 59; 0 50); opaque = NO; autoresize = W; layer = <CALayer: 0x600001aa9580>> delegate=0x7fddea817600
-  ```
+  You get the following Xcode console message if you are using UINavigationController. This warning doesn't appear in iOS 15.
+
+  > 2023-02-04 05:22:52.044903+0300 Atlas[19155:581143] [Assert] UINavigationBar decoded as unlocked for UINavigationController, or navigationBar delegate set up incorrectly. Inconsistent configuration may cause problems. navigationController=<UINavigationController: 0x7fddea817600>, navigationBar=<UINavigationBar: 0x7fdddb007630; frame = (0 59; 0 50); opaque = NO; autoresize = W; layer = <CALayer: 0x600001aa9580>> delegate=0x7fddea817600
 
   Various Forums also reporting the same issue are listed below. At the moment there is no fix we just have to wait for Apple to Squash this Bug.
   I have submitted a bug report to Apple
