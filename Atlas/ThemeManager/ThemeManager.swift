@@ -7,16 +7,16 @@
 
 import Foundation
 
+// swiftlint:disable explicit_init
 class ThemeManager {
     static let shared = ThemeManager()
     
-    // swiftlint:disable explicit_init
     var currentImageTheme: ImageTheme? {
         didSet {
             NotificationCenter.default.post(name: Notification.Name.init("ImageChanged"), object: nil)
         }
     }
-    // swiftlint:disable explicit_init
+
     var currentBackgroundColor: ColorTheme? {
         didSet {
             NotificationCenter.default.post(name: Notification.Name.init("ColorChanged"), object: nil)
