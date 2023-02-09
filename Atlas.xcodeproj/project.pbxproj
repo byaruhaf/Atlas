@@ -53,6 +53,7 @@
 		5F72E1C4298DFFE700858576 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F72E1C2298DFFE700858576 /* Settings.storyboard */; };
 		5F72E1C6298E00A500858576 /* CurrentLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F72E1C5298E00A500858576 /* CurrentLocation.storyboard */; };
 		5F72E1C8298E201200858576 /* AtlasError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F72E1C7298E201200858576 /* AtlasError.swift */; };
+		5F8A97072994BEC6003B8A7C /* StringOptional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A97062994BEC6003B8A7C /* StringOptional+Extension.swift */; };
 		5F9280032992901F0067A2D7 /* FavoritesMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9280022992901F0067A2D7 /* FavoritesMapViewModel.swift */; };
 		5FAC3698299181BF0037E7A5 /* FavoritesMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAC3697299181BF0037E7A5 /* FavoritesMapViewController.swift */; };
 		5FAFABEA2993F46B009519B9 /* NetworkSservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAFABE92993F46B009519B9 /* NetworkSservice.swift */; };
@@ -144,6 +145,7 @@
 		5F72E1C3298DFFE700858576 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Atlas/Storyboards/Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		5F72E1C5298E00A500858576 /* CurrentLocation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CurrentLocation.storyboard; sourceTree = "<group>"; };
 		5F72E1C7298E201200858576 /* AtlasError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtlasError.swift; sourceTree = "<group>"; };
+		5F8A97062994BEC6003B8A7C /* StringOptional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringOptional+Extension.swift"; sourceTree = "<group>"; };
 		5F9280022992901F0067A2D7 /* FavoritesMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesMapViewModel.swift; sourceTree = "<group>"; };
 		5FAC3697299181BF0037E7A5 /* FavoritesMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesMapViewController.swift; sourceTree = "<group>"; };
 		5FAFABE92993F46B009519B9 /* NetworkSservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSservice.swift; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 			isa = PBXGroup;
 			children = (
 				5F4AB483298C595E0007815D /* Styles.swift */,
+				5F8A97062994BEC6003B8A7C /* StringOptional+Extension.swift */,
 				5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */,
 				5F1359A4298FEB71005B8100 /* UserDefaults+Extension.swift */,
 				5F1A2D032992DF0E00A61733 /* Logger+Extension.swift */,
@@ -757,6 +760,7 @@
 				5F4AB475298BD1B10007815D /* FavoritesViewController.swift in Sources */,
 				5F72E1C8298E201200858576 /* AtlasError.swift in Sources */,
 				5F9280032992901F0067A2D7 /* FavoritesMapViewModel.swift in Sources */,
+				5F8A97072994BEC6003B8A7C /* StringOptional+Extension.swift in Sources */,
 				5FAC3698299181BF0037E7A5 /* FavoritesMapViewController.swift in Sources */,
 				5F1359A5298FEB71005B8100 /* UserDefaults+Extension.swift in Sources */,
 				5F505E1B2989366D00EAFE2E /* AppDelegate.swift in Sources */,

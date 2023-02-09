@@ -41,7 +41,7 @@ class AddCityViewModel: NSObject {
     
     var searchTerm: String? {
         didSet {
-            searchCompleter.queryFragment = searchTerm ?? ""
+            searchCompleter.queryFragment = searchTerm.orEmpty
         }
     }
     
@@ -76,7 +76,7 @@ class AddCityViewModel: NSObject {
         .map { (placemark: CLPlacemark) -> Location in
             Location(
                 name: placemark.name ?? placemark.locality ?? "(unknown city)",
-                locality: placemark.administrativeArea ?? placemark.country ?? "",
+                locality: placemark.administrativeArea ?? placemark.country.orEmpty,
                 latitude: placemark.location?.coordinate.latitude ?? 0,
                 longitude: placemark.location?.coordinate.longitude ?? 0)
         }
