@@ -59,7 +59,7 @@ The App fetch's the weather data for the current location of the device every ti
 The App also fetch's the weather data every time the user moves it from the background to the foreground.
 For efficiency the background to the foreground update only happens the ten minutes or more have passed.
 
-NB: Pull to refresh was also implemented, but disabled due to a concurrency bug.
+The user can also use Pull to refresh to fetch the weather data for the current location.
 
 ### Security
 
