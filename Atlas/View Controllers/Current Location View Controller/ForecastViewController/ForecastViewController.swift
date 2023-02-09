@@ -85,7 +85,7 @@ final class ForecastViewController: UIViewController {
     
     @objc
     private func didPullToRefresh(_ sender: Any) {
-//        delegate?.controllerDidRefresh(self)
+        delegate?.controllerDidRefresh(self)
         refreshControl.endRefreshing()
     }
     

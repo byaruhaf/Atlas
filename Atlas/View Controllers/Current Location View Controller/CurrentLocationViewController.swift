@@ -20,18 +20,21 @@ final class CurrentLocationViewController: UIViewController {
     @IBOutlet private var forcastViewController: ForecastViewController!
     
     // MARK: - Properties
-    var viewModel: CurrentLocationViewModel? {
-        didSet {
-            refresh()
-        }
-    }
+    var viewModel: CurrentLocationViewModel?
+//    {
+//        didSet {
+//            if oldValue == nil {
+//                refresh()
+//            }
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.forcastViewController.delegate = self
         // Register for Observer
         registerForegroundNotification()
-//        refresh()
+        refresh()
     }
     
     // MARK: - Navigation
