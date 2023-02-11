@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Default ColorTheme
         ThemeManager.shared.set(colorTheme: SunnyColorTheme())
         
-        // Default ColorTheme
+        // Default imageTheme
         ThemeManager.shared.set(imageTheme: ForestImageTheme())
         
         // Initialize Window
