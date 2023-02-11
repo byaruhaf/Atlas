@@ -46,6 +46,7 @@ The user can also swipe to a map view to view his/her favorite cities on a map.
 #### Third Tab: Settings
 
 Allows the user to set the image theme for the first tab the choice is between the sea images and the forest images.
+Allows the user to set the App Icon. User can choose between a "Cloud Icon" & "Temperature Icon"
 
 ![Navigation](Demo/Set2.gif)
 

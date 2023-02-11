@@ -20,13 +20,17 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
                 Form {
-                    Section("Themes") {
+                    Section {
                         Picker("Image Themes", selection: $imageScheme) {
                             Text("🌴 Forest").tag(ImageScheme.forest)
                             Text("🌊 Sea").tag(ImageScheme.sea)
                         }
+                    } header: {
+                        Text("Themes")
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
                     }
-                    Section("App Icon") {
+                    Section {
                         ForEach(AppIcon.allCases) { appIcon in
                             HStack(spacing: 16) {
                                 Image(uiImage: appIcon.preview)
@@ -36,13 +40,17 @@ struct SettingsView: View {
                                     .cornerRadius(12)
                                 Text(appIcon.description)
                                 Spacer()
-                                CheckboxView(isSelected: viewModel.selectedAppIcon == appIcon)
+                                RadioView(isSelected: viewModel.selectedAppIcon == appIcon)
                             }.onTapGesture {
                                 withAnimation {
                                     viewModel.updateAppIcon(to: appIcon)
                                 }
                             }
                         }
+                    } header: {
+                        Text("App Icon")
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
                     }
                 }
                 .background(Color(uiColor: ThemeManager.shared.currentBackgroundColor!.backgroundColor))
