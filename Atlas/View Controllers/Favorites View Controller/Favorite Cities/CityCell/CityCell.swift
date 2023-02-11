@@ -26,7 +26,7 @@ class CityCell: UICollectionViewCell, SelfConfiguringCityCell {
     func loadCurrentWeatherData(for location: Location) async throws -> CurrentWeather {
         let weatherData = try await networkService.loadCurrentWeatherData(for: location)
         return weatherData
-    }
+}
     
     override func layoutSubviews() {
         // cell rounded section
