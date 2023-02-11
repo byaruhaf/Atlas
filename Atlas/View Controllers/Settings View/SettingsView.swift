@@ -15,6 +15,7 @@ struct SettingsView: View {
     
     @State private var bgColor: Color = .white
     @State private var imageScheme: ImageScheme = .forest
+    @StateObject var viewModel = SettingsViewModel()
     
     var body: some View {
         NavigationStack {
@@ -23,6 +24,24 @@ struct SettingsView: View {
                         Picker("Image Themes", selection: $imageScheme) {
                             Text("🌴 Forest").tag(ImageScheme.forest)
                             Text("🌊 Sea").tag(ImageScheme.sea)
+                        }
+                    }
+                    Section("App Icon") {
+                        ForEach(AppIcon.allCases) { appIcon in
+                            HStack(spacing: 16) {
+                                Image(uiImage: appIcon.preview)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 60, height: 60)
+                                    .cornerRadius(12)
+                                Text(appIcon.description)
+                                Spacer()
+                                CheckboxView(isSelected: viewModel.selectedAppIcon == appIcon)
+                            }.onTapGesture {
+                                withAnimation {
+                                    viewModel.updateAppIcon(to: appIcon)
+                                }
+                            }
                         }
                     }
                 }

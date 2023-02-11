@@ -19,6 +19,9 @@
 		5F1359B32990BC57005B8100 /* CurrentLocationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1359B22990BC57005B8100 /* CurrentLocationViewModelTests.swift */; };
 		5F1A2D042992DF0E00A61733 /* Logger+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1A2D032992DF0E00A61733 /* Logger+Extension.swift */; };
 		5F26171E2992845A005DAD79 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F26171D2992845A005DAD79 /* MapPin.swift */; };
+		5F2B9F68299761520033DBB5 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B9F67299761520033DBB5 /* AppIcon.swift */; };
+		5F2B9F6A299763DF0033DBB5 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B9F69299763DF0033DBB5 /* SettingsViewModel.swift */; };
+		5F2B9F6C299764EE0033DBB5 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B9F6B299764EE0033DBB5 /* CheckboxView.swift */; };
 		5F328292298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */; };
 		5F328297298C9B380079CF67 /* ForecastListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F328295298C9B380079CF67 /* ForecastListCollectionViewCell.swift */; };
 		5F328298298C9B380079CF67 /* ForecastListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */; };
@@ -108,6 +111,9 @@
 		5F1359B42991371F005B8100 /* Kira.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Kira.gpx; sourceTree = "<group>"; };
 		5F1A2D032992DF0E00A61733 /* Logger+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Extension.swift"; sourceTree = "<group>"; };
 		5F26171D2992845A005DAD79 /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
+		5F2B9F67299761520033DBB5 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
+		5F2B9F69299763DF0033DBB5 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		5F2B9F6B299764EE0033DBB5 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension .swift"; sourceTree = "<group>"; };
 		5F328295298C9B380079CF67 /* ForecastListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F328296298C9B380079CF67 /* ForecastListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastListCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -252,6 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				5F3282A3298CD2790079CF67 /* SettingsView.swift */,
+				5F2B9F6B299764EE0033DBB5 /* CheckboxView.swift */,
+				5F2B9F69299763DF0033DBB5 /* SettingsViewModel.swift */,
 				5F3282A9298CDCF50079CF67 /* SettingsViewController.swift */,
 			);
 			path = "Settings View";
@@ -463,6 +471,7 @@
 				5F72E1C7298E201200858576 /* AtlasError.swift */,
 				5FC3A530298A44B60071FA66 /* WeatherConditionIcon.swift */,
 				5F4AB471298BCBD20007815D /*  DependencyProvider.swift */,
+				5F2B9F67299761520033DBB5 /* AppIcon.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -740,7 +749,9 @@
 				5F5CA33C298A061B006074B3 /* Forecast.swift in Sources */,
 				5F5CA342298A1BC7006074B3 /* ForecastViewController.swift in Sources */,
 				5FF54D68298B10EE000FF779 /* DayViewModel.swift in Sources */,
+				5F2B9F6C299764EE0033DBB5 /* CheckboxView.swift in Sources */,
 				5F4AB484298C595E0007815D /* Styles.swift in Sources */,
+				5F2B9F6A299763DF0033DBB5 /* SettingsViewModel.swift in Sources */,
 				5F328292298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift in Sources */,
 				5FF3FA6F2991C20D0074FBAF /* CityCell.swift in Sources */,
 				5F328297298C9B380079CF67 /* ForecastListCollectionViewCell.swift in Sources */,
@@ -753,6 +764,7 @@
 				5FC3A531298A44B60071FA66 /* WeatherConditionIcon.swift in Sources */,
 				5F4AB47C298BF9B90007815D /* ThemeManager.swift in Sources */,
 				5F505E1F2989366D00EAFE2E /* CurrentLocationViewController.swift in Sources */,
+				5F2B9F68299761520033DBB5 /* AppIcon.swift in Sources */,
 				5F56FFB7298E55940085DAD0 /* WeekDayRepresentable.swift in Sources */,
 				5FB8F4A3298AD9DD00B8A158 /* Alert.swift in Sources */,
 				5F26171E2992845A005DAD79 /* MapPin.swift in Sources */,
@@ -856,6 +868,7 @@
 			baseConfigurationReference = 5FCCAEF9298DF34D00A652C4 /* secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = AppIconT;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -917,6 +930,7 @@
 			baseConfigurationReference = 5FCCAEF9298DF34D00A652C4 /* secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = AppIconT;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
