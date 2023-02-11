@@ -22,7 +22,7 @@ struct SettingsView: View {
         NavigationStack {
                 Form {
                     Section {
-                        Picker("Image Themes", selection: $imageScheme) {
+                        Picker("Image", selection: $imageScheme) {
                             Text("🌴 Forest").tag(ImageScheme.forest)
                             Text("🌊 Sea").tag(ImageScheme.sea)
                         }
