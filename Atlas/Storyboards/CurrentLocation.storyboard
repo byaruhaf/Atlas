@@ -128,10 +128,10 @@
                                 </constraints>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="9cO-Z4-Wwe">
-                                <rect key="frame" x="201.33333333333334" y="190.33333333333334" width="20" height="20"/>
+                                <rect key="frame" x="168.33333333333334" y="190.33333333333334" width="20" height="20"/>
                             </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="J49-vt-SbW">
-                                <rect key="frame" x="133" y="80" width="156.66666666666663" height="120.66666666666669"/>
+                                <rect key="frame" x="99.999999999999986" y="80" width="156.66666666666663" height="120.66666666666669"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 °" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPk-TH-hPe">
                                         <rect key="frame" x="0.0" y="0.0" width="156.66666666666666" height="74"/>
@@ -161,7 +161,7 @@
                             <constraint firstItem="9cO-Z4-Wwe" firstAttribute="centerY" secondItem="J49-vt-SbW" secondAttribute="centerY" constant="60" id="TzY-aO-T7b"/>
                             <constraint firstItem="aus-Ps-fGq" firstAttribute="top" secondItem="CrP-bC-Xcu" secondAttribute="top" id="aXG-WM-C9Z"/>
                             <constraint firstItem="aus-Ps-fGq" firstAttribute="trailing" secondItem="Jx3-qJ-PAo" secondAttribute="trailing" id="eNO-7j-gQb"/>
-                            <constraint firstItem="J49-vt-SbW" firstAttribute="leading" secondItem="Jx3-qJ-PAo" secondAttribute="leading" constant="133" id="iks-h6-hmy"/>
+                            <constraint firstItem="J49-vt-SbW" firstAttribute="leading" secondItem="Jx3-qJ-PAo" secondAttribute="leading" constant="100" id="iks-h6-hmy"/>
                             <constraint firstItem="Jx3-qJ-PAo" firstAttribute="trailing" secondItem="9Dc-Vd-RmP" secondAttribute="trailing" constant="16" id="l96-R4-M3p"/>
                             <constraint firstItem="9cO-Z4-Wwe" firstAttribute="centerX" secondItem="J49-vt-SbW" secondAttribute="centerX" id="lbr-Wt-DJn"/>
                             <constraint firstItem="Jx3-qJ-PAo" firstAttribute="bottom" secondItem="8MI-JI-FGJ" secondAttribute="bottom" id="tme-EW-WbI"/>
