@@ -142,6 +142,31 @@ extension FavoriteCitiesViewController {
 }
 
 extension FavoriteCitiesViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCity" {
+            guard let index = collectionView.indexPathsForSelectedItems?.first?.row else { return }
+            
+            let city = favorites[index]
+            let cityVC = segue.destination as! CurrentLocationViewController
+            let viewModel = CurrentLocationViewModel(locationService: LocationSservice(), networkService: NetworkSservice())
+            Task {
+                // Configure Day View Controller
+                async let current = try await viewModel.loadCurrentWeatherData(for: city)
+                // Initialize Day View Model
+                let dayViewModel = await DayViewModel(weatherData: try current)
+                // Update Day View Controller
+                cityVC.dayViewController.viewModel = dayViewModel
+                
+                // Configure Forcast View Controller
+                async let forecast = try await viewModel.loadForecastWeatherData(for: city)
+                // Initialize Forcast View Model
+                let forcastViewModel = await ForecastViewModel(weatherData: try forecast)
+                // Update Forcast View Controller
+                cityVC.forcastViewController.viewModel = forcastViewModel
+            }
+        }
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
         
         let menu = contextMenu(for: indexPath.row)

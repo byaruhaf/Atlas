@@ -28,7 +28,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYW-ID-CFB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="-1463"/>
+            <point key="canvasLocation" x="821" y="-1569"/>
         </scene>
         <!--Settings-->
         <scene sceneID="LvP-Vj-Q5h">
@@ -38,7 +38,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohd-7W-HTs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1532" y="-1037"/>
+            <point key="canvasLocation" x="222" y="-1146"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="jso-Rj-oeU">
@@ -55,10 +55,11 @@
             <objects>
                 <viewControllerPlaceholder storyboardName="CurrentLocation" id="9Cl-I2-STH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="XHK-Vp-6ql"/>
+                    <navigationItem key="navigationItem" id="qZW-HI-b46"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wj2-8S-UnF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="340" y="-1037"/>
+            <point key="canvasLocation" x="2982" y="-1146"/>
         </scene>
         <!--Favorite Cities View Controller-->
         <scene sceneID="jlz-Xp-vyp">
@@ -127,6 +128,7 @@
                                     <outlet property="currentTemperatureLabel" destination="nea-bW-W4p" id="xFc-3s-dS3"/>
                                     <outlet property="localityLabel" destination="a5o-dW-kxs" id="2gv-wL-gsK"/>
                                     <outlet property="nameLabel" destination="sga-bR-062" id="ymT-Er-6HB"/>
+                                    <segue destination="9Cl-I2-STH" kind="show" identifier="showCity" id="Rsu-YU-Z6X"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -172,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwo-mJ-vGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3268" y="-663"/>
+            <point key="canvasLocation" x="3282" y="-663"/>
         </scene>
         <!--Favorites Navigation View Controller-->
         <scene sceneID="1mZ-0Y-ovc">
@@ -193,6 +195,9 @@
             <point key="canvasLocation" x="1605" y="-663"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Rsu-YU-Z6X"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <systemColor name="systemBackgroundColor">

@@ -16,8 +16,8 @@ final class CurrentLocationViewController: UIViewController {
     private let segueForcastView = "SegueForcastView"
     
     // MARK: - IBOutlet
-    @IBOutlet private var dayViewController: DayViewController!
-    @IBOutlet private var forcastViewController: ForecastViewController!
+    @IBOutlet var dayViewController: DayViewController!
+    @IBOutlet var forcastViewController: ForecastViewController!
     
     // MARK: - Properties
     var viewModel: CurrentLocationViewModel?
