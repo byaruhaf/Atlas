@@ -61,9 +61,7 @@ final class DayViewController: UIViewController {
     
     var viewModel: DayViewModel? {
         didSet {
-            guard let viewModel else { return }
-            // Setup View Model
-            setupViewModel(with: viewModel)
+            refresh()
         }
     }
     
@@ -84,6 +82,11 @@ final class DayViewController: UIViewController {
         }
         determineColorTheme(condtion: viewModel.weatherData.weather[0].weatherType)
     }
+    private func refresh() {
+        guard let viewModel else { return }
+        // Setup View Model
+        setupViewModel(with: viewModel)
+    }
     
     private func determineColorTheme(condtion: WeatherType) {
         switch condtion {
@@ -103,6 +106,10 @@ final class DayViewController: UIViewController {
         registerForTheme()
         // Setup View
         setupView()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refresh()
     }
     
     // MARK: - Helper Methods

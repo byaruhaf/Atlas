@@ -18,8 +18,14 @@ class CityCell: UICollectionViewCell, SelfConfiguringCityCell {
         self.nameLabel.text = location.name
         self.localityLabel.text = location.locality
         Task {
-            let temp = try await loadCurrentWeatherData(for: location).main.feelsLike.description
-            self.currentTemperatureLabel.text = "\(temp) °"
+            let temperature = try await loadCurrentWeatherData(for: location).main.feelsLike
+            
+            switch UserDefaults.temperatureNotation {
+            case .celsius:
+                self.currentTemperatureLabel.text = String(format: "%.2f °C", temperature)
+            case .fahrenheit:
+                self.currentTemperatureLabel.text = String(format: "%.2f °F", temperature.toFahrenheit)
+            }
         }
     }
     

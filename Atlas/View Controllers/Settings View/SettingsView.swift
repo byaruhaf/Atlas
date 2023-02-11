@@ -16,6 +16,7 @@ struct SettingsView: View {
     @State private var bgColor: Color = .white
     @State private var imageScheme: ImageScheme = .forest
     @StateObject var viewModel = SettingsViewModel()
+    @AppStorage("temperatureNotation") var temperatureNotation: TemperatureNotation = .celsius
     
     var body: some View {
         NavigationStack {
@@ -27,6 +28,16 @@ struct SettingsView: View {
                         }
                     } header: {
                         Text("Themes")
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
+                    }
+                    Section {
+                        Picker("Unit", selection: $temperatureNotation) {
+                            Text("°C").tag(TemperatureNotation.celsius)
+                            Text("°F").tag(TemperatureNotation.fahrenheit)
+                        }
+                    } header: {
+                        Text("Temperature")
                             .fontWeight(.bold)
                             .foregroundColor(Color.white)
                     }
@@ -56,6 +67,7 @@ struct SettingsView: View {
                 .background(Color(uiColor: ThemeManager.shared.currentBackgroundColor!.backgroundColor))
                 .scrollContentBackground(.hidden)
                 .navigationTitle("Settings")
+                .preferredColorScheme(.dark)
                 .onChange(of: imageScheme) { newValue in
                     switch newValue {
                     case .forest:

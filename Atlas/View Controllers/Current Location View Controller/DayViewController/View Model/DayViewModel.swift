@@ -11,15 +11,36 @@ struct DayViewModel {
     let weatherData: CurrentWeatherConditions
     
     var minTemperature: String {
-        "\(weatherData.main.tempMin.description) °"
+        let temperature = weatherData.main.tempMin
+        
+        switch UserDefaults.temperatureNotation {
+        case .celsius:
+            return String(format: "%.2f °C", temperature)
+        case .fahrenheit:
+            return String(format: "%.2f °F", temperature.toFahrenheit)
+        }
     }
     
     var maxTemperature: String {
-        "\(weatherData.main.tempMax.description) °"
+        let temperature = weatherData.main.tempMax
+        
+        switch UserDefaults.temperatureNotation {
+        case .celsius:
+            return String(format: "%.2f °C", temperature)
+        case .fahrenheit:
+            return String(format: "%.2f °F", temperature.toFahrenheit)
+        }
     }
     
     var temperature: String {
-        "\(weatherData.main.feelsLike.description) °"
+        let temperature = weatherData.main.feelsLike
+        
+        switch UserDefaults.temperatureNotation {
+        case .celsius:
+            return String(format: "%.2f °C", temperature)
+        case .fahrenheit:
+            return String(format: "%.2f °F", temperature.toFahrenheit)
+        }
     }
     
     var weatherCondition: String {

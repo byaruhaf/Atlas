@@ -34,7 +34,7 @@ class ForecastListCollectionViewCell: UICollectionViewCell, SelfConfiguringCell 
 
     func configure(with forecastDayViewModel: any WeekDayRepresentable) {
         self.dayOfWeekLable.text = forecastDayViewModel.day
-        self.temperatureLable.text = forecastDayViewModel.temperature.description
+        self.temperatureLable.text = forecastDayViewModel.temperature
         self.iconImageView.image = forecastDayViewModel.backgroundImageName
         backgroundView?.backgroundColor = ThemeManager.shared.currentBackgroundColor?.backgroundColor
         backgroundVDayiew.backgroundColor = ThemeManager.shared.currentBackgroundColor?.backgroundColor

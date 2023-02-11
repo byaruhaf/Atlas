@@ -37,7 +37,6 @@ class FavoriteCitiesViewController: UICollectionViewController {
         registerForTheme()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCityTapped))
         navigationItem.rightBarButtonItem?.tintColor = .black
-        setupViewModel(with: favorites)
     }
     
     // MARK: - View Methods
@@ -49,6 +48,7 @@ class FavoriteCitiesViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animateColor()
+        setupViewModel(with: favorites)
     }
     
     @objc private func addCityTapped() {

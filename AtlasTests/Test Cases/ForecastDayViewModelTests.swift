@@ -51,7 +51,7 @@ final class ForecastDayViewModelTests: XCTestCase {
     
     // MARK: - Tests for temperature
     func testWeeksDayWeatherData_temperature() throws {
-        XCTAssertEqual(viewModel.temperature.description, "3.28")
+        XCTAssertEqual(viewModel.temperature.description, "3.28 °C")
     }
     
     // MARK: - Tests for backgroundImageName

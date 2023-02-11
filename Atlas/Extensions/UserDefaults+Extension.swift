@@ -14,6 +14,7 @@ extension UserDefaults {
     private enum Keys {
         static let didDataRefresh = "didDataRefresh"
         static let locations = "locations"
+        static let temperatureNotation = "temperatureNotation"
     }
     
     class func setDidDataRefresh(_ didSeedPersistentStore: Date) {
@@ -71,5 +72,13 @@ extension UserDefaults {
         
         // Save Locations
         self.locations = locations
+    }
+}
+
+extension UserDefaults {
+    // MARK: - Temperature Notation
+    class var temperatureNotation: TemperatureNotation {
+            let storedValue = UserDefaults.standard.integer(forKey: Keys.temperatureNotation)
+            return TemperatureNotation(rawValue: storedValue) ?? TemperatureNotation.celsius
     }
 }

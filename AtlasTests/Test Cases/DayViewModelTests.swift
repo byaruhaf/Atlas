@@ -37,17 +37,17 @@ final class DayViewModelTests: XCTestCase {
     
     // MARK: - Tests for minTemperature
     func testminTemperature() {
-        XCTAssertEqual(viewModel.minTemperature, "0.14 °")
+        XCTAssertEqual(viewModel.minTemperature, "0.14 °C")
     }
     
     // MARK: - Tests for maxTemperature
     func testmaxTemperature() {
-        XCTAssertEqual(viewModel.maxTemperature, "4.68 °")
+        XCTAssertEqual(viewModel.maxTemperature, "4.68 °C")
     }
     
     // MARK: - Tests for temperature
     func testTemperature() {
-        XCTAssertEqual(viewModel.temperature, "-1.05 °")
+        XCTAssertEqual(viewModel.temperature, "-1.05 °C")
     }
     
     // MARK: - Tests for weatherCondition

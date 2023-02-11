@@ -16,13 +16,22 @@ struct ForecastViewModel {
         dateFormatter.dateFormat = "EE"
         let timeFormatter = DateFormatter()
         timeFormatter.timeStyle = .short
-        weatherData.list.forEach { ddd in
+        weatherData.list.forEach { weatherDataitem in
             temp.append(
-                ForecastDayViewModel(day: "  \(dateFormatter.string(from: ddd.date)) \(timeFormatter.string(from: ddd.date))",
-                                     condition: "\(ddd.weather.first!.main)",
-                                     temperature: ddd.main.feelsLike)
+                ForecastDayViewModel(day: "  \(dateFormatter.string(from: weatherDataitem.date)) \(timeFormatter.string(from: weatherDataitem.date))",
+                                     condition: "\(weatherDataitem.weather.first!.main)",
+                                     temperature: temperatureFormatter(weatherDataitem.main.feelsLike))
             )
         }
         return temp
+    }
+    
+    private func temperatureFormatter(_ temperature: Double) -> String {
+        switch UserDefaults.temperatureNotation {
+        case .celsius:
+            return String(format: "%.2f °C", temperature)
+        case .fahrenheit:
+            return String(format: "%.2f °F", temperature.toFahrenheit)
+        }
     }
 }

@@ -42,9 +42,7 @@ final class ForecastViewController: UIViewController {
         didSet {
             refreshControl.endRefreshing()
             // updateView()
-            guard let viewModel else { return }
-            // Setup View Model
-            setupViewModel(with: viewModel)
+            refresh()
         }
     }
     
@@ -65,6 +63,12 @@ final class ForecastViewController: UIViewController {
         configureDataSource()
         reloadData(forecastDayViewModel: viewModel.generateForecastDayViewModel(from: viewModel.weatherData))
     }
+    
+    private func refresh() {
+        guard let viewModel else { return }
+        // Setup View Model
+        setupViewModel(with: viewModel)
+    }
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -73,6 +77,10 @@ final class ForecastViewController: UIViewController {
         registerForTheme()
         // Setup View
         setupView()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refresh()
     }
     
     // MARK: - Helper Methods

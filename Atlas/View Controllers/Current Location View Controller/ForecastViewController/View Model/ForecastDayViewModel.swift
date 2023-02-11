@@ -10,7 +10,7 @@ import UIKit.UIImage
 struct ForecastDayViewModel {
     var day: String
     var condition: String
-    var temperature: Double
+    var temperature: String
     
     var backgroundImageName: UIImage {
         guard let weatherType = WeatherType(rawValue: condition) else { return UIImage(systemName: "cloud")! }

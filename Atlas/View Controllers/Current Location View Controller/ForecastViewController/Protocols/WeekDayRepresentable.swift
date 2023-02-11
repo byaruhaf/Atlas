@@ -10,6 +10,6 @@ import UIKit.UIImage
 protocol WeekDayRepresentable: Hashable {
     var day: String { get }
     var condition: String { get }
-    var temperature: Double { get }
+    var temperature: String { get }
     var backgroundImageName: UIImage { get }
 }

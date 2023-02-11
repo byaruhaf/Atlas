@@ -68,6 +68,8 @@
 		5FC3A536298A6F440071FA66 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3A535298A6F440071FA66 /* Configuration.swift */; };
 		5FC3A53D298A818D0071FA66 /* CurrentLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3A53C298A818D0071FA66 /* CurrentLocationViewModel.swift */; };
 		5FC3A542298A85D70071FA66 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3A541298A85D70071FA66 /* TabBarController.swift */; };
+		5FC591832997C71D00A9301D /* TemperatureNotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC591822997C71D00A9301D /* TemperatureNotation.swift */; };
+		5FC591852997D47600A9301D /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC591842997D47600A9301D /* Double+Extension.swift */; };
 		5FCCAEFC298DF71A00A652C4 /* ci_post_clone.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5FCCAEFB298DF71A00A652C4 /* ci_post_clone.sh */; };
 		5FCCCD5D2992C6C20061EB43 /* AtlasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCCD5C2992C6C20061EB43 /* AtlasUITests.swift */; };
 		5FF3FA622991A7880074FBAF /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA612991A7880074FBAF /* AddCityViewController.swift */; };
@@ -164,6 +166,8 @@
 		5FC3A535298A6F440071FA66 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		5FC3A53C298A818D0071FA66 /* CurrentLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewModel.swift; sourceTree = "<group>"; };
 		5FC3A541298A85D70071FA66 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		5FC591822997C71D00A9301D /* TemperatureNotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureNotation.swift; sourceTree = "<group>"; };
+		5FC591842997D47600A9301D /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		5FCCAEF9298DF34D00A652C4 /* secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = secrets.xcconfig; sourceTree = "<group>"; };
 		5FCCAEFB298DF71A00A652C4 /* ci_post_clone.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ci_post_clone.sh; sourceTree = "<group>"; };
 		5FCCCD5A2992C6C20061EB43 /* AtlasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AtlasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -451,6 +455,7 @@
 				5F4AB47D298BFA210007815D /* ImageTheme.swift */,
 				5F4AB481298C14D90007815D /* ColorTheme.swift */,
 				5F26171D2992845A005DAD79 /* MapPin.swift */,
+				5FC591822997C71D00A9301D /* TemperatureNotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -517,6 +522,7 @@
 				5F328291298C9A9F0079CF67 /* UICollectionViewCell+Extension .swift */,
 				5F1359A4298FEB71005B8100 /* UserDefaults+Extension.swift */,
 				5F1A2D032992DF0E00A61733 /* Logger+Extension.swift */,
+				5FC591842997D47600A9301D /* Double+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -762,6 +768,7 @@
 				5FF54D6B298B117F000FF779 /* ForecastViewModel.swift in Sources */,
 				5F4AB47E298BFA210007815D /* ImageTheme.swift in Sources */,
 				5FC3A531298A44B60071FA66 /* WeatherConditionIcon.swift in Sources */,
+				5FC591852997D47600A9301D /* Double+Extension.swift in Sources */,
 				5F4AB47C298BF9B90007815D /* ThemeManager.swift in Sources */,
 				5F505E1F2989366D00EAFE2E /* CurrentLocationViewController.swift in Sources */,
 				5F2B9F68299761520033DBB5 /* AppIcon.swift in Sources */,
@@ -776,6 +783,7 @@
 				5FAC3698299181BF0037E7A5 /* FavoritesMapViewController.swift in Sources */,
 				5F1359A5298FEB71005B8100 /* UserDefaults+Extension.swift in Sources */,
 				5F505E1B2989366D00EAFE2E /* AppDelegate.swift in Sources */,
+				5FC591832997C71D00A9301D /* TemperatureNotation.swift in Sources */,
 				5FF3FA7129920B7B0074FBAF /* CityCellViewModel.swift in Sources */,
 				5F3282A4298CD2790079CF67 /* SettingsView.swift in Sources */,
 				5FC3A536298A6F440071FA66 /* Configuration.swift in Sources */,

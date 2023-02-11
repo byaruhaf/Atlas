@@ -48,6 +48,6 @@ final class ForecastViewModelTests: XCTestCase {
     
     func testViewModelForIndex() {
         let forecastDayViewModel = viewModel.generateForecastDayViewModel(from: viewModel.weatherData)
-        XCTAssertEqual(forecastDayViewModel.first?.temperature.description, "3.28")
+        XCTAssertEqual(forecastDayViewModel.first?.temperature.description, "3.28 °C")
     }
 }
