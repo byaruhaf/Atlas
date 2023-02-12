@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F0BE8A5299325A4001D8535 /* XCUIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BE8A4299325A4001D8535 /* XCUIApplication+Extension.swift */; };
 		5F0BE8A929934C12001D8535 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BE8A829934C12001D8535 /* XCTestCase+Extension.swift */; };
 		5F13599C298FA5D1005B8100 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F13599B298FA5D1005B8100 /* Location.swift */; };
 		5F13599E298FA921005B8100 /* LocationServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F13599D298FA921005B8100 /* LocationServicing.swift */; };
@@ -36,6 +35,8 @@
 		5F4AB480298C121A0007815D /* Themeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB47F298C121A0007815D /* Themeable.swift */; };
 		5F4AB482298C14D90007815D /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB481298C14D90007815D /* ColorTheme.swift */; };
 		5F4AB484298C595E0007815D /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB483298C595E0007815D /* Styles.swift */; };
+		5F4E53B32998645900AF8C80 /* FavoritesMapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E53B22998645900AF8C80 /* FavoritesMapViewModelTests.swift */; };
+		5F4E53B5299866DE00AF8C80 /* SettingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E53B4299866DE00AF8C80 /* SettingsViewModelTests.swift */; };
 		5F505E1B2989366D00EAFE2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F505E1A2989366D00EAFE2E /* AppDelegate.swift */; };
 		5F505E1D2989366D00EAFE2E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F505E1C2989366D00EAFE2E /* SceneDelegate.swift */; };
 		5F505E1F2989366D00EAFE2E /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F505E1E2989366D00EAFE2E /* CurrentLocationViewController.swift */; };
@@ -71,7 +72,6 @@
 		5FC591832997C71D00A9301D /* TemperatureNotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC591822997C71D00A9301D /* TemperatureNotation.swift */; };
 		5FC591852997D47600A9301D /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC591842997D47600A9301D /* Double+Extension.swift */; };
 		5FCCAEFC298DF71A00A652C4 /* ci_post_clone.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5FCCAEFB298DF71A00A652C4 /* ci_post_clone.sh */; };
-		5FCCCD5D2992C6C20061EB43 /* AtlasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCCD5C2992C6C20061EB43 /* AtlasUITests.swift */; };
 		5FF3FA622991A7880074FBAF /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA612991A7880074FBAF /* AddCityViewController.swift */; };
 		5FF3FA642991A7980074FBAF /* AddCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA632991A7980074FBAF /* AddCityViewModel.swift */; };
 		5FF3FA682991AD6E0074FBAF /* FavoritesNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3FA672991AD6E0074FBAF /* FavoritesNavigationViewController.swift */; };
@@ -89,17 +89,9 @@
 			remoteGlobalIDString = 5F505E162989366D00EAFE2E;
 			remoteInfo = Atlas;
 		};
-		5FCCCD602992C6C20061EB43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5F505E0F2989366D00EAFE2E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5F505E162989366D00EAFE2E;
-			remoteInfo = Atlas;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5F0BE8A4299325A4001D8535 /* XCUIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Extension.swift"; sourceTree = "<group>"; };
 		5F0BE8A829934C12001D8535 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 		5F13599B298FA5D1005B8100 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		5F13599D298FA921005B8100 /* LocationServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServicing.swift; sourceTree = "<group>"; };
@@ -130,6 +122,8 @@
 		5F4AB47F298C121A0007815D /* Themeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themeable.swift; sourceTree = "<group>"; };
 		5F4AB481298C14D90007815D /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
 		5F4AB483298C595E0007815D /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		5F4E53B22998645900AF8C80 /* FavoritesMapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesMapViewModelTests.swift; sourceTree = "<group>"; };
+		5F4E53B4299866DE00AF8C80 /* SettingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelTests.swift; sourceTree = "<group>"; };
 		5F505E172989366D00EAFE2E /* Atlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F505E1A2989366D00EAFE2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F505E1C2989366D00EAFE2E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,8 +164,6 @@
 		5FC591842997D47600A9301D /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		5FCCAEF9298DF34D00A652C4 /* secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = secrets.xcconfig; sourceTree = "<group>"; };
 		5FCCAEFB298DF71A00A652C4 /* ci_post_clone.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ci_post_clone.sh; sourceTree = "<group>"; };
-		5FCCCD5A2992C6C20061EB43 /* AtlasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AtlasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FCCCD5C2992C6C20061EB43 /* AtlasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtlasUITests.swift; sourceTree = "<group>"; };
 		5FF3FA612991A7880074FBAF /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 		5FF3FA632991A7980074FBAF /* AddCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewModel.swift; sourceTree = "<group>"; };
 		5FF3FA672991AD6E0074FBAF /* FavoritesNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNavigationViewController.swift; sourceTree = "<group>"; };
@@ -196,24 +188,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5FCCCD572992C6C20061EB43 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5F0BE8A329932576001D8535 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				5F0BE8A4299325A4001D8535 /* XCUIApplication+Extension.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		5F0BE8A729934BF1001D8535 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,7 +279,6 @@
 				5FCCAEFA298DF6C600A652C4 /* ci_scripts */,
 				5F505E192989366D00EAFE2E /* Atlas */,
 				5F56FF9D298E30F80085DAD0 /* AtlasTests */,
-				5FCCCD5B2992C6C20061EB43 /* AtlasUITests */,
 				5F505E182989366D00EAFE2E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -312,7 +288,6 @@
 			children = (
 				5F505E172989366D00EAFE2E /* Atlas.app */,
 				5F56FF9C298E30F80085DAD0 /* AtlasTests.xctest */,
-				5FCCCD5A2992C6C20061EB43 /* AtlasUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -413,6 +388,8 @@
 				5F56FFB0298E3CB10085DAD0 /* ForecastViewModelTests.swift */,
 				5F56FFB8298E62240085DAD0 /* ForecastDayViewModelTests.swift */,
 				5F1359B22990BC57005B8100 /* CurrentLocationViewModelTests.swift */,
+				5F4E53B22998645900AF8C80 /* FavoritesMapViewModelTests.swift */,
+				5F4E53B4299866DE00AF8C80 /* SettingsViewModelTests.swift */,
 			);
 			path = "Test Cases";
 			sourceTree = "<group>";
@@ -553,15 +530,6 @@
 			path = ci_scripts;
 			sourceTree = "<group>";
 		};
-		5FCCCD5B2992C6C20061EB43 /* AtlasUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5F0BE8A329932576001D8535 /* Extension */,
-				5FCCCD5C2992C6C20061EB43 /* AtlasUITests.swift */,
-			);
-			path = AtlasUITests;
-			sourceTree = "<group>";
-		};
 		5FF3FA602991A76A0074FBAF /* AddCity View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -627,24 +595,6 @@
 			productReference = 5F56FF9C298E30F80085DAD0 /* AtlasTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5FCCCD592992C6C20061EB43 /* AtlasUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5FCCCD622992C6C20061EB43 /* Build configuration list for PBXNativeTarget "AtlasUITests" */;
-			buildPhases = (
-				5FCCCD562992C6C20061EB43 /* Sources */,
-				5FCCCD572992C6C20061EB43 /* Frameworks */,
-				5FCCCD582992C6C20061EB43 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5FCCCD612992C6C20061EB43 /* PBXTargetDependency */,
-			);
-			name = AtlasUITests;
-			productName = AtlasUITests;
-			productReference = 5FCCCD5A2992C6C20061EB43 /* AtlasUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -659,10 +609,6 @@
 						CreatedOnToolsVersion = 14.2;
 					};
 					5F56FF9B298E30F80085DAD0 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = 5F505E162989366D00EAFE2E;
-					};
-					5FCCCD592992C6C20061EB43 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 5F505E162989366D00EAFE2E;
 					};
@@ -683,7 +629,6 @@
 			targets = (
 				5F505E162989366D00EAFE2E /* Atlas */,
 				5F56FF9B298E30F80085DAD0 /* AtlasTests */,
-				5FCCCD592992C6C20061EB43 /* AtlasUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -709,13 +654,6 @@
 			files = (
 				5F56FFAF298E3A6C0085DAD0 /* forecast.json in Resources */,
 				5F56FFAA298E342F0085DAD0 /* current.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5FCCCD582992C6C20061EB43 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,16 +753,9 @@
 				5F56FFB1298E3CB10085DAD0 /* ForecastViewModelTests.swift in Sources */,
 				5F56FFA7298E319E0085DAD0 /* DayViewModelTests.swift in Sources */,
 				5F0BE8A929934C12001D8535 /* XCTestCase+Extension.swift in Sources */,
+				5F4E53B32998645900AF8C80 /* FavoritesMapViewModelTests.swift in Sources */,
 				5F56FFB9298E62240085DAD0 /* ForecastDayViewModelTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5FCCCD562992C6C20061EB43 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5FCCCD5D2992C6C20061EB43 /* AtlasUITests.swift in Sources */,
-				5F0BE8A5299325A4001D8535 /* XCUIApplication+Extension.swift in Sources */,
+				5F4E53B5299866DE00AF8C80 /* SettingsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -835,11 +766,6 @@
 			isa = PBXTargetDependency;
 			target = 5F505E162989366D00EAFE2E /* Atlas */;
 			targetProxy = 5F56FFA0298E30F80085DAD0 /* PBXContainerItemProxy */;
-		};
-		5FCCCD612992C6C20061EB43 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5F505E162989366D00EAFE2E /* Atlas */;
-			targetProxy = 5FCCCD602992C6C20061EB43 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1097,40 +1023,6 @@
 			};
 			name = Release;
 		};
-		5FCCCD632992C6C20061EB43 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WV9WZS43J9;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.appbantu.AtlasUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Atlas;
-			};
-			name = Debug;
-		};
-		5FCCCD642992C6C20061EB43 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WV9WZS43J9;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.appbantu.AtlasUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Atlas;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1157,15 +1049,6 @@
 			buildConfigurations = (
 				5F56FFA3298E30F80085DAD0 /* Debug */,
 				5F56FFA4298E30F80085DAD0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5FCCCD622992C6C20061EB43 /* Build configuration list for PBXNativeTarget "AtlasUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5FCCCD632992C6C20061EB43 /* Debug */,
-				5FCCCD642992C6C20061EB43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
