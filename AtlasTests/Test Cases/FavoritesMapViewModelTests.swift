@@ -43,5 +43,3 @@ final class FavoritesMapViewModelTests: XCTestCase {
         XCTAssertEqual(userPins.first!.locationName, locality)
     }
 }
-
-

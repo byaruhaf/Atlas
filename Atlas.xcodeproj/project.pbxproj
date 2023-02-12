@@ -37,6 +37,7 @@
 		5F4AB484298C595E0007815D /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4AB483298C595E0007815D /* Styles.swift */; };
 		5F4E53B32998645900AF8C80 /* FavoritesMapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E53B22998645900AF8C80 /* FavoritesMapViewModelTests.swift */; };
 		5F4E53B5299866DE00AF8C80 /* SettingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E53B4299866DE00AF8C80 /* SettingsViewModelTests.swift */; };
+		5F4E53B7299869FB00AF8C80 /* CityCellViewModellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E53B6299869FB00AF8C80 /* CityCellViewModellTests.swift */; };
 		5F505E1B2989366D00EAFE2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F505E1A2989366D00EAFE2E /* AppDelegate.swift */; };
 		5F505E1D2989366D00EAFE2E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F505E1C2989366D00EAFE2E /* SceneDelegate.swift */; };
 		5F505E1F2989366D00EAFE2E /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F505E1E2989366D00EAFE2E /* CurrentLocationViewController.swift */; };
@@ -124,6 +125,7 @@
 		5F4AB483298C595E0007815D /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		5F4E53B22998645900AF8C80 /* FavoritesMapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesMapViewModelTests.swift; sourceTree = "<group>"; };
 		5F4E53B4299866DE00AF8C80 /* SettingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelTests.swift; sourceTree = "<group>"; };
+		5F4E53B6299869FB00AF8C80 /* CityCellViewModellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCellViewModellTests.swift; sourceTree = "<group>"; };
 		5F505E172989366D00EAFE2E /* Atlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F505E1A2989366D00EAFE2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F505E1C2989366D00EAFE2E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				5F1359B22990BC57005B8100 /* CurrentLocationViewModelTests.swift */,
 				5F4E53B22998645900AF8C80 /* FavoritesMapViewModelTests.swift */,
 				5F4E53B4299866DE00AF8C80 /* SettingsViewModelTests.swift */,
+				5F4E53B6299869FB00AF8C80 /* CityCellViewModellTests.swift */,
 			);
 			path = "Test Cases";
 			sourceTree = "<group>";
@@ -755,6 +758,7 @@
 				5F0BE8A929934C12001D8535 /* XCTestCase+Extension.swift in Sources */,
 				5F4E53B32998645900AF8C80 /* FavoritesMapViewModelTests.swift in Sources */,
 				5F56FFB9298E62240085DAD0 /* ForecastDayViewModelTests.swift in Sources */,
+				5F4E53B7299869FB00AF8C80 /* CityCellViewModellTests.swift in Sources */,
 				5F4E53B5299866DE00AF8C80 /* SettingsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
