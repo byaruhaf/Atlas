@@ -1,6 +1,5 @@
 
 opt_in_rules:
-  - anyobject_protocol
   - array_init
   - closure_body_length
   - closure_spacing
@@ -53,6 +52,7 @@ opt_in_rules:
   - yoda_condition
 
 disabled_rules: # rule identifiers to exclude from running
+  - blanket_disable_command
   - multiline_arguments
   - closure_parameter_position
   - force_cast

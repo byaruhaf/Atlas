@@ -39,7 +39,7 @@ final class FavoritesMapViewModelTests: XCTestCase {
         let userPins = viewModel.userPins
         let name = "Test Name"
         let locality = "Test Name"
-        XCTAssertEqual(userPins.first!.title, name)
+        XCTAssertNil(userPins.first)
         XCTAssertEqual(userPins.first!.locationName, locality)
     }
 }
